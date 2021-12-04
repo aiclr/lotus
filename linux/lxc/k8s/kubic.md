@@ -96,48 +96,6 @@ kubectl describe deployment nginx-deployment
 kubectl describe pod nginx-deployment-66b6c48dd5-p9kbk
 ```
 
-### [Dashboard UI](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
-
-> https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
-> https://github.com/kubernetes/dashboard/blob/master/docs/user/accessing-dashboard/README.md
-
-```shell
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.4.0/aio/deploy/recommended.yaml
-
-
-slave:~ # kubectl get namespaces
-NAME                   STATUS   AGE
-default                Active   3h36m
-kube-node-lease        Active   3h36m
-kube-public            Active   3h36m
-kube-system            Active   3h36m
-kubernetes-dashboard   Active   36m
-slave:~ # kubectl get pods -n kubernetes-dashboard
-NAME                                        READY   STATUS    RESTARTS   AGE
-dashboard-metrics-scraper-c45b7869d-vrc6t   1/1     Running   0          43m
-kubernetes-dashboard-576cb95f94-87lz5       1/1     Running   0          43m
-slave:~ # kubectl get svc -n kubernetes-dashboard
-NAME                        TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
-dashboard-metrics-scraper   ClusterIP   10.100.244.14    <none>        8000/TCP   43m
-kubernetes-dashboard        ClusterIP   10.107.123.253   <none>        443/TCP    43m
-```
-
-#### localhost 访问
-
-```shell
-kubectl proxy
-
-http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
-```
-
-#### 外部访问
-
-```shell
-kubectl proxy --address='0.0.0.0' --accept-hosts='^*$'
-
-http://192.168.1.100:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
-```
-
 ## kubic 原子更新
 
 ```shell
