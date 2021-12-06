@@ -6,6 +6,7 @@
 
 - [vim](linux/tools/vim.md)
 - [firewald防火墙策略](linux/tools/firewall-cmd.md)
+- [vsftd](linux/tools/vsftpd.md)
 
 ### lxc
 
