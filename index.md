@@ -26,3 +26,7 @@
 ## git
 
 - [git](git/git.md)
+
+## mysql
+
+- [一次隐式类型转换触发的bug](mysql/type-conversion.md)
