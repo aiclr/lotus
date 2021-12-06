@@ -44,7 +44,31 @@ master:~ # kubectl get pods --namespace=<insert-namespace-name-here>
 ```shell
 kubectl get nodes
 kubectl get no
+kubectl describe no/master-dell
+
+master-dell:~/yaml/fly # kubectl describe no/master-dell
+Name:               master-dell
+Roles:              control-plane,master
+# 省略 内容
+Taints:             node-role.kubernetes.io/master:NoSchedule
+# 省略 内容
 ```
+
+### taints node 调度策略 `kubectl taint nodes master-dell node-role.kubernetes.io/master=:PreferNoSchedule`
+
+> taints node 调度策略
+> >不能被调度，当只有一个 master 时要将 master 设置为可调度 
+> >
+> >Taints:             node-role.kubernetes.io/master:NoSchedule
+>
+> >不仅不会调度，还会驱逐Node上的Pod
+> >
+> >Taints:             node-role.kubernetes.io/master:NoExecute
+> 
+> >尽量不要调度到此Node
+> >
+> >Taints:             node-role.kubernetes.io/master:PreferNoSchedule
+
 
 ## deployments/deploy
 
