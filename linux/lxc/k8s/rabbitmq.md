@@ -30,6 +30,14 @@ spec:
         - name: http
           containerPort: 5672
           protocol: TCP
+        volumeMounts:
+          - name: mq-time
+            mountPath: /etc/localtime
+            readOnly: true
+      volumes:
+        - name: mq-time
+          hostPath:
+            path: /etc/localtime
 ```
 
 ## Create the Deployment

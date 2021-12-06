@@ -127,6 +127,7 @@ spec:
       containers:
         - name: rabbitmq
           image: myregistry.domain.com/mq:v1
+          imagePullPolicy: IfNotPresent # IfNotPresent Always Never
           ports:
             - containerPort: 15672
             - containerPort: 5672
@@ -135,6 +136,14 @@ spec:
               value: user
             - name: RABBITMQ_DEFAULT_PASS
               value: "123456"
+          volumeMounts:
+            - name: mq
+              mountPath: /etc/localtime
+              readOnly: true
+      volumes:
+        - name: mq
+          hostPath:
+            path: /etc/localtime
 ---
 apiVersion: v1
 kind: Service
