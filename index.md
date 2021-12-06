@@ -2,7 +2,10 @@
 
 ## linux
 
-- [vim](linux/vim.md)
+### tools
+
+- [vim](linux/tools/vim.md)
+- [firewald防火墙策略](linux/tools/firewall-cmd.md)
 
 ### lxc
 
@@ -20,8 +23,9 @@
 
 ### spring
 
-- boot
-    - [Layering Docker Images](java/spring/boot/layer.md)
+#### boot
+
+- [Layering Docker Images](java/spring/boot/layer.md)
 
 ## git
 
