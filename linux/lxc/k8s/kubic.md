@@ -6,6 +6,45 @@
 2. 设置时区 Asia/Shanghai
 3. 设置 hostname & ip & dns & gateway`virtualbox nat 10.0.0.1`
 
+### network
+
+```shell
+ip link
+# 激活网卡
+ip link set wlp2s0 up
+# 关闭网卡
+ip link set wlp2s0 down
+# 查看网卡状态
+ifstatus wlp2s0
+# 连接网络
+ifup wlp2s0
+# 断开
+ifdown wlp2s0
+```
+
+#### 网络配置
+
+```
+BOOTPROTO='dhcp'
+STARTMODE='auto'
+WIRELESS_ESSID='fiy'
+WIRELESS_AUTH_MODE='PSK'
+WIRELESS_MODE='managed'
+WIRELESS_WPA_PSK='fiy123456'
+WIRELESS_AP_SCANMODE='1'
+WIRELESS_NWID=''
+
+IPADDR='192.168.1.10/24'
+BOOTPROTO='static'
+STARTMODE='auto'
+WIRELESS_ESSID='fiy'
+WIRELESS_AUTH_MODE='PSK'
+WIRELESS_MODE='managed'
+WIRELESS_WPA_PSK='fiy123456'
+WIRELESS_AP_SCANMODE='1'
+WIRELESS_NWID=''
+```
+
 ### ssh
 
 ```shell
@@ -119,14 +158,28 @@ Repository Management:
   clean, cc             Clean local caches.
 # 例子
 zypper addrepo -f https://mirrors.bfsu.edu.cn/opensuse/tumbleweed/repo/non-oss bfsu-non-oss
-zypper addrepo -f https://mirrors.bfsu.edu.cn/opensuse/tumbleweed/repo/non-oss bfsu-non-oss
+zypper addrepo -f https://mirrors.bfsu.edu.cn/opensuse/tumbleweed/repo/oss/ bfsu-oss
 zypper ar -f https://mirrors.bfsu.edu.cn/opensuse/tumbleweed/repo/non-oss bfsu-non-oss
-zypper ar -f https://mirrors.bfsu.edu.cn/opensuse/tumbleweed/repo/non-oss bfsu-non-oss
+zypper ar -f https://mirrors.bfsu.edu.cn/opensuse/tumbleweed/repo/oss/ bfsu-oss
  
 zypper repos -d # 查看详细信息
 zypper mr -da # 禁用全部
 zypper refresh # 刷新
 zypper in docker # 安装docker
+
+master:~/parking # cat /etc/docker/daemon.json
+{
+  "registry-mirrors":["https://rjm3pmfv.mirror.aliyuncs.com"]
+}
+zypper in docker-compose # 安装docker-compose
+
+zypper in htop # htop
+zypper in tmux # tmux
+zypper in lrzsz # lrzsz
+zypper in zsh # zsh
+zypper in git # git
+# 安装 ohmyzsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ## [HOME](../../../index.md)
