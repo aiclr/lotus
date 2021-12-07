@@ -170,18 +170,18 @@ git push origin --delete 0.0.1 #（删除远程仓库上的标签）
 - [git reference](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
 
 > core.autocrlf false
->> If you’re a Windows programmer doing a Windows-only project, then you can turn off this functionality,
+> > If you’re a Windows programmer doing a Windows-only project, then you can turn off this functionality, \
 > > recording the carriage returns in the repository by setting the config value to false
 >
 >core.autocrlf true
 >> If you’re on a Windows machine, set it to true this converts LF endings into CRLF when you check out code:
 >
 >core.autocrlf input
->> If you’re on a Linux or macOS system that uses LF line endings,
-> > then you don’t want Git to automatically convert them when you check out files;
-> > however, if a file with CRLF endings accidentally gets introduced, then you may want Git to fix it.
-> > You can tell Git to convert CRLF to LF on commit but not the other way around by setting core.autocrlf to input:
-> > This setup should leave you with CRLF endings in Windows checkouts,
+>> If you’re on a Linux or macOS system that uses LF line endings, \
+> > then you don’t want Git to automatically convert them when you check out files; \
+> > however, if a file with CRLF endings accidentally gets introduced, then you may want Git to fix it. \
+> > You can tell Git to convert CRLF to LF on commit but not the other way around by setting core.autocrlf to input: \
+> > This setup should leave you with CRLF endings in Windows checkouts, \
 > > but LF endings on macOS and Linux systems and in the repository.
 
 

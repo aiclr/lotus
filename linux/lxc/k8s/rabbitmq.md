@@ -30,6 +30,11 @@ spec:
         - name: http
           containerPort: 5672
           protocol: TCP
+        env:
+        - name: RABBITMQ_DEFAULT_USER
+          value: user
+        - name: RABBITMQ_DEFAULT_PASS
+          value: "123456"
         volumeMounts:
           - name: mq-time
             mountPath: /etc/localtime
