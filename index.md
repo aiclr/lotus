@@ -24,9 +24,11 @@
     - [less](linux/tools/less.md)
     - [sed](linux/tools/sed.md)
     - [awk](linux/tools/awk.md)
+    - [ohmyzsh](linux/tools/ohmyzsh.md)
 - lxc
     - docker
         - [rabbitmq](linux/lxc/docker/rabbitmq.md) 
+        - [nginx](linux/lxc/docker/nginx.md) 
         - [jre8 for alpine](linux/lxc/docker/jre84alpine.md) 
     - k8s
         - [kubic 安装 k8s](linux/lxc/k8s/kubic.md)
