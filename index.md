@@ -35,6 +35,7 @@
         - [kubectl 用法](linux/lxc/k8s/kubectl.md)
         - [Dashboard UI 部署](linux/lxc/k8s/dashbord-ui.md)
         - [RabbitMQ k8s 部署 脚本](linux/lxc/k8s/rabbitmq.md)
+        - [mysql k8s 部署 脚本](linux/lxc/k8s/mysql.yaml)
     - registry
         - [Docker registry 部署 与 自签证书](linux/lxc/registry/registry.md)
 
