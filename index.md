@@ -11,6 +11,8 @@
     - [系统监控工具](linux/arch/monitor.md)
     - [wifi爆破](linux/arch/aircrack-ng.md)
     - [sddm login 主题](linux/arch/sddm.md)
+- opensuse
+    - [自启动脚本](linux/suse/init.md)
 - tools
     - [vim](linux/tools/vim.md)
     - [firewald 防火墙策略](linux/tools/firewall-cmd.md)
