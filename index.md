@@ -31,7 +31,7 @@
     - docker
         - [rabbitmq](linux/lxc/docker/rabbitmq.md) 
         - [nginx](linux/lxc/docker/nginx.md) 
-        - [jre8 for alpine](linux/lxc/docker/jre84alpine.md) 
+        - [jre8 for alpine](linux/lxc/jre8/jre84alpine.md) 
     - k8s
         - [kubic 安装 k8s](linux/lxc/k8s/kubic.md)
         - [kubectl 用法](linux/lxc/k8s/kubectl.md)
