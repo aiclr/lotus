@@ -5,6 +5,7 @@
 - [linux](linux/linux.md)
 - [shell](linux/shell.md)
 - [archlinux](linux/arch/index.md)
+- [Linux container](linux/lxc/index.md)
 - opensuse
     - [自启动脚本](linux/suse/init.md)
 - tools
@@ -22,7 +23,7 @@
     - [awk](linux/tools/awk.md)
     - [ohmyzsh](linux/tools/ohmyzsh.md)
     - [lvm](linux/tools/lvm.md)
-- [Linux container](linux/lxc/index.md)
+
 
 ## java
 

@@ -1,5 +1,15 @@
 <div style="text-align: center;font-size: 40px;">kubic</div>
 
+> https://en.opensuse.org/Kubic:Installation 
+> 
+> 国内外国语大学开源软件镜像站
+> > https://mirrors.bfsu.edu.cn/opensuse/tumbleweed/iso/openSUSE-Kubic-DVD-x86_64-Current.iso 
+> 
+> 国内外国语大学开源软件镜像仓库
+> https://mirrors.bfsu.edu.cn/opensuse/tumbleweed/repo/
+> https://mirrors.bfsu.edu.cn/opensuse/tumbleweed/repo/oss
+> https://mirrors.bfsu.edu.cn/opensuse/tumbleweed/repo/non-oss
+
 ## [kubeadm](https://en.opensuse.org/Kubic:kubeadm)
 
 1. 安装选择 kubeadm Node

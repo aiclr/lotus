@@ -83,3 +83,4 @@ RUN set -ex && \
     ln -sf /etc/ssl/certs/java/cacerts ${JAVA_HOME}/jre/lib/security/cacerts && \
     apk del glibc-i18n && \
     rm -rf /var/cache/apk/* /root/.cache /tmp/*
+# EOF
