@@ -4,13 +4,7 @@
 
 - [linux](linux/linux.md)
 - [shell](linux/shell.md)
-- archlinux
-    - [安装记录](linux/arch/install.md)
-    - [pacman](linux/arch/pacman.md)
-    - [i3](linux/arch/i3.md)
-    - [系统监控工具](linux/arch/monitor.md)
-    - [wifi爆破](linux/arch/aircrack-ng.md)
-    - [sddm login 主题](linux/arch/sddm.md)
+- [archlinux](linux/arch/index.md)
 - opensuse
     - [自启动脚本](linux/suse/init.md)
 - tools
@@ -27,6 +21,7 @@
     - [sed](linux/tools/sed.md)
     - [awk](linux/tools/awk.md)
     - [ohmyzsh](linux/tools/ohmyzsh.md)
+    - [lvm](linux/tools/lvm.md)
 - lxc
     - docker
         - [rabbitmq](linux/lxc/docker/rabbitmq.md) 
