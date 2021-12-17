@@ -1,5 +1,7 @@
 <div style="text-align: center;font-size: 40px;">vue & react nginx</div>
 
+## [nginx](../docker/nginx.md)
+
 ## [Dockerfile](Dockerfile)
 
 ```dockerfile
@@ -19,7 +21,7 @@ COPY dist  /usr/share/nginx/html/
 RUN echo 'echo init ok!!'
 ```
 
-## [build]()
+## [build](build.sh)
 
 ```shell
 #!/bin/bash

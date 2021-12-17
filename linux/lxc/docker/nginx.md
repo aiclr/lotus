@@ -27,3 +27,5 @@ docker container exec -it containerID /bin/bash
 # 复制nginx.conf 到宿主机/root/nginx/conf/nginx.conf
 docker cp containerID:/etc/nginx/nginx.conf /root/nginx/conf/nginx.conf 
 ```
+
+## [vue & react](../nginx/nginx4js.md)
