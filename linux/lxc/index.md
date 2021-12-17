@@ -6,6 +6,7 @@
 - [nginx](docker/nginx.md) 
 - [jre8 for alpine](jre8/jre84alpine.md)
 - [jre7 for alpine](jre7/jre74alpine.md)
+- [nginx for react & vue](nginx/nginx4js.md)
 - [Springboot Layering Docker Images](../../java/spring/boot/layer.md)
 
 ## k8s
