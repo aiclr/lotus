@@ -25,12 +25,9 @@
     - [lvm](linux/tools/lvm.md)
 
 
-## java
+## [java](java/index.md)
 
-- [Functional Programming & Currying](java/functional.md)
-- [敏捷开发](java/TDD.md)
-- [REST ful API](java/RESTfulAPI.md)
-- [maven](java/mvn.md)
+- [jshell java REPL](java/jshell.md)
 - spring
     - boot
         - [Layering Docker Images](java/spring/boot/layer.md)
