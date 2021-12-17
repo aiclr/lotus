@@ -22,19 +22,7 @@
     - [awk](linux/tools/awk.md)
     - [ohmyzsh](linux/tools/ohmyzsh.md)
     - [lvm](linux/tools/lvm.md)
-- lxc
-    - docker
-        - [rabbitmq](linux/lxc/docker/rabbitmq.md) 
-        - [nginx](linux/lxc/docker/nginx.md) 
-        - [jre8 for alpine](linux/lxc/jre8/jre84alpine.md) 
-    - k8s
-        - [kubic 安装 k8s](linux/lxc/k8s/kubic.md)
-        - [kubectl 用法](linux/lxc/k8s/kubectl.md)
-        - [Dashboard UI 部署](linux/lxc/k8s/dashbord-ui.md)
-        - [RabbitMQ k8s 部署 脚本](linux/lxc/k8s/rabbitmq.md)
-        - [mysql k8s 部署 脚本](linux/lxc/k8s/mysql.yaml)
-    - registry
-        - [Docker registry 部署 与 自签证书](linux/lxc/registry/registry.md)
+- [Linux container](linux/lxc/index.md)
 
 ## java
 
