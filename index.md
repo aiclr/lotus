@@ -27,6 +27,7 @@
 
 ## [java](java/index.md)
 
+- [jvm](java/jvm/index.md)
 - [jshell java REPL](java/jshell.md)
 - spring
     - boot
