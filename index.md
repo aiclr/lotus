@@ -31,6 +31,7 @@
 - [jshell java REPL](java/jshell.md)
 - String
   - [Jaccard](java/string/Jaccard.md)
+  - [Sorensen Dice](java/string/dice.md)
 - spring
     - boot
         - [Layering Docker Images](java/spring/boot/layer.md)

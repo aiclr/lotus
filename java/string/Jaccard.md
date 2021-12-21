@@ -9,17 +9,17 @@
 
 ## java code
 
-```java
+```jshelllanguage
 /**
  * Jaccard similarity coefficient Jaccard相似系数
  * 比较有限样本集之间的相似性与差异性。
  * Jaccard系数值越大，样本相似度越高
  *
- * J(A,B)=|A、B交集| ÷ |A、B并集| = |A、B交集| ÷ (|A| + |B| - |A、B交集|)
+ * J(A,B)=|A∩B| ÷ |A∪B| = |A∩B| ÷ (|A| + |B| - |A∩B|)
  *
- *             |A、B交集|                |A、B交集|
- * J(A,B)=   ------------   =   -------------------------
- *             |A、B并集|          |A| + |B| - |A、B交集|
+ *             |A∩B|                    |A∩B|
+ * J(A,B)=   ------------   =   ----------------------
+ *             |A∪B|              |A| + |B| - |A∩B|
  *
  * Jshell 默认导入了 import java.util.*
  * @param a 样本a
@@ -52,8 +52,6 @@ float jaccard(String a,String b)
 
 ```shell
 jshell> /open jshell/jaccard.txt
-jshell> /methods
-|    float jaccard(String,String)
 
 jshell> jaccard("abcde","abcde")
 $3 ==> 1.0
