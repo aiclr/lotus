@@ -6,6 +6,8 @@
 - [REST ful API](RESTfulAPI.md)
 - [maven](mvn.md)
 - [jshell java REPL](jshell.md)
+- String
+  - [Jaccard](string/Jaccard.md)
 - spring
     - boot
         - [Layering Docker Images](spring/boot/layer.md)

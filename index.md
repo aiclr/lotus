@@ -29,6 +29,8 @@
 
 - [jvm](java/jvm/index.md)
 - [jshell java REPL](java/jshell.md)
+- String
+  - [Jaccard](java/string/Jaccard.md)
 - spring
     - boot
         - [Layering Docker Images](java/spring/boot/layer.md)
