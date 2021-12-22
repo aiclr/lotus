@@ -30,8 +30,9 @@
 - [jvm](java/jvm/index.md)
 - [jshell java REPL](java/jshell.md)
 - String
-  - [Jaccard](java/string/Jaccard.md)
-  - [Sorensen Dice](java/string/dice.md)
+  - [Jaccard 相似系数](java/string/Jaccard.md)
+  - [Sorensen Dice 相似度系数](java/string/dice.md)
+  - [Levenshtein 莱文斯距离](java/string/Levenshtein.md)
 - spring
     - boot
         - [Layering Docker Images](java/spring/boot/layer.md)

@@ -7,8 +7,9 @@
 - [maven](mvn.md)
 - [jshell java REPL](jshell.md)
 - String
-  - [Jaccard](string/Jaccard.md)
-  - [Sorensen Dice](string/dice.md)
+  - [Jaccard 相似系数](string/Jaccard.md)
+  - [Sorensen Dice 相似度系数](string/dice.md)
+  - [Levenshtein 莱文斯距离](string/Levenshtein.md)
 - spring
     - boot
         - [Layering Docker Images](spring/boot/layer.md)
