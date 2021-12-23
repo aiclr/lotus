@@ -1,6 +1,5 @@
 <script type="text/javascript">
     let startTime=new Date('2021/12/18 20:53:00');
-
     function getTime()
     {
         var ms = Math.floor((new Date() - startTime));
@@ -19,9 +18,7 @@
         if(m>0)
             minutesText=m.toString()+' minutes and ';
         var showText=daysText+hoursText+minutesText+s.toString()+' seconds have passed';
-
-        document.getElementById("time").innerHTML=d.toString()+'天'+h.toString()+'小时'+m.toString()+'分'+s.toString()+'秒';
-        document.getElementById("time2").innerHTML=showText;
+        document.getElementById("time").innerHTML=showText;
     }
     setInterval(getTime,1000);
 </script>
