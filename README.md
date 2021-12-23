@@ -1,2 +1,2 @@
 # [lotus](https://bougainvilleas.github.io/lotus/)
-彩灵
+keep it simple and stupid
