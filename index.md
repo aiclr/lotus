@@ -25,6 +25,10 @@
 
 <div id='time' style="text-align: center;font-size: 40px;color: cyan;"></div>
 
+## [C](c/index.md)
+
+- [gcc](c/gcc.md)
+
 ## linux
 
 - [linux](linux/linux.md)

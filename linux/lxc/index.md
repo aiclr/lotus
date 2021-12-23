@@ -16,6 +16,7 @@
 - [Dashboard UI 部署](k8s/dashbord-ui.md)
 - [RabbitMQ k8s 部署 脚本](k8s/rabbitmq.md)
 - [mysql k8s 部署 脚本](k8s/mysql.yaml)
+- [redis k8s 部署 脚本](k8s/redis.md)
 
 ## registry
 
