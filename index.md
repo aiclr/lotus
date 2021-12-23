@@ -8,11 +8,9 @@
         var m = Math.floor((ms-d*86400000-h*3600000) / 60000);
         var s = Math.floor((ms-d*86400000-h*3600000-m*60000) / 1000);
 
-        var daysText="";
+        var daysText=d.toString()+' days,';
         var hoursText="";
         var minutesText="";
-        if(d>0)
-            daysText=d.toString()+' days,';
         if(h>0)
             hoursText=h.toString()+' hours,';
         if(m>0)
