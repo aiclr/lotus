@@ -11,9 +11,10 @@
 
 ```shell
 mysql -u root -p
-create database dbName;
-use dbName;
-set names utf-8;
+USE mysql;
+CREATE DATABASE `dbName` CHARACTER SET 'utf8mb4.' COLLATE 'utf8mb4_general_ci';
+USE dbName;
+SET NAMES utf8mb4;
 source /root/dbName.sql;
 # 或者
 mysql -u root -p dbName < dbName.sql
