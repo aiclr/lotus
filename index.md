@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    let startTime=new Date('2021-12-18 20:53:00');
+    let startTime=new Date('2021/12/18 20:53:00');
 
     function getTime()
     {
