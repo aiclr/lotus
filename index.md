@@ -76,3 +76,9 @@
 
 - [MySQL](mysql/database.md)
 - [一次隐式类型转换触发的bug](mysql/type-conversion.md)
+
+## C
+
+| [C](c/index.md) | C Primer Plus |
+|:----------------|:--------------|
+| [gcc](c/gcc.md) ||
