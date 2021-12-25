@@ -43,6 +43,7 @@
 | [chmod](linux/tools/chmod.md)                 |                                     |                                |
 | [grep](linux/tools/grep.md)                   |                                     |                                |
 | [less](linux/tools/less.md)                   |                                     |                                |
+| [进制转换](linux/decimal.md)                      |                                     |                                |
 
 ## linux container
 
