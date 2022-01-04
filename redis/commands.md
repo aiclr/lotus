@@ -18,6 +18,12 @@ redis-cli -h localhost -p 6379 -a password ping
 redis-cli -h localhost -p 6379
 # 密码
 redis-cli -h localhost -p 6379 -a password
+
+# 默认连接 localhost 6379
+redis-cli
+# 1. 按数据原有格式打印数据，不展示额外的类型信息; 2. 显示中文
+redis-cli --raw
+
 # 连接后 认证
 localhost:6379> AUTH [username] password
 # redis 6.0 以后的新功能 A container for Access List Control commands 访问控制列表 默认用户 default ,设置不同用户并授予命令或数据权限
