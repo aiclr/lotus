@@ -2,21 +2,20 @@
     let startTime=new Date('2021/12/18 20:53:00');
     function getTime()
     {
-        var ms = Math.floor((new Date() - startTime));
-        var d = Math.floor(ms / 86400000);
-        var h = Math.floor((ms-d*86400000) / 3600000);
-        var m = Math.floor((ms-d*86400000-h*3600000) / 60000);
-        var s = Math.floor((ms-d*86400000-h*3600000-m*60000) / 1000);
+        const ms = Math.floor((new Date() - startTime));
+        const d = Math.floor(ms / 86400000);
+        const h = Math.floor((ms-d*86400000) / 3600000);
+        const m = Math.floor((ms-d*86400000-h*3600000) / 60000);
+        const s = Math.floor((ms-d*86400000-h*3600000-m*60000) / 1000);
 
-        var daysText=d.toString()+' days,';
-        var hoursText="";
-        var minutesText="";
+        const daysText=d.toString()+' days,';
+        let hoursText="";
+        let minutesText="";
         if(h>0)
             hoursText=h.toString()+' hours,';
         if(m>0)
             minutesText=m.toString()+' minutes and ';
-        var showText=daysText+hoursText+minutesText+s.toString()+' seconds have passed';
-        document.getElementById("time").innerHTML=showText;
+        document.getElementById("time").innerHTML=daysText+hoursText+minutesText+s.toString()+' seconds have passed';
     }
     setInterval(getTime,1000);
 </script>
