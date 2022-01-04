@@ -5,8 +5,8 @@
 
 ## install
 
-> `zypper in podman` \
-> `pacman -S podman`
+> `zypper in podman` Kubic 上测试可以正常使用 \
+> `pacman -S podman` 目前 arch linux 有点问题
 
 ## [command](https://docs.podman.io/en/latest/Commands.html)
 

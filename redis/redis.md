@@ -1,6 +1,16 @@
 <div style="text-align: center;font-size: 40px;">Redis</div>
 
-## k8s yaml
+> [home](https://redis.io) \
+> [documentation](https://redis.io/documentation) \
+> [commands](https://redis.io/commands) \
+> [github](https://github.com/redis/redis)
+
+## docker or podman
+```shell
+podman run -v/root/redis/conf:/usr/local/etc/redis -v /root/redis/data:/data -p 6379:6379 --name redis redis:6.2.6
+```
+
+## [k8s yaml](../linux/lxc/k8s/redis.yaml)
 
 ```yaml
 apiVersion: apps/v1

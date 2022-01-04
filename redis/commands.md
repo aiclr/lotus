@@ -27,6 +27,12 @@ localhost:6379> ACL USERS
 localhost:6379> select 1
 # Return the number of keys in the currently-selected database
 localhost:6379> dbsize
+
+```
+
+## RedisJSON commands
+
+```shell
 localhost:6379> JSON.SET doc $ '{"a":2,"b":3,"nested":{"a":4,"b":null}}'
 OK
 localhost:6379> get keys
@@ -47,6 +53,4 @@ localhost:6379> JSON.GET doc $..a
 "[2,4]"
 localhost:6379> JSON.GET doc $..a $..b
 "{\"$..a\":[2,4],\"$..b\":[3,null]}"
-
-
 ```

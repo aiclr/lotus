@@ -47,16 +47,16 @@
 
 ## linux container
 
-| **docker**                                                     | **podman**                           | **k8s**                                         |
-|:---------------------------------------------------------------|:-------------------------------------|:------------------------------------------------|
-| [Docker registry 部署 与 自签证书](linux/lxc/registry/registry.md)    | [podman](linux/lxc/podman/podman.md) | [kubic 安装 k8s](linux/lxc/k8s/kubic.md)          |
-| [rabbitmq](linux/lxc/docker/rabbitmq.md)                       |                                      | [kubectl 用法](linux/lxc/k8s/kubectl.md)          |
-| [jre8 for alpine](linux/lxc/jre8/jre84alpine.md)               |                                      | [Dashboard UI 部署](linux/lxc/k8s/dashbord-ui.md) |
-| [jre7 for alpine](linux/lxc/jre7/jre74alpine.md)               |                                      | [RabbitMQ k8s 部署 脚本](linux/lxc/k8s/rabbitmq.md) |
-| [nginx](linux/lxc/docker/nginx.md)                             |                                      | [mysql k8s 部署 脚本](linux/lxc/k8s/mysql.yaml)     |
-| [nginx for react & vue](linux/lxc/nginx/nginx4js.md)           |                                      | [redis k8s 部署 脚本](linux/lxc/k8s/redis.md)       |
-| [Springboot Layering Docker Images](java/spring/boot/layer.md) |                                      |                                                 |
-| [docker 开启远程访问](linux/lxc/docker/docker.md)                    |                                      |                                                 |
+| **docker**                                                     | **podman**                           | **k8s**                                          |
+|:---------------------------------------------------------------|:-------------------------------------|:-------------------------------------------------|
+| [Docker registry 部署 与 自签证书](linux/lxc/registry/registry.md)    | [podman](linux/lxc/podman/podman.md) | [kubic 安装 k8s](linux/lxc/k8s/kubic.md)           |
+| [rabbitmq](linux/lxc/docker/rabbitmq.md)                       |                                      | [kubectl 用法](linux/lxc/k8s/kubectl.md)           |
+| [jre8 for alpine](linux/lxc/jre8/jre84alpine.md)               |                                      | [Dashboard UI 部署](linux/lxc/k8s/dashbord-ui.md)  |
+| [jre7 for alpine](linux/lxc/jre7/jre74alpine.md)               |                                      | [RabbitMQ k8s 部署 脚本](linux/lxc/k8s/rabbitmq.md)  |
+| [nginx](linux/lxc/docker/nginx.md)                             |                                      | [mysql k8s 部署 脚本](linux/lxc/k8s/mysql.yaml)      |
+| [nginx for react & vue](linux/lxc/nginx/nginx4js.md)           |                                      | [redis k8s 部署 脚本](linux/lxc/k8s/redis.yaml)      |
+| [Springboot Layering Docker Images](java/spring/boot/layer.md) |                                      | [RedisJSON k8s 部署 脚本](linux/lxc/k8s/rejson.yaml) |
+| [docker 开启远程访问](linux/lxc/docker/docker.md)                    |                                      |                                                  |
 
 ## java
 
@@ -102,6 +102,13 @@
 |:-------------------------------------------|
 | [MySQL](mysql/database.md)                 |
 | [一次隐式类型转换触发的bug](mysql/type-conversion.md) |
+
+## redis
+
+| **redis**                     | **RedisJSON**                  |
+|:------------------------------|:-------------------------------|
+| [commands](redis/commands.md) | [RedisJSON](redis/rejson.md)   |
+| [Redis](redis/redis.md)       | [JavaClient](redis/Jrejson.md) |
 
 ## C
 
