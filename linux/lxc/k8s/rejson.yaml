@@ -20,6 +20,11 @@ spec:
         - name: redisjson
           image: fly.reg.com/redisjson:2.0.6
           imagePullPolicy: IfNotPresent
+          command: # 启动配置端口 参考源码中的 Dockerfile https://github.com/RedisJSON/RedisJSON/blob/master/Dockerfile
+            - redis-server
+            - --port 6379 # 指定端口
+            - --loadmodule /usr/lib/redis/modules/rejson.so
+            - --loadmodule /usr/lib/redis/modules/redisearch.so
           ports:
             - containerPort: 6379
           volumeMounts:

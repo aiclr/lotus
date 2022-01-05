@@ -20,6 +20,9 @@ spec:
         - name: redis
           image: fly.reg.com/redis:6.2.6
           imagePullPolicy: IfNotPresent
+          command: # 启动配置端口 参考 redis 的 Dockerfile CMD ["redis-server"]
+            - redis-server
+            - --port 6379
           ports:
             - containerPort: 6379
           volumeMounts:
