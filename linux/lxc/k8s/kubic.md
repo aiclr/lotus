@@ -6,9 +6,15 @@
 > > https://mirrors.bfsu.edu.cn/opensuse/tumbleweed/iso/openSUSE-Kubic-DVD-x86_64-Current.iso 
 > 
 > 国内外国语大学开源软件镜像仓库
-> https://mirrors.bfsu.edu.cn/opensuse/tumbleweed/repo/
-> https://mirrors.bfsu.edu.cn/opensuse/tumbleweed/repo/oss
-> https://mirrors.bfsu.edu.cn/opensuse/tumbleweed/repo/non-oss
+> > https://mirrors.bfsu.edu.cn/opensuse/tumbleweed/repo/ \
+> > https://mirrors.bfsu.edu.cn/opensuse/tumbleweed/repo/oss \
+> > https://mirrors.bfsu.edu.cn/opensuse/tumbleweed/repo/non-oss
+> 
+> 注意
+> > [openSUSE-Kubic 默认有定时重启系统和滚动更新系统的服务](https://en.opensuse.org/Kubic:Update_and_Reboot)
+> > > `systemctl status transactional-update.timer` 自动滚动更新 \
+> > > `systemctl status rebootmgr.service` [重启系统](../../suse/rebootmg.md) \
+> > > `rebootmgrctl get-window` 查看维护开始时间和持续时间 默认 window-start=03:30 window-duration=1h30m
 
 ## [kubeadm](https://en.opensuse.org/Kubic:kubeadm)
 
