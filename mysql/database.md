@@ -46,9 +46,10 @@ mysql -u root -p dbName < dbName.sql
 > table
 > > 清空表 `truncate TABLE table_name;` \
 > > 添加主键 `alter table t_name add primary key(id);` \
+> > 添加字段 `alter table t_name add column del_flag tinyint(1) NULL default 0 COMMENT '注释';` \
 > > 修改id字段位置到最前 `alter table t_name modify id int first;` \
 > > 修改id位置到name之后 `alter table t_name modify id int after name;` \
-> > 修改字段名字及属性:把id改成new_id且字段类型为varchar(10) `alter table t_name change id new_id varchar(10);` \
+> > 修改字段名字及属性:把id改成new_id且字段类型为varchar(10) `alter table t_name change id new_id varchar(10) COMMENT '注释'';` \
 > > 删除id字段 `alter table t_name drop column id;` \
 > > 重命名表 `alter table t_name rename new_name;`
 > 
