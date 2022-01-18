@@ -71,10 +71,10 @@ keep it simple and stupid
 
 ## git
 
-| **git**                     |
-|:----------------------------|
-| [git](git/git.md)           |
-| [ssh & gpg](git/ssh_gpg.md) |
+| **git**                     | **git 使用 规范**                |
+|:----------------------------|:-----------------------------|
+| [git](git/git.md)           | [git 使用 规范](git/standard.md) |
+| [ssh & gpg](git/ssh_gpg.md) ||
 
 ## mysql
 
