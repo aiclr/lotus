@@ -78,10 +78,10 @@ keep it simple and stupid
 
 ## mysql
 
-| **mysql**                                  |
-|:-------------------------------------------|
-| [MySQL](mysql/database.md)                 |
-| [一次隐式类型转换触发的bug](mysql/type-conversion.md) |
+| **mysql**                                  | **优化**                   |
+|:-------------------------------------------|:-------------------------|
+| [MySQL](mysql/database.md)                 | [分页查询优化](mysql/delay.md) |
+| [一次隐式类型转换触发的bug](mysql/type-conversion.md) ||
 
 ## redis
 
