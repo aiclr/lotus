@@ -1,6 +1,6 @@
 <div style="text-align: center;font-size: 40px;">jar</div>
 
-##jar
+## jar
 
 - 解压war包 `jar -xvf **.war`
 - 解压jar包 ```jar -xvf flyos-dev-2.1.9.3.jar```
