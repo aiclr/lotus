@@ -31,10 +31,50 @@ gpg>save   # 保存
 gpg --armor --export xxxx(pub key) 
 ```
 
-## 添加ssh私钥
+## 添加ssh私钥 **github 需要设置密码**[参考](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+
+### win10 powershell
 
 ```shell
-# 阅读提示自定义设置
-ssh-keygen -t rsa -C "caddyRen@qq.com" 
-cat ~/.ssh/id_rsa.pub 
+ssh-keygen -t rsa -b 2048  -C "caddyRen@qq.com"
+# clip 复制到粘贴板 
+cat ~/.ssh/caddyRen_rsa.pub | clip
+```
+
+### linux
+
+```shell
+ssh-keygen -t rsa -b 2048  -C "caddyRen@qq.com"
+cat ~/.ssh/caddyRen_rsa.pub
+```
+
+### 多 ssh 配置
+
+```shell
+vim ~/.ssh/config
+
+Host git.parkere.cn
+  HostName git.parkere.cn
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/work_rsa
+Host bougainvilleas
+  HostName github.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/bougainvilleas_rsa
+Host caddyRen
+  HostName github.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/caddyRen_rsa
+```
+
+> Host 替换掉真实域名 `git clone git@bougainvilleas:bougainvilleas/lotus.git`
+>
+> HostName 真实域名 `git clone git@github.com:bougainvilleas/lotus.git`
+
+### 检测
+
+```shell
+ssh git@git.parkere.cn
+ssh git@caddyRen
+ssh git@bougainvilleas
 ```
