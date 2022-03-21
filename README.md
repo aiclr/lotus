@@ -11,7 +11,7 @@ keep it simple and stupid
 | [lvm](linux/tools/lvm.md)                     | [i3](linux/arch/i3.md)              | [自启动脚本](linux/suse/init.md)              |
 | [ohmyzsh](linux/tools/ohmyzsh.md)             | [系统监控工具](linux/arch/monitor.md)     | [默认凌晨三点六重启系统](linux/suse/rebootmg.md)    |
 | [awk](linux/tools/awk.md)                     | [wifi爆破](linux/arch/aircrack-ng.md) | [Network file system](linux/suse/nfs.md) |
-| [sed](linux/tools/sed.md)                     | [sddm login 主题](linux/arch/sddm.md) |                                          |
+| [sed](linux/tools/sed.md)                     | [sddm login 主题](linux/arch/sddm.md) | [java version 管理工具](linux/suse/java.md) |
 | [vim](linux/tools/vim.md)                     |                                     |                                          |
 | [firewald 防火墙策略](linux/tools/firewall-cmd.md) |                                     |                                          |
 | [vsftd文件服务器](linux/tools/vsftpd.md)           |                                     |                                          |
@@ -23,7 +23,7 @@ keep it simple and stupid
 | [grep](linux/tools/grep.md)                   |                                     |                                          |
 | [less](linux/tools/less.md)                   |                                     |                                          |
 | [进制转换](linux/decimal.md)                      |                                     |                                          |
-| [journalctl 系统日志](linux/tools/journalctl.md)  |                                     |                                          |
+| [journalctl 系统日志](linux/tools/journalctl.md)  |                                     |                                          |                                    |
 
 ## linux container
 
