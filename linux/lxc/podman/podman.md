@@ -1,12 +1,24 @@
 <div style="text-align: center;font-size: 40px;">Pod Manager tool</div>
 
-> [podman 官方网站](https://podman.io) \
-> [github](https://github.com/TomSweeneyRedHat/podman)
+## [podman 官方网站](https://podman.io)
+
+## [github](https://github.com/TomSweeneyRedHat/podman)
 
 ## install
 
-> `zypper in podman` Kubic 上测试可以正常使用 \
-> `pacman -S podman` 目前 arch linux 有点问题
+> `zypper in podman` Kubic 上测试可以正常使用 
+>
+> `pacman -S podman` archlinux
+
+## [Rootless mode](https://man.archlinux.org/man/podman.1#Rootless_mode)
+
+```shell
+usermod --add-subuids 10000-65535 caddy
+usermod --add-subgids 10000-65535 caddy
+# or
+echo caddy:10000:65536 >> /etc/subuid
+echo caddy:10000:65536 >> /etc/subgid
+```
 
 ## [command](https://docs.podman.io/en/latest/Commands.html)
 

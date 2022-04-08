@@ -77,7 +77,8 @@ keep it simple and stupid
 | **git**                     | **git 使用 规范**                |
 |:----------------------------|:-----------------------------|
 | [git](git/git.md)           | [git 使用 规范](git/standard.md) |
-| [ssh & gpg](git/ssh_gpg.md) ||
+| [ssh & gpg](git/ssh_gpg.md) | [git 分支 规范](git/standard.md) |
+| [push](git/git_push.md) ||
 
 ## mysql
 
