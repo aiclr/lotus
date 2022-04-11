@@ -62,7 +62,7 @@ mkfs.ext4 /dev/sdb1
 mount /dev/sdb1 /mnt
 ```
 
-#### UEFI模式
+#### UEFI模式 需要 GPT 分区表
 
 - 固态盘 `fdisk /dev/nvme0n1`
     - `/dev/nvme0n1p1` : 主引导分区 最少300M 
@@ -117,8 +117,8 @@ dmsetup status
 
 ### archlinuxcn
 
-- [/etc/pacman.conf](pacman.conf)
-- [/etc/pacman.d/mirrorlist](mirrorlist)
+- 国内加速源 [/etc/pacman.conf](pacman.conf)
+- archlinuxcn 源 [/etc/pacman.d/mirrorlist](mirrorlist)
 
 ### shell
 
@@ -126,15 +126,9 @@ dmsetup status
 vim /etc/pacman.d/mirrorlist
 # 开头
 Server = https://mirrors.bfsu.edu.cn/archlinux/$repo/os/$arch
-vim /etc/pacman.conf
-# 末尾
-[archlinuxcn]
-Server = https://mirrors.bfsu.edu.cn/archlinuxcn/$arch
 
+# 安装系统
 pacstrap /mnt base linux linux-firmware
-
-#安装完base报错failed to install packages to new root
-pacman-key --refresh-keys
 
 # 生成挂载信息文件
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -143,7 +137,15 @@ genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 
 # 安装软件包
-pacman -S vim networkmanager openssh dialog wpa_supplicant sudo
+pacman -S vi vim networkmanager openssh sudo
+
+# 配置 archlinuxcn 源
+vim /etc/pacman.conf
+# 末尾
+[archlinuxcn]
+Server = https://mirrors.bfsu.edu.cn/archlinuxcn/$arch
+#安装报错failed to install packages to new root
+pacman-key --refresh-keys
 
 # 设置时区
 ln -sf /usr/share/zoneinfo/$Region/$City /etc/localtime
@@ -155,16 +157,16 @@ vim /etc/locale.gen
 en_US.UTF-8 UTF-8
 zh_CN.UTF-8 UTF-8
 
-# 生成locale信息
-locale-gen
-
 # 设置locale
 vim /etc/locale.conf
 LANG=en_US.UTF-8
 
+# 生成locale信息
+locale-gen
+
 # 主机名
 vim /etc/hostname
-caddy
+box
 
 # hosts设置
 vim /etc/hosts
@@ -177,7 +179,13 @@ vim /etc/hosts
 passwd
 # 添加用户
 useradd -m caddy
+# 设置 caddy 密码
 passwd caddy
+
+# 用户添加 sudo  visudo 专门编辑 /etc/sudoers 需要 vi
+visudo /etc/sudoers
+caddy   ALL=(ALL) ALL
+
 
 # 网络
 systemctl enable NetworkManager
@@ -189,12 +197,13 @@ nmtui
 nmcli device wifi list
 nmcli device wifi connect "your wifi name" password "your wifi password"
 
-# ssh
-systemctl enable sshd.service
+# openssh
+systemctl enable sshd
+## 禁止 root ssh 仅允许 caddy 用户 ssh
+vim /etc/ssh/sshd_config
+PermitRootLogin no
+AllowUsers caddy
 
-# 用户添加 sudo 
-vim /etc/sudoers
-caddy   ALL=(ALL) ALL
 
 # 安装grub
 pacman -S grub efibootmgr
@@ -205,6 +214,10 @@ grub-mkconfig -o /boot/grub/grub.cfg
 exit
 # 取消挂载 重启
 lsblk
+# 取消多个挂载目录
+umount -R /mnt
+lsblk
+# 或者分别取消挂载
 umount /mnt/boot
 umount /mnt/code
 umount /mnt/data
