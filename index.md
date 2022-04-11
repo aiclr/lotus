@@ -26,9 +26,9 @@
 
 | **linux**                                     | **arch**                            | **suse**                                 |
 |:----------------------------------------------|:------------------------------------|:-----------------------------------------|
-| [btrfs](linux/btrfs.md)                       |                                     |                                          |
-| [users & groups](linux/user.md)               |                                     |                                          |
-| [shell](linux/shell.md)                       | [安装记录](linux/arch/install.md)     | [发行版](linux/suse/microos.md)          |
+| [btrfs](linux/btrfs.md)                       | [安装记录](linux/arch/install.md)    |                                          |
+| [users & groups](linux/user.md)               | [virtualbox安装](linux/arch/virtualbox.md)    |                                 |
+| [shell](linux/shell.md)                       |                                     | [发行版](linux/suse/microos.md)          |
 | [linux](linux/linux.md)                       | [pacman](linux/arch/pacman.md)      | [zypper](linux/suse/zypper.md)           |
 | [lvm](linux/tools/lvm.md)                     | [i3](linux/arch/i3.md)              | [自启动脚本](linux/suse/init.md)           |
 | [ohmyzsh](linux/tools/ohmyzsh.md)             | [系统监控工具](linux/arch/monitor.md)     | [默认凌晨三点六重启系统](linux/suse/rebootmg.md)    |
