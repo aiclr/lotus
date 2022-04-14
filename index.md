@@ -64,13 +64,14 @@
 
 | **java**                                                | **String**                                      | **Spring**                                               | **Springboot**                                      |
 |:--------------------------------------------------------|-------------------------------------------------|:---------------------------------------------------------|:----------------------------------------------------|
-| [jvm 监控工具](jvm/tools.md)                                | [Jaccard 相似系数](java/string/Jaccard.md)          | [spring cloud](java/spring/cloud/springcloud.md)         | [Layering Docker Images](java/spring/boot/layer.md) |
-| [Functional Programming & Currying](java/functional.md) | [Sorensen Dice 相似度系数](java/string/dice.md)      | [eureka 配置说明](java/spring/cloud/eureka.md)               |                                                     |
-| [jshell java REPL](java/jshell.md)                      | [Levenshtein 莱文斯距离](java/string/Levenshtein.md) | [循环依赖](java/spring/cyclic-dependencies.md)               |                                                     |
-| [REST ful API](java/RESTfulAPI.md)                      |                                                 | [MultipartFile isEmpty 源码](java/spring/MultipartFile.md) |                                                     |
-| [敏捷开发](java/TDD.md)                                     |                                                 |                                                          |                                                     |
-| [代理](java/proxy.md)                                     |                                                 |                                                          |                                                     |
-| [eclipse formatter](java/eclipse-codestyle.xml)                                     |                                                 |                                                          |                                                     |
+| [jvm 监控工具](jvm/tools.md) | [Jaccard 相似系数](java/string/Jaccard.md) | [spring cloud](java/spring/cloud/springcloud.md) | [Layering Docker Images](java/spring/boot/layer.md) |
+| [Functional Programming & Currying](java/functional.md) | [Sorensen Dice 相似度系数](java/string/dice.md) | [eureka 配置说明](java/spring/cloud/eureka.md) | |
+| [jshell java REPL](java/jshell.md) | [Levenshtein 莱文斯距离](java/string/Levenshtein.md) | [循环依赖](java/spring/cyclic-dependencies.md) | |
+| [REST ful API](java/RESTfulAPI.md) | | [MultipartFile isEmpty 源码](java/spring/MultipartFile.md) | |
+| [敏捷开发](java/TDD.md) | | | |
+| [代理](java/proxy.md) | | | |
+| [eclipse formatter](java/eclipse-codestyle.xml) | | | |
+| [java 模块化 打包编译运行](java/java.md) ||||
 
 ## maven
 
@@ -99,6 +100,8 @@
 | [git](git/git.md)           | [git 使用 规范](git/standard.md) |
 | [ssh & gpg](git/ssh_gpg.md) | [git 分支 规范](git/standard.md) |
 | [push](git/git_push.md) ||
+| [tag](git/git_tag.md) ||
+| [reflog](git/git_reflog.md) ||
 
 
 ## mysql
