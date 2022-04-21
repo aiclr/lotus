@@ -144,6 +144,8 @@ vim /etc/pacman.conf
 # 末尾
 [archlinuxcn]
 Server = https://mirrors.bfsu.edu.cn/archlinuxcn/$arch
+# 导入archlinuxcn GPG包 
+pacman -S archlinuxcn-keyring
 #安装报错failed to install packages to new root
 pacman-key --refresh-keys
 

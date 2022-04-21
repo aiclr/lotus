@@ -1,6 +1,17 @@
 <div style="text-align: center;font-size: 40px;">pacman</div>
 
-### 安装 `sudo pacman -S man-db`
+### 更新系统 `pacman -Syu`
+
+### 更新时忽略包 `vim /etc/pacman.conf`
+
+```
+# Pacman won't upgrade packages listed in IgnorePkg and members of IgnoreGroup
+IgnorePkg = intellij-idea-ultimate-edition intellij-idea-ultimate-edition-jre
+```
+
+### 查询 `pacman -Ss man-db`
+
+### 安装 `pacman -S man-db`
 
 ### 卸载
 
