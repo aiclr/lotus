@@ -1,5 +1,12 @@
 <div style="text-align: center;font-size: 40px;">Java 模块化 编译 打包 运行</div>
 
+## **注意**
+
+> `windows 错误: 编码 GBK 的不可映射字符`\
+添加编译参数指定字符集编码 `-encoding UTF-8` \
+`javac -encoding UTF-8 -d out/single --module-source-path single -m helloworld`
+
+
 ## 目录
 
 ```shell
@@ -86,6 +93,13 @@ java --show-module-resolution --limit-modules java.base \
 
 ## jlink 创建仅包含运行应用程序所需模块的运行时 image
 
+> jlink 不执行自动服务绑定即：不会根据 **uses** 子句自动将服务提供者包含在映像中\
+java.base 具有大量uses子句\
+所有这些服务类型的提供者位于其他各种平台模块中\
+默认绑定所有这些服务将会增大映像的大小 \
+不会根据 **uses** 子句自动将服务提供者包含在映像中
+
+
 ```shell
 # --module-path mods/:$JAVA_HOME/jmods 构造一个模块路径
 # 包含 mods 目录（helloworld 模块位置）
@@ -129,6 +143,7 @@ helloworld-image/bin/
 └── keytool
 # 运行
 ./helloworld-image/bin/hello
+./helloworld-image/bin/java --list-modules
 
 ```
 
@@ -204,7 +219,12 @@ javac -d out --module-source-path src -m hi
 ## 运行 classes
 
 ```shell
+# module path 需要包含运行所需的所有模块
 java -p out -m hello/org.bougainvilleas.hello.HelloWorld
+# unix module path 使用 : 号分割
+java -p out/hello:out/hi -m hello/org.bougainvilleas.hello.HelloWorld
+# windows module path 使用 ; 号分割 注意不要使用 powershell
+java -p out/hello;out/hi -m hello/org.bougainvilleas.hello.HelloWorld
 ```
 
 ## 打包 **分模块打包 放到同一目录下**
@@ -224,11 +244,11 @@ out/
             └── hi
                 └── HI.class
 # -e, --main-class=CLASSNAME jar名不用与模块名保持一致
-jar -cvfe mods/App.jar org.bougainvilleas.hello -C out/hello .
+jar -cvfe mods/hello.jar org.bougainvilleas.hello -C out/hello .
 jar -cvf mods/hi.jar -C out/hi .
 ```
 
-## 运行 **放到同一目录下**
+## 运行 **jar 放到同一目录下**
 
 ```shell
 mods/
@@ -249,7 +269,8 @@ java -p mods -m hello
 #
 # --add-modules hello 
 # 表示 hello 是需要在运行时 image 中运行的根模块
-#
+# 会 自动将其 requires 的模块添加到 images
+# 
 # --launcher 定义了一个入口点来直接运行 image 中的模块
 # --output 表示运行时 image 的目录名称
 jlink -p mods/:$JAVA_HOME/jmods \
