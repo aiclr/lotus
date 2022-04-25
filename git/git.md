@@ -4,6 +4,13 @@
 
 ---
 
+## 查看其他分支文件
+
+```shell
+git show develop:README.md
+```
+---
+
 ## 本地仓库
 
 ### 初始化
@@ -133,12 +140,5 @@ git rebase --abort #(取消 rebase)
 - ***切勿对已提交的commit合并***
 - ***可使用 reflog 进行回退***
 
----
-
-## 查看其他分支文件
-
-```shell
-git show develop:README.md
-```
 
 ## [HOME](../index.md)

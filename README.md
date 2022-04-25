@@ -81,6 +81,7 @@ keep it simple and stupid
 | [push](git/git_push.md) ||
 | [tag](git/git_tag.md) ||
 | [reflog](git/git_reflog.md) ||
+| [config](git/git_config.md) ||
 
 ## mysql
 
