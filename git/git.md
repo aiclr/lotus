@@ -11,6 +11,20 @@ git show develop:README.md
 ```
 ---
 
+## 修改 commit message
+
+```shell
+# 未提交 远程
+git commit --amend
+
+# 已提交 远程
+git reset --soft HEAD~1
+git commit -m "new message"
+git push -f origin branchname
+```
+
+---
+
 ## 本地仓库
 
 ### 初始化
