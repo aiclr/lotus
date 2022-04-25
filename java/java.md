@@ -3,8 +3,13 @@
 ## **注意**
 
 > `windows 错误: 编码 GBK 的不可映射字符`\
-添加编译参数指定字符集编码 `-encoding UTF-8` \
-`javac -encoding UTF-8 -d out/single --module-source-path single -m helloworld`
+> 添加编译参数指定字符集编码 `-encoding UTF-8` \
+> `javac -encoding UTF-8 -d out/single --module-source-path single -m helloworld`
+
+> `javac -d out --module-source-path src -m helloworld` 的 `--module-source-path src` 从 src 目录下检索java 模块 \
+> 但是 需要整个模块代码目录 在src下才能正常编译 \
+> IDE项目目录、gradle、maven 有自己的代码目录规范 编译时不是采用`--module-source-path` 应该是编译全部 java 文件进行编译 \
+> `javac -d out/helloworld src/helloworld/org/bougainvilleas/ilj/HelloWorld.java src/helloworld/module-info.java` 
 
 
 ## 目录
