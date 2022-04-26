@@ -21,11 +21,14 @@
 >
 > `--output <path>`  Location of output path
 
+---
+
 ## demo
 
 ```shell
-# 
-#     
+# 需要手动创建 目录
+mkdir -p out/jlink
+
 # 单模块
 jlink -v --compress=0 -p out/mods/:$JAVA_HOME/jmods --add-modules cli --launcher app=cli --output out/jlink/image
 jlink -v --compress=1 -p out/mods/:$JAVA_HOME/jmods --add-modules cli --launcher app=cli --output out/jlink/image
@@ -33,6 +36,8 @@ jlink -v --compress=2 -p out/mods/:$JAVA_HOME/jmods --add-modules cli --launcher
 # 多模块
 jlink -v -p out/mods/:$JAVA_HOME/jmods --add-modules cli,svc --launcher app=cli --output out/jlink/image
 ```
+
+---
 
 ## jlink --help
 
