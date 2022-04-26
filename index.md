@@ -72,6 +72,8 @@
 | [代理](java/proxy.md) | | | |
 | [eclipse formatter](java/eclipse-codestyle.xml) | | | |
 | [java 模块化 打包编译运行](java/java.md) ||||
+| [java 模块化 jar](java/jar.md) ||||
+| [java 模块化 jlink](java/jlink.md) ||||
 
 ## maven
 
