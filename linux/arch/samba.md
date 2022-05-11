@@ -14,7 +14,7 @@
 
 ```shell
 pacman -S samba
-# 创建 共享专用账户
+# 创建 共享专用账户 
 useradd -m hi
 # 禁止登录 禁止 ssh login 
 usermod --shell /usr/bin/nologin --lock hi
