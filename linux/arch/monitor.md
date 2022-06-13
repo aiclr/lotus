@@ -94,12 +94,32 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
 
 ## 网络状态统计
 
-### netstat
+> **Arch Linux has deprecated net-tools in favor of iproute2**
 
-> 监控网络性能，定位并解决网络相关问题
-> > netstat -h 查看帮助 \
-> > netstat -r 查看路由表 \
-> > netstat -i 查看网络接口
+| Deprecated command | Replacement commands |
+| :----------------- | :------------------- |
+| arp                | ip neighbor          |
+| ifconfig           | ip address, ip link  |
+| netstat            | ss                   |
+| route              | ip route             |
+
+### netstat replace with ss 
+
+> 监控网络性能，定位并解决网络相关问题\
+> [arch wiki](https://wiki.archlinux.org/title/Network_configuration#net-tools)\
+> [ss man page](https://man.archlinux.org/man/ss.8)
+
+```shell
+# Display man page
+man ss
+# Display all TCP Sockets with service names
+ss -at
+# Display all TCP Sockets with port numbers
+ss -atn
+# Display all UDP Sockets
+ss -au
+```
+
 
 ## 实时局域网IP监控
 
