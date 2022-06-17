@@ -155,7 +155,7 @@ Compiled  Size  Type Method
 > > `java -XX:+PrintFlagsFinal -version | grep manageable` \
 > > `jinfo -flag UseTLAB 3164` \
 > > `jinfo -flag NewRatio 3164` \
-> > `jinfo -flag SurvivorRatio 3164` \
+> > `jinfo -flag SurvivorRatio 3164` 
 > 
 > 查看
 > > jinfo -sysprops PID 可以查看由System.getProperties()取得的参数 \
@@ -261,7 +261,7 @@ C:\>jinfo -flag SurvivorRatio 3164
 > 常用
 > > `jmap -h`
 > > `jmap -dump:format=b,file=/home/caddy/a.hprof PID` format=b 使导出文件符合dump读取规范 \
-> > `jmap -dump:live,format=b,file=/home/caddy/b.hprof PID` \
+> > `jmap -dump:live,format=b,file=/home/caddy/b.hprof PID` 
 > >
 > > 自动生成dump文件，jvm命令行参数(当OOM时,导出应用程序的当前heap dump)
 > > > `-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/home/caddy/c.hprof`
@@ -579,7 +579,7 @@ JNI global references: 5
 > > `jcmd -h` \
 > > `jcmd 2304 VM.flags` \
 > > `jcmd -l` 等价于 `jps -lm` 显示命令参数 \
-> > `jcmd` 等价于 `jps -l` \
+> > `jcmd` 等价于 `jps -l` 
 > 
 > jdk7以后，新增命令行工具jcmd \
 > 多功能命令行工具，可以用来实现除jstat之外所有命令的功能 \

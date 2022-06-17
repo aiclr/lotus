@@ -92,6 +92,7 @@
 | **jvm**                      |
 | :--------------------------- |
 | [jvm 监控工具](jvm/tools.md) |
+| [VisualVM](jvm/visualvm.md) |
 
 
 
@@ -112,7 +113,9 @@
 | **mysql**                                             | **优化**                       |
 | :---------------------------------------------------- | :----------------------------- |
 | [MySQL](mysql/database.md)                            | [分页查询优化](mysql/delay.md) |
-| [一次隐式类型转换触发的bug](mysql/type-conversion.md) |                                |
+| [一次隐式类型转换触发的bug](mysql/type-conversion.md)    | |
+| [mysql5.7 sql_mode 默认开启 ONLY_FULL_GROUP_BY 问题](mysql/ONLY_FULL_GROUP_BY.md)| |
+| [mysql错误码](mysql/errorCode.md)| |
 
 ## redis
 
