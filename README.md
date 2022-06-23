@@ -62,9 +62,9 @@ keep it simple and stupid
 
 ## gradle
 
-| **gradle** |
-| :--------- |
-|            |
+| **gradle**                 |
+| :------------------------- |
+| [gradle](gradle/gradle.md) |
 
 ## jvm
 
