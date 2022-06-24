@@ -19,6 +19,15 @@ usermod --add-subgids 10000-65535 caddy
 echo caddy:10000:65536 >> /etc/subuid
 echo caddy:10000:65536 >> /etc/subgid
 ```
+## registry 加速
+
+```properties
+[[registry]]
+   prefix = "docker.io"
+   location = "rjm3pmfv.mirror.aliyuncs.com"
+[[registry.mirror]]
+   location = "rjm3pmfv.mirror.aliyuncs.com"
+```
 
 ## [command](https://docs.podman.io/en/latest/Commands.html)
 
@@ -30,6 +39,7 @@ man podman-<subcommand>
 
 podman search <search_term> # searching images
 podman search httpd --filter=is-official # searching images
+podman search httpd --f=is-official # searching images
 podman pull docker.io/library/httpd #  pulling some images
 podman images # list all images
 podman run -dt -p 8080:80/tcp docker.io/library/httpd # Running a container
