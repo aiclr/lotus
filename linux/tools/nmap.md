@@ -194,3 +194,12 @@ nmap扫描TCP/IP指纹特征，确定目标主机系统类型
 2. 注册端口registered port: 1025-49151 最常用端口，通常于协议绑定
 3. 动态或私有端口dynamic/private port: 49152-65535 最常用端口，通常于协议绑定
 4. 特例: 端口还与协议相关。比如UDP端口53通常用于DNS查询、TCP端口53通常用于DNS记录迁移
+
+### 扫描结果端口状态说明
+
+> open 目标端口开启
+> closed 目标端口关闭
+> filtered 通常被防火墙拦截，无法判断目标端口开启与否
+> unfiltered 目标端口可以访问，但无法判断开启与否
+> open|filtered 无法确定端口是开启还是filtered
+> closed|filtered 无法确定端口是关闭还是filtered

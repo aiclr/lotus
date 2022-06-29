@@ -24,6 +24,7 @@ keep it simple and stupid
 | [grep](linux/tools/grep.md)                        |                                            |                                                  |
 | [less](linux/tools/less.md)                        |                                            |                                                  |
 | [进制转换](linux/decimal.md)                       |                                            |                                                  |
+| [nmap](linux/nmap.md)                              |                                            |                                                  |
 | [journalctl 系统日志](linux/tools/journalctl.md)   |                                            |                                                  |
 
 ## linux container
@@ -71,7 +72,7 @@ keep it simple and stupid
 | **jvm**                      |
 | :--------------------------- |
 | [jvm 监控工具](jvm/tools.md) |
-| [VisualVM](jvm/visualvm.md) |
+| [VisualVM](jvm/visualvm.md)  |
 
 
 
@@ -89,12 +90,12 @@ keep it simple and stupid
 
 ## mysql
 
-| **mysql**                                             | **优化**                       |
-| :---------------------------------------------------- | :----------------------------- |
-| [MySQL](mysql/database.md)                            | [分页查询优化](mysql/delay.md) |
-| [一次隐式类型转换触发的bug](mysql/type-conversion.md)    | |
-| [mysql5.7 sql_mode 默认开启 ONLY_FULL_GROUP_BY 问题](mysql/ONLY_FULL_GROUP_BY.md)| |
-| [mysql错误码](mysql/errorCode.md)| |
+| **mysql**                                                                         | **优化**                       |
+| :-------------------------------------------------------------------------------- | :----------------------------- |
+| [MySQL](mysql/database.md)                                                        | [分页查询优化](mysql/delay.md) |
+| [一次隐式类型转换触发的bug](mysql/type-conversion.md)                             |                                |
+| [mysql5.7 sql_mode 默认开启 ONLY_FULL_GROUP_BY 问题](mysql/ONLY_FULL_GROUP_BY.md) |                                |
+| [mysql错误码](mysql/errorCode.md)                                                 |                                |
 
 ## redis
 
