@@ -24,7 +24,7 @@ keep it simple and stupid
 | [grep](linux/tools/grep.md)                        |                                            |                                                  |
 | [less](linux/tools/less.md)                        |                                            |                                                  |
 | [进制转换](linux/decimal.md)                       |                                            |                                                  |
-| [nmap](linux/nmap.md)                              |                                            |                                                  |
+| [nmap](linux/tools/nmap.md)                              |                                            |                                                  |
 | [journalctl 系统日志](linux/tools/journalctl.md)   |                                            |                                                  |
 
 ## linux container
