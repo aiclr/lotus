@@ -6,3 +6,7 @@
 ## java.sql.SQLSyntaxErrorException: Unknown error 1146
 
 > 数据表不存在
+
+## java.sql.SQLIntegrityConstraintViolationException: #23000
+
+> 主键 或 唯一索引 冲突
