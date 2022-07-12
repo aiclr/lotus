@@ -10,3 +10,7 @@
 ## java.sql.SQLIntegrityConstraintViolationException: #23000
 
 > 主键 或 唯一索引 冲突
+
+## java.sql.SQLException: #HY000
+
+> 数据类型不匹配
