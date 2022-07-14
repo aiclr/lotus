@@ -25,6 +25,7 @@ vim .git/config
 - 单库 git user
     - `git config user.name xxx` or `git config --local user.name xxx`
     - `git config user.email xxx@xx.com` or `git config --local user.email xxx@xx.com`
+
 ---
 ## remote branch
 
@@ -79,9 +80,6 @@ vim .git/config
 # 全局 windows C:\Users\xxx\.gitconfig
 [core]
 	autocrlf = true
-
-
-
 
 # 单库 .git/config
 [core]
