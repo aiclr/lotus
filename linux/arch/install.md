@@ -39,12 +39,13 @@ UEFI启动不需要活动分区，不需要主引导记录，所以UEFI比大多
 
 ## 文件系统 [File System](https://wiki.archlinux.org/title/File_systems)
 
-| 名称                                                   | mkfs       | package               | 描述                                                                              |
-| :----------------------------------------------------- | :--------- | :-------------------- | :-------------------------------------------------------------------------------- |
-| [fat](https://wiki.archlinux.org/title/FAT)            | mkfs.fat   | pacman -S dosfstools  | mkfs.vfat and mkfs.msdos are both symlinks to mkfs.fat, they are the same utility |
-| [exfat](https://wiki.archlinux.org/title/File_systems) | mkfs.exfat | pacman -S exfatprogs  | windows linux mac 都可访问 U盘使用此格式 (无arch wiki)                            |
-| [btrfs](https://wiki.archlinux.org/title/Btrfs)        | mkfs.btrfs | pacman -S btrfs-progs | copy on write                                                                     |
-| [ext4](https://wiki.archlinux.org/title/Ext4)          | mkfs.ext4  | pacman -S e2fsprogs   |                                                                                   |
+| 名称                                                   | example                         | need package          | 描述                                                                              |
+| :----------------------------------------------------- | :------------------------------ | :-------------------- | :-------------------------------------------------------------------------------- |
+| [fat](https://wiki.archlinux.org/title/FAT)            | mkfs.fat -F 32 -n fat /dev/sdd1 | pacman -S dosfstools  | mkfs.vfat and mkfs.msdos are both symlinks to mkfs.fat, they are the same utility |
+| [exfat](https://wiki.archlinux.org/title/File_systems) | mkfs.exfat -L exfat /dev/sdc2   | pacman -S exfatprogs  | windows linux mac 都可访问 U盘使用此格式 (无arch wiki)                            |
+| [btrfs](https://wiki.archlinux.org/title/Btrfs)        | mkfs.btrfs  -L btrfs /dev/sdc3  | pacman -S btrfs-progs | copy on write                                                                     |
+| [ext4](https://wiki.archlinux.org/title/Ext4)          | mkfs.ext4   /dev/sdc4           | pacman -S e2fsprogs   |                                                                                   |
+
 
 ## dd命令制作启动盘
 
