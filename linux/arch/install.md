@@ -35,15 +35,24 @@ UEFI图形化界面更加直观，操作者进入BIOS后可以更直观查看各
 UEFI启动不需要活动分区，不需要主引导记录，所以UEFI比大多数BIOS快， \
 区别主要在启动过程不同，UEFI省略很多的自检步骤，硬盘分区下他们也不同
 
-## mkfs.fat 需要安装dosfstools
+---
 
-> pacman -S dosfstools
+## 文件系统 [File System](https://wiki.archlinux.org/title/File_systems)
+
+| 名称                                                   | mkfs       | package               | 描述                                                                              |
+| :----------------------------------------------------- | :--------- | :-------------------- | :-------------------------------------------------------------------------------- |
+| [fat](https://wiki.archlinux.org/title/FAT)            | mkfs.fat   | pacman -S dosfstools  | mkfs.vfat and mkfs.msdos are both symlinks to mkfs.fat, they are the same utility |
+| [exfat](https://wiki.archlinux.org/title/File_systems) | mkfs.exfat | pacman -S exfatprogs  | windows linux mac 都可访问 U盘使用此格式 (无arch wiki)                            |
+| [btrfs](https://wiki.archlinux.org/title/Btrfs)        | mkfs.btrfs | pacman -S btrfs-progs | copy on write                                                                     |
+| [ext4](https://wiki.archlinux.org/title/Ext4)          | mkfs.ext4  | pacman -S e2fsprogs   |                                                                                   |
 
 ## dd命令制作启动盘
 
 - 查看U盘 `fdisk -l`
 - 如果u盘挂载，卸载掉，否则会提示设备资源正忙 `umount /dev/sdd*`
-- 格式化u盘vfat格式文件系统 centos7 提示找不到目录 `mkfs  -t vfat -f /dev/sdd1`
+- 格式化u盘vfat格式文件系统 centos7 提示找不到目录
+  - `mkfs -t vfat -F 32 /dev/sdd1` 
+  - `mkfs.fat -F 32 /dev/sdd1`
 - 写入iso镜像到U盘 `dd if=/root/archlinux.iso of=/dev/sdd1`
 - 查看进度和读写速度 新终端执行 `watch -n 5 pkill -USR1 ^dd$`
 
