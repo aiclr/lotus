@@ -35,6 +35,10 @@ UEFI图形化界面更加直观，操作者进入BIOS后可以更直观查看各
 UEFI启动不需要活动分区，不需要主引导记录，所以UEFI比大多数BIOS快， \
 区别主要在启动过程不同，UEFI省略很多的自检步骤，硬盘分区下他们也不同
 
+## mkfs.fat 需要安装dosfstools
+
+> pacman -S dosfstools
+
 ## dd命令制作启动盘
 
 - 查看U盘 `fdisk -l`
