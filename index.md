@@ -116,7 +116,7 @@
 | [MySQL](mysql/database.md)                                                        | [分页查询优化](mysql/delay.md) |
 | [一次隐式类型转换触发的bug](mysql/type-conversion.md)                             |                                |
 | [mysql5.7 sql_mode 默认开启 ONLY_FULL_GROUP_BY 问题](mysql/ONLY_FULL_GROUP_BY.md) |                                |
-| [mysql错误码](mysql/errorCode.md)                                                 |                                |
+| [mysql错误码](https://dev.mysql.com/doc/mysql-errors/5.7/en/server-error-reference.html#error_er_no_such_table)                                                 |                                |
 
 ## redis
 
