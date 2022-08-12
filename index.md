@@ -45,7 +45,7 @@
 | [grep](linux/tools/grep.md)                        |                                            |                                                  |
 | [less](linux/tools/less.md)                        |                                            |                                                  |
 | [进制转换](linux/decimal.md)                       |                                            |                                                  |
-| [nmap](linux/tools/nmap.md)                              |                                            |                                                  |
+| [nmap](linux/tools/nmap.md)                        |                                            |                                                  |
 | [journalctl 系统日志](linux/tools/journalctl.md)   |                                            |                                                  |
 
 ## linux container
@@ -63,18 +63,20 @@
 
 ## java
 
-| **java**                                                | **String**                                           | **Spring**                                                 | **Springboot**                                      |
-| :------------------------------------------------------ | ---------------------------------------------------- | :--------------------------------------------------------- | :-------------------------------------------------- |
-| [jvm 监控工具](jvm/tools.md)                            | [Jaccard 相似系数](java/string/Jaccard.md)           | [spring cloud](java/spring/cloud/springcloud.md)           | [Layering Docker Images](java/spring/boot/layer.md) |
-| [Functional Programming & Currying](java/functional.md) | [Sorensen Dice 相似度系数](java/string/dice.md)      | [eureka 配置说明](java/spring/cloud/eureka.md)             |                                                     |
-| [jshell java REPL](java/jshell.md)                      | [Levenshtein 莱文斯距离](java/string/Levenshtein.md) | [循环依赖](java/spring/cyclic-dependencies.md)             |                                                     |
-| [REST ful API](java/RESTfulAPI.md)                      |                                                      | [MultipartFile isEmpty 源码](java/spring/MultipartFile.md) |                                                     |
-| [敏捷开发](java/TDD.md)                                 |                                                      |                                                            |                                                     |
-| [代理](java/proxy.md)                                   |                                                      |                                                            |                                                     |
-| [eclipse formatter](java/eclipse-codestyle.xml)         |                                                      |                                                            |                                                     |
-| [java 模块化 打包编译运行](java/java.md)                |                                                      |                                                            |                                                     |
-| [java 模块化 jar](java/jar.md)                          |                                                      |                                                            |                                                     |
-| [java 模块化 jlink](java/jlink.md)                      |                                                      |                                                            |                                                     |
+| **java**                                                                                           | **String**                                           | **Spring**                                                 | **Springboot**                                      |
+| :------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | :--------------------------------------------------------- | :-------------------------------------------------- |
+| [jvm 监控工具](jvm/tools.md)                                                                       | [Jaccard 相似系数](java/string/Jaccard.md)           | [spring cloud](java/spring/cloud/springcloud.md)           | [Layering Docker Images](java/spring/boot/layer.md) |
+| [Functional Programming & Currying](java/functional.md)                                            | [Sorensen Dice 相似度系数](java/string/dice.md)      | [eureka 配置说明](java/spring/cloud/eureka.md)             |                                                     |
+| [jshell java REPL](java/jshell.md)                                                                 | [Levenshtein 莱文斯距离](java/string/Levenshtein.md) | [循环依赖](java/spring/cyclic-dependencies.md)             |                                                     |
+| [REST ful API](java/RESTfulAPI.md)                                                                 |                                                      | [MultipartFile isEmpty 源码](java/spring/MultipartFile.md) |                                                     |
+| [TDD测试驱动开发](java/TDD.md)                                                                     |                                                      |                                                            |                                                     |
+| [Spock测试框架](https://spockframework.org)                                                        |                                                      |                                                            |                                                     |
+| [代理](java/proxy.md)                                                                              |                                                      |                                                            |                                                     |
+| [eclipse formatter](java/eclipse-codestyle.xml)                                                    |                                                      |                                                            |                                                     |
+| [java 模块化 打包编译运行](java/java.md)                                                           |                                                      |                                                            |                                                     |
+| [java 模块化 jar](java/jar.md)                                                                     |                                                      |                                                            |                                                     |
+| [java 模块化 jlink](java/jlink.md)                                                                 |                                                      |                                                            |                                                     |
+| [Java泛型的优点、缺点以及丑陋之处](http://www.agiledeveloper.com/articles/GenericsInJavaPartI.pdf) |                                                      |                                                            |                                                     |
 
 ## maven
 
@@ -111,12 +113,12 @@
 
 ## mysql
 
-| **mysql**                                                                         | **优化**                       |
-| :-------------------------------------------------------------------------------- | :----------------------------- |
-| [MySQL](mysql/database.md)                                                        | [分页查询优化](mysql/delay.md) |
-| [一次隐式类型转换触发的bug](mysql/type-conversion.md)                             |                                |
-| [mysql5.7 sql_mode 默认开启 ONLY_FULL_GROUP_BY 问题](mysql/ONLY_FULL_GROUP_BY.md) |                                |
-| [mysql错误码](https://dev.mysql.com/doc/mysql-errors/5.7/en/server-error-reference.html#error_er_no_such_table)                                                 |                                |
+| **mysql**                                                                                                       | **优化**                       |
+| :-------------------------------------------------------------------------------------------------------------- | :----------------------------- |
+| [MySQL](mysql/database.md)                                                                                      | [分页查询优化](mysql/delay.md) |
+| [一次隐式类型转换触发的bug](mysql/type-conversion.md)                                                           |                                |
+| [mysql5.7 sql_mode 默认开启 ONLY_FULL_GROUP_BY 问题](mysql/ONLY_FULL_GROUP_BY.md)                               |                                |
+| [mysql错误码](https://dev.mysql.com/doc/mysql-errors/5.7/en/server-error-reference.html#error_er_no_such_table) |                                |
 
 ## redis
 
