@@ -1,7 +1,7 @@
 <div style="text-align: center;font-size: 40px;">nmap</div>
 
 > [arch wiki](https://wiki.archlinux.org/title/Nmap)\
-> `pacman -S nmao`
+> `pacman -S nmap`
 
 ## nmap 使用方法
 
