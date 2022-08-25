@@ -1,5 +1,22 @@
+# :world_map:
+
+- [:world_map:](#world_map)
+- [lotus](#lotus)
+  - [linux](#linux)
+  - [linux container](#linux-container)
+  - [java](#java)
+  - [maven](#maven)
+  - [gradle](#gradle)
+  - [jvm](#jvm)
+  - [git](#git)
+  - [mysql](#mysql)
+  - [redis](#redis)
+  - [C](#c)
+  - [windows](#windows)
+
 # [lotus](https://bougainvilleas.github.io/lotus/)
-keep it simple and stupid
+
+> keep it simple and stupid
 
 ## linux
 
