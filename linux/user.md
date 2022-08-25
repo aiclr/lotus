@@ -4,8 +4,8 @@
 
 - [archlinux wiki](https://wiki.archlinux.org/title/Users_and_groups)
 - [用户和组相关文件](#用户和组相关文件)
-- [Group management](#Group-management)
-- [User management](#User-management)
+- [Group management](#group-management)
+- [User management](#user-management)
 
 
 ## 用户和组相关文件
