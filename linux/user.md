@@ -1,10 +1,16 @@
 <div style="text-align: center;font-size: 40px;">Users and groups</div>
 
-> [archlinux wiki](https://wiki.archlinux.org/title/Users_and_groups) \
-> 
->
+# :world_map:
+
+- [archlinux wiki](https://wiki.archlinux.org/title/Users_and_groups)
+- [用户和组相关文件](#用户和组相关文件)
+- [Group management](#Group-management)
+- [User management](#User-management)
+
 
 ## 用户和组相关文件
+
+<details><summary>CLICK ME :sparkles:</summary>
 
 ```shell
 localhost:~ # cat /etc/passwd
@@ -41,8 +47,13 @@ localhost:~ # find ./ -user root
 ./text.txt
 
 ```
+</details>
+
+[:world_map:](#world_map)
 
 ## Group management
+
+<details><summary>CLICK ME :sparkles:</summary>
 
 ```shell
 # 查看用户所属组
@@ -74,8 +85,13 @@ gpasswd -d user group
 # Modify an existing group with the groupmod command e.g. to rename the old_group group to new_group:
 groupmod -n new_group old_group
 ```
+</details>
+
+[:world_map:](#world_map)
 
 ## User management
+
+<details><summary>CLICK ME :sparkles:</summary>
 
 ```shell
 # -m/--create-home the user's home directory is created as /home/username. The directory is populated by the files in the skeleton directory. The created files are owned by the new user.
@@ -108,3 +124,6 @@ userdel -r username
 chage -d 0 username
 
 ```
+</details>
+
+[:world_map:](#world_map)
