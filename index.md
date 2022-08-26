@@ -22,6 +22,18 @@
 
 <div id='time' style="text-align: center;font-size: 24px;color: cyan;"></div>
 
+## :world_map:
+
+- [github-pages](https://bougainvilleas.github.io/lotus/)
+- [linux](#linux)
+- [java](#java)
+- [build tools](#build-tools)
+- [git](#git)
+- [mysql](#mysql)
+- [redis](#redis)
+- [C](#c)
+- [windows](#windows)
+
 ## linux
 
 | **linux**                                          | **arch**                                   | **suse**                                         | **docker**                                                         | **podman**                           | **k8s**                                              |
@@ -48,19 +60,6 @@
 | [nmap](linux/tools/nmap.md)                        |                                            |                                                  |
 | [journalctl 系统日志](linux/tools/journalctl.md)   |                                            |                                                  |
 
-## linux container
-
-| **docker**                                                         | **podman**                           | **k8s**                                              |
-| :----------------------------------------------------------------- | :----------------------------------- | :--------------------------------------------------- |
-| [Docker registry 部署 与 自签证书](linux/lxc/registry/registry.md) | [podman](linux/lxc/podman/podman.md) | [kubic 安装 k8s](linux/lxc/k8s/kubic.md)             |
-| [rabbitmq](linux/lxc/docker/rabbitmq.md)                           |                                      | [kubectl 用法](linux/lxc/k8s/kubectl.md)             |
-| [jre8 for alpine](linux/lxc/jre8/jre84alpine.md)                   |                                      | [Dashboard UI 部署](linux/lxc/k8s/dashbord-ui.md)    |
-| [jre7 for alpine](linux/lxc/jre7/jre74alpine.md)                   |                                      | [RabbitMQ k8s 部署 脚本](linux/lxc/k8s/rabbitmq.md)  |
-| [nginx](linux/lxc/docker/nginx.md)                                 |                                      | [mysql k8s 部署 脚本](linux/lxc/k8s/mysql.yaml)      |
-| [nginx for react & vue](linux/lxc/nginx/nginx4js.md)               |                                      | [redis k8s 部署 脚本](linux/lxc/k8s/redis.yaml)      |
-| [Springboot Layering Docker Images](java/spring/boot/layer.md)     |                                      | [RedisJSON k8s 部署 脚本](linux/lxc/k8s/rejson.yaml) |
-| [docker 开启远程访问](linux/lxc/docker/docker.md)                  |                                      |                                                      |
-
 ## java
 
 | **java**                                                                                           | **String**                                           | **Spring**                                                 | **Springboot**                                      |
@@ -77,26 +76,13 @@
 | [java 模块化 jar](java/jar.md)                                                                     |                                                      |                                                            |                                                     |
 | [java 模块化 jlink](java/jlink.md)                                                                 |                                                      |                                                            |                                                     |
 | [Java泛型的优点、缺点以及丑陋之处](http://www.agiledeveloper.com/articles/GenericsInJavaPartI.pdf) |                                                      |                                                            |                                                     |
+| [VisualVM](jvm/visualvm.md)                                                                        |
 
-## maven
+## build tools
 
-| **maven**            |
-| :------------------- |
-| [maven](java/mvn.md) |
-
-## gradle
-
-| **gradle**                 |
-| :------------------------- |
-| [gradle](gradle/gradle.md) |
-
-## jvm
-
-| **jvm**                      |
-| :--------------------------- |
-| [jvm 监控工具](jvm/tools.md) |
-| [VisualVM](jvm/visualvm.md)  |
-
+| **maven**            | **gradle**                 |
+| :------------------- | :------------------------- |
+| [maven](java/mvn.md) | [gradle](gradle/gradle.md) |
 
 
 ## git
