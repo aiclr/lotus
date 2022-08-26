@@ -20,7 +20,7 @@
     setInterval(getTime,1000);
 </script>
 
-<div id='time' style="text-align: center;font-size: 40px;color: cyan;"></div>
+<div id='time' style="text-align: center;font-size: 24px;color: cyan;"></div>
 
 ## linux
 
