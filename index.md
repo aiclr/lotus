@@ -32,8 +32,8 @@
 - [mysql](#mysql)
 - [redis](#redis)
 - [C](#c)
-- [windows](#windows)
 - [archlinux](#archlinux)
+- [windows](#windows)
 
 ## linux
 
@@ -118,12 +118,6 @@
 | :-------------- | :---------------- |
 | [gcc](c/gcc.md) |                   |
 
-## windows
-
-| **windows**                 |
-| :-------------------------- |
-| [端口占用](windows/port.md) |
-
 ## archlinux
 
 | [top](#top)                                    |                                       |       |           Tools           |
@@ -133,3 +127,9 @@
 | [systemd/Timers](archlinux.md#systemdtimers)   |                                       |       |                           |
 |                                                | [OnCalendar](archlinux.md#oncalendar) |       |                           |
 | [systemd/Journal](archlinux.md#systemdjournal) |                                       |       |                           |
+
+## windows
+
+| [top](#top)                                     |
+| :---------------------------------------------- |
+| [处理端口占用](windows.md#windows-kill-process) |
