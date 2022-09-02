@@ -130,8 +130,8 @@
 
 | [top](#top)                                        |                                              |
 | :---------------------------------------------------- | :------------------------------------------- |
-| [systemd](archlinux.md#center-systemd)                |
-| [systemd/User](archlinux.md#center-systemduser)       |
-| [systemd/Timers](archlinux.md#center-systemdtimers)   |
-|                                                       | [OnCalendar](archlinux.md#center-oncalendar) |
-| [systemd/Journal](archlinux.md#center-systemdjournal) |
+| [systemd](archlinux.md#systemd)                |
+| [systemd/User](archlinux.md#systemduser)       |
+| [systemd/Timers](archlinux.md#systemdtimers)   |
+|                                                       | [OnCalendar](archlinux.md#oncalendar) |
+| [systemd/Journal](archlinux.md#systemdjournal) |
