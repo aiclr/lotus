@@ -58,8 +58,6 @@
 | [grep](linux/tools/grep.md)                        |                                            |                                                  |
 | [less](linux/tools/less.md)                        |                                            |                                                  |
 | [进制转换](linux/decimal.md)                       |                                            |                                                  |
-| [nmap](linux/tools/nmap.md)                        |                                            |                                                  |
-| [journalctl 系统日志](linux/tools/journalctl.md)   |                                            |                                                  |
 
 ## java
 
@@ -128,10 +126,10 @@
 
 ## archlinux
 
-| [top](#top)                                        |                                              |
-| :---------------------------------------------------- | :------------------------------------------- |
-| [systemd](archlinux.md#systemd)                |
-| [systemd/User](archlinux.md#systemduser)       |
-| [systemd/Timers](archlinux.md#systemdtimers)   |
-|                                                       | [OnCalendar](archlinux.md#oncalendar) |
-| [systemd/Journal](archlinux.md#systemdjournal) |
+| [top](#top)                                    |                                       |       |           Tools           |
+| :--------------------------------------------- | :------------------------------------ | :---: | :-----------------------: |
+| [systemd](archlinux.md#systemd)                |                                       |       | [nmap](archlinux.md#nmap) |
+| [systemd/User](archlinux.md#systemduser)       |                                       |       |                           |
+| [systemd/Timers](archlinux.md#systemdtimers)   |                                       |       |                           |
+|                                                | [OnCalendar](archlinux.md#oncalendar) |       |                           |
+| [systemd/Journal](archlinux.md#systemdjournal) |                                       |       |                           |
