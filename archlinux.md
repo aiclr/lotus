@@ -1,16 +1,14 @@
-# <center> arch linux
+# arch linux
 
+| [home](index.md#archlinux)         |                           |
+| :--------------------------------- | :------------------------ |
+| [systemd](#systemd)                |
+| [systemd/User](#systemduser)       |
+| [systemd/Timers](#systemdtimers)   |
+|                                    | [OnCalendar](#oncalendar) |
+| [systemd/Journal](#systemdjournal) |
 
-
-| [home](index.md#center-archlinux)         |                                  |
-| :---------------------------------------- | :------------------------------- |
-| [systemd](#center-systemd)                |
-| [systemd/User](#center-systemduser)       |
-| [systemd/Timers](#center-systemdtimers)   |
-|                                           | [OnCalendar](#center-oncalendar) |
-| [systemd/Journal](#center-systemdjournal) |
-
-# <center> systemd
+# systemd
 
 > [archlinux Wiki](https://wiki.archlinux.org/title/Systemd)
 
@@ -33,37 +31,34 @@
 > > > List installed unit files
 > > > > `systemctl list-unit-files`
 > >
-> > not root 参考[systemd/User](#center-systemduser) \
+> > not root 参考[systemd/User](#systemduser) \
 > > `systemctl --user` Connect to user service manager
 > > > `systemctl --user enable mpd` \
 > > > `systemctl --user start mpd`
 
-[top](#center-arch-linux) | [home](index.md)
+[top](#arch-linux) | [home](index.md)
 
-## <center> systemd/User
+## systemd/User
 
-> [systemd](#center-systemd) offers the ability to manage services under the user's control with a per-user systemd instance,enabling them to start, stop, enable, and disable their own user units\
+> [systemd](#systemd) offers the ability to manage services under the user's control with a per-user systemd instance,enabling them to start, stop, enable, and disable their own user units\
 > [archlinux Wiki](https://wiki.archlinux.org/title/Systemd/User)\
 > 参考[mpd](linux/arch/mpd.md)
 
-## <center> systemd/Timers
+## systemd/Timers
 
 > There are many cron implementations, but none of them are installed by default as the base system uses **systemd/Timers** instead. \
 > [archlinux Wiki](https://wiki.archlinux.org/title/Systemd/Timers)\
 > [systemd.timer](https://man.archlinux.org/man/systemd.timer.5)\
 > [systemd.time 执行时间策略](https://man.archlinux.org/man/systemd.time.7)
-> > [OnCalendar](#center-oncalendar)
+> > [OnCalendar](#oncalendar)
 > 
 > [systemd.exec ](https://man.archlinux.org/man/systemd.exec.5)
-
-
-<details><summary> Files: update-system.timer & update-system.service </summary>
 
 > file path
 > > /etc/systemd/system/update-system.timer \
 > > /etc/systemd/system/update-system.service
 
-#### update-system.timer
+### update-system.timer
 
 ```
 [Unit]
@@ -76,7 +71,7 @@ OnCalendar= Fri *-*-* 12:00:00
 WantedBy=timers.target
 ```
 
-#### update-system.service
+### update-system.service
 
 ```
 [Unit]
@@ -85,7 +80,6 @@ Description=update system weekly
 [Service]
 ExecStart=pacman -S -y --noconfirm -u
 ```
-</details>
 
 > 查看定时任务
 > > `systemctl list-timers` \
@@ -106,7 +100,7 @@ ExecStart=pacman -S -y --noconfirm -u
 > 查看定时器状态 
 > > `systemctl status update-system.timer`
 
-### <center> OnCalendar
+### OnCalendar
 
 > `systemd-analyze calendar weekly` \
 > `systemd-analyze calendar "Mon *-*-* 00:00:00"`
@@ -128,9 +122,9 @@ ExecStart=pacman -S -y --noconfirm -u
 | 下一个周一或周五                      |                  |  `Mon,Fri *-*-* 00:00:00`   |
 | 周一到周五每天0点                     |                  |  `Mon..Fri *-*-* 00:00:00`  |
 
-[timer](#center-systemdtimers) | [systemd](#center-systemd) | [top](#center-arch-linux) | [home](index.md)
+[timer](#systemdtimers) | [systemd](#systemd) | [top](#arch-linux) | [home](index.md)
 
-## <center> systemd/Journal
+## systemd/Journal
 
 > linux 系统日志 \
 > [archlinux Wiki](https://wiki.archlinux.org/title/Systemd/Journal) \
@@ -168,4 +162,4 @@ ExecStart=pacman -S -y --noconfirm -u
 > > 查看进程号=28097 的 kubelet服务的日志 ***交集***
 > > > `journalctl _SYSTEMD_UNIT=kubelet.service _PID=28097`
 
-[systemd](#center-systemd) | [top](#center-arch-linux) | [home](index.md)
+[systemd](#systemd) | [top](#arch-linux) | [home](index.md)

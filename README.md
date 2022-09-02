@@ -12,7 +12,7 @@
 - [redis](#redis)
 - [C](#c)
 - [windows](#windows)
-- [archlinux](#center-archlinux)
+- [archlinux](#archlinux)
 
 ## linux
 
@@ -131,12 +131,12 @@
 | :-------------------------- |
 | [端口占用](windows/port.md) |
 
-## <center> archlinux
+## archlinux
 
-| [top](#world_map)                                        |                                              |
+| [top](#worldmap)                                        |                                              |
 | :---------------------------------------------------- | :------------------------------------------- |
-| [systemd](archlinux.md#center-systemd)                |
-| [systemd/User](archlinux.md#center-systemduser)       |
-| [systemd/Timers](archlinux.md#center-systemdtimers)   |
-|                                                       | [OnCalendar](archlinux.md#center-oncalendar) |
-| [systemd/Journal](archlinux.md#center-systemdjournal) |
+| [systemd](archlinux.md#-systemd)                |
+| [systemd/User](archlinux.md#-systemduser)       |
+| [systemd/Timers](archlinux.md#-systemdtimers)   |
+|                                                       | [OnCalendar](archlinux.md#-oncalendar) |
+| [systemd/Journal](archlinux.md#-systemdjournal) |

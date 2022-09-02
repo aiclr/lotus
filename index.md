@@ -22,7 +22,7 @@
 
 <div id='time' style="text-align: center;font-size: 24px;color: cyan;"></div>
 
-## <center>
+## top
 
 - [github-pages](https://bougainvilleas.github.io/lotus/)
 - [linux](#linux)
@@ -33,7 +33,7 @@
 - [redis](#redis)
 - [C](#c)
 - [windows](#windows)
-- [archlinux](#center-archlinux)
+- [archlinux](#archlinux)
 
 ## linux
 
@@ -126,9 +126,9 @@
 | :-------------------------- |
 | [端口占用](windows/port.md) |
 
-## <center> archlinux
+## archlinux
 
-| [top](#center)                                        |                                              |
+| [top](#top)                                        |                                              |
 | :---------------------------------------------------- | :------------------------------------------- |
 | [systemd](archlinux.md#center-systemd)                |
 | [systemd/User](archlinux.md#center-systemduser)       |
