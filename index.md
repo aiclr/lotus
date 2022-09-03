@@ -31,8 +31,8 @@
 - [git](#git)
 - [mysql](#mysql)
 - [redis](#redis)
-- [C](#c)
 - [archlinux](#archlinux)
+- [C](#c)
 - [windows](#windows)
 
 ## linux
@@ -112,11 +112,7 @@
 | [commands](redis/commands.md) | [RedisJSON](redis/rejson.md)   |
 | [Redis](redis/redis.md)       | [JavaClient](redis/Jrejson.md) |
 
-## C
 
-| **C**           | **C Primer Plus** |
-| :-------------- | :---------------- |
-| [gcc](c/gcc.md) |                   |
 
 ## archlinux
 
@@ -127,6 +123,13 @@
 | [systemd/Timers](archlinux.md#systemdtimers)   |                                       |       |                           |
 |                                                | [OnCalendar](archlinux.md#oncalendar) |       |                           |
 | [systemd/Journal](archlinux.md#systemdjournal) |                                       |       |                           |
+
+## C
+
+| [top](#top)                                 |
+| :------------------------------------------ |
+| [gcc](c.md#gcc)                             |
+| [链接静态库/动态库时搜索路径顺序](c.md#lib) |
 
 ## windows
 
