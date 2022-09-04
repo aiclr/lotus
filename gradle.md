@@ -1,8 +1,9 @@
-<div style="text-align: center;font-size: 40px;">gradle</div>
-
 # gradle
 
-[升级 gradle 版本](#upgrade) | [jvm 参数配置](#gradleproperties) | [home](index.md#gradle)|
+| [home](index.md#build-tools)      |
+| :-------------------------------- |
+| [升级 gradle 版本](#upgrade)      |
+| [jvm 参数配置](#gradleproperties) |
 
 > [官方文档](https://docs.gradle.org/current/userguide/userguide.html) \
 > [支持java版本对照](https://docs.gradle.org/current/userguide/compatibility.html) \
@@ -36,4 +37,4 @@ org.gradle.parallel=true
 
 ```
 
-[top](#gradle) | [home](index.md#gradle)
+[top](#gradle) | [home](index.md#build-tools)

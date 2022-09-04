@@ -27,12 +27,12 @@
 - [github-pages](https://bougainvilleas.github.io/lotus/)
 - [linux](#linux)
 - [java](#java)
-- [build tools](#build-tools)
 - [git](#git)
 - [mysql](#mysql)
 - [archlinux](#archlinux)
 - [C](#c)
 - [redis](#redis)
+- [build tools](#build-tools)
 - [windows](#windows)
 
 ## linux
@@ -76,12 +76,6 @@
 | [java 模块化 jlink](java/jlink.md)                                                                 |                                                      |                                                            |                                                     |
 | [Java泛型的优点、缺点以及丑陋之处](http://www.agiledeveloper.com/articles/GenericsInJavaPartI.pdf) |                                                      |                                                            |                                                     |
 | [VisualVM](jvm/visualvm.md)                                                                        |
-
-## build tools
-
-| **maven**            | **gradle**                 |
-| :------------------- | :------------------------- |
-| [maven](java/mvn.md) | [gradle](gradle/gradle.md) |
 
 
 ## git
@@ -131,6 +125,19 @@
 |             | [podman](redis.md#podman)     | [rejson commands](redis.md#redisjson-commands)      |
 |             | [k8s](redis.md#k8s)           | [JRedisJSON](redis.md#jrejson)                      |
 |             | [commands](redis.md#commands) |
+
+## build tools
+
+| [top](#top) | [maven](maven.md#maven)                       | [gradle](gradle.md#gradle) |
+| :---------- | :-------------------------------------------- | :------------------------- |
+|             | [安装目录说明](#安装目录说明)                 |
+|             | [生命周期](#生命周期)                         |
+|             | [命令行与生命周期](#命令行与生命周期)         |
+|             | [总结](#总结)                                 |
+|             | [插件](#插件)                                 |
+|             | [传递性依赖和以来范围](#传递性依赖和以来范围) |
+|             | [多模块](#多模块)                             |
+|             | [一些错误](#error)                            |
 
 ## windows
 
