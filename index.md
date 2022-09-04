@@ -89,16 +89,6 @@
 | [reflog](git/git_reflog.md) |                                  |
 | [config](git/git_config.md) |                                  |
 
-
-## mysql
-
-| **mysql**                                                                                                       | **优化**                       |
-| :-------------------------------------------------------------------------------------------------------------- | :----------------------------- |
-| [MySQL](mysql/database.md)                                                                                      | [分页查询优化](mysql/delay.md) |
-| [一次隐式类型转换触发的bug](mysql/type-conversion.md)                                                           |                                |
-| [mysql5.7 sql_mode 默认开启 ONLY_FULL_GROUP_BY 问题](mysql/ONLY_FULL_GROUP_BY.md)                               |                                |
-| [mysql错误码](https://dev.mysql.com/doc/mysql-errors/5.7/en/server-error-reference.html#error_er_no_such_table) |                                |
-
 ## archlinux
 
 | [top](#top)                                    |                                       |       |           Tools           |
@@ -126,18 +116,27 @@
 |             | [k8s](redis.md#k8s)           | [JRedisJSON](redis.md#jrejson)                      |
 |             | [commands](redis.md#commands) |
 
+## mysql
+
+| [top](#top)                                                                                                     | **优化**                       |
+| :-------------------------------------------------------------------------------------------------------------- | :----------------------------- |
+| [MySQL](mysql/database.md)                                                                                      | [分页查询优化](mysql/delay.md) |
+| [一次隐式类型转换触发的bug](mysql/type-conversion.md)                                                           |                                |
+| [mysql5.7 sql_mode 默认开启 ONLY_FULL_GROUP_BY 问题](mysql.md#onlyfullgroupby)                               |                                |
+| [mysql错误码](https://dev.mysql.com/doc/mysql-errors/5.7/en/server-error-reference.html#error_er_no_such_table) |                                |
+
 ## build tools
 
-| [top](#top) | [maven](maven.md#maven)                       | [gradle](gradle.md#gradle) |
-| :---------- | :-------------------------------------------- | :------------------------- |
-|             | [安装目录说明](#安装目录说明)                 |
-|             | [生命周期](#生命周期)                         |
-|             | [命令行与生命周期](#命令行与生命周期)         |
-|             | [总结](#总结)                                 |
-|             | [插件](#插件)                                 |
-|             | [传递性依赖和以来范围](#传递性依赖和以来范围) |
-|             | [多模块](#多模块)                             |
-|             | [一些错误](#error)                            |
+| [top](#top) | [maven](maven.md#maven)                               | [gradle](gradle.md#gradle) |
+| :---------- | :---------------------------------------------------- | :------------------------- |
+|             | [安装目录说明](maven.md#安装目录说明)                 |
+|             | [生命周期](maven.md#生命周期)                         |
+|             | [命令行与生命周期](maven.md#命令行与生命周期)         |
+|             | [总结](maven.md#总结)                                 |
+|             | [插件](maven.md#插件)                                 |
+|             | [传递性依赖和以来范围](maven.md#传递性依赖和以来范围) |
+|             | [多模块](maven.md#多模块)                             |
+|             | [一些错误](maven.md#error)                            |
 
 ## windows
 
