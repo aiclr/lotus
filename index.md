@@ -107,12 +107,19 @@
 
 ## redis
 
-| **redis**                     | **RedisJSON**                  |
+| [top](#top)                   | **RedisJSON**                  |
 | :---------------------------- | :----------------------------- |
 | [commands](redis/commands.md) | [RedisJSON](redis/rejson.md)   |
-| [Redis](redis/redis.md)       | [JavaClient](redis/Jrejson.md) |
+| [Redis](redis.md#redis)       | [JavaClient](redis/Jrejson.md) |
 
 
+| [top](#top) | [Redis](redis.md#redis)       | [rrejson](redis.md#redisjson)                       |
+| :---------- | :---------------------------- | :-------------------------------------------------- |
+|             | [官方网址](redis.md#official) | [rejson docker & podman](redis.md#docker-or-podman) |
+|             | [docker](redis.md#docker)     | [rejson k8s](redis.md#rejson-k8s)                   |
+|             | [podman](redis.md#podman)     | [rejson commands](redis.md#redisjson-commands)      |
+|             | [k8s](redis.md#k8s)           | [JRedisJSON](redis.md#jrejson)                      |
+|             | [commands](redis.md#commands) |
 
 ## archlinux
 
