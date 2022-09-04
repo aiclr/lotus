@@ -30,9 +30,9 @@
 - [build tools](#build-tools)
 - [git](#git)
 - [mysql](#mysql)
-- [redis](#redis)
 - [archlinux](#archlinux)
 - [C](#c)
+- [redis](#redis)
 - [windows](#windows)
 
 ## linux
@@ -105,22 +105,6 @@
 | [mysql5.7 sql_mode 默认开启 ONLY_FULL_GROUP_BY 问题](mysql/ONLY_FULL_GROUP_BY.md)                               |                                |
 | [mysql错误码](https://dev.mysql.com/doc/mysql-errors/5.7/en/server-error-reference.html#error_er_no_such_table) |                                |
 
-## redis
-
-| [top](#top)                   | **RedisJSON**                  |
-| :---------------------------- | :----------------------------- |
-| [commands](redis/commands.md) | [RedisJSON](redis/rejson.md)   |
-| [Redis](redis.md#redis)       | [JavaClient](redis/Jrejson.md) |
-
-
-| [top](#top) | [Redis](redis.md#redis)       | [rrejson](redis.md#redisjson)                       |
-| :---------- | :---------------------------- | :-------------------------------------------------- |
-|             | [官方网址](redis.md#official) | [rejson docker & podman](redis.md#docker-or-podman) |
-|             | [docker](redis.md#docker)     | [rejson k8s](redis.md#rejson-k8s)                   |
-|             | [podman](redis.md#podman)     | [rejson commands](redis.md#redisjson-commands)      |
-|             | [k8s](redis.md#k8s)           | [JRedisJSON](redis.md#jrejson)                      |
-|             | [commands](redis.md#commands) |
-
 ## archlinux
 
 | [top](#top)                                    |                                       |       |           Tools           |
@@ -137,6 +121,16 @@
 | :------------------------------------------ |
 | [gcc](c.md#gcc)                             |
 | [链接静态库/动态库时搜索路径顺序](c.md#lib) |
+
+## redis
+
+| [top](#top) | [Redis](redis.md#redis)       | [rrejson](redis.md#redisjson)                       |
+| :---------- | :---------------------------- | :-------------------------------------------------- |
+|             | [官方网址](redis.md#official) | [rejson docker & podman](redis.md#docker-or-podman) |
+|             | [docker](redis.md#docker)     | [rejson k8s](redis.md#rejson-k8s)                   |
+|             | [podman](redis.md#podman)     | [rejson commands](redis.md#redisjson-commands)      |
+|             | [k8s](redis.md#k8s)           | [JRedisJSON](redis.md#jrejson)                      |
+|             | [commands](redis.md#commands) |
 
 ## windows
 

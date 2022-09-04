@@ -1,5 +1,9 @@
 <div style="text-align: center;font-size: 40px;">gradle</div>
 
+# gradle
+
+[升级 gradle 版本](#upgrade) | [jvm 参数配置](#gradleproperties) | [home](index.md#gradle)|
+
 > [官方文档](https://docs.gradle.org/current/userguide/userguide.html) \
 > [支持java版本对照](https://docs.gradle.org/current/userguide/compatibility.html) \
 > [使用指引](https://docs.gradle.org/current/userguide/getting_started.html) \
@@ -10,7 +14,7 @@
 
 ## command
 
-### 升级版本
+### upgrade
 
 ```shell
 #  扫描并查看弃用视图 view the deprecations view of the generated build scan
@@ -31,3 +35,5 @@ org.gradle.jvmargs=-Xmx2g -XX:MaxMetaspaceSize=512m -XX:+HeapDumpOnOutOfMemoryEr
 org.gradle.parallel=true
 
 ```
+
+[top](#gradle) | [home](index.md#gradle)
