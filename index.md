@@ -91,16 +91,16 @@
 
 ## archlinux
 
-| [top](#top)                                                     |           Tools           |
-| :-------------------------------------------------------------- | :-----------------------: |
-| [systemd](archlinux.md#systemd)                                 | [nmap](archlinux.md#nmap) |
-| [systemd/User](archlinux.md#systemduser)                        |                           |
-| [systemd/Timers](archlinux.md#systemdtimers)                    |                           |
-| [定时器策略 systemd/Timers/OnCalendar](archlinux.md#oncalendar) |                           |
-| [systemd/Journal](archlinux.md#systemdjournal)                  |                           |
-| [pacman](archlinux.md#pacman)                                   |                           |
-| [AUR](archlinux.md#aur)                                         |                           |
-| [降级软件包](archlinux.md#降级)                                 |                           |
+| [top](#top)                                                     |            Tools            |
+| :-------------------------------------------------------------- | :-------------------------: |
+| [systemd](archlinux.md#systemd)                                 |  [nmap](archlinux.md#nmap)  |
+| [systemd/User](archlinux.md#systemduser)                        | [samba](archlinux.md#samba) |
+| [systemd/Timers](archlinux.md#systemdtimers)                    |                             |
+| [定时器策略 systemd/Timers/OnCalendar](archlinux.md#oncalendar) |                             |
+| [systemd/Journal](archlinux.md#systemdjournal)                  |                             |
+| [pacman](archlinux.md#pacman)                                   |                             |
+| [AUR](archlinux.md#aur)                                         |                             |
+| [降级软件包](archlinux.md#降级)                                 |                             |
 
 ## C
 

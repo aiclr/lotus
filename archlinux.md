@@ -1,15 +1,46 @@
 # arch linux
 
-| [home](index.md#archlinux)                          |     Tools     |
-| :-------------------------------------------------- | :-----------: |
-| [systemd](#systemd)                                 | [nmap](#nmap) |
-| [systemd/User](#systemduser)                        |               |
-| [systemd/Timers](#systemdtimers)                    |               |
-| [定时器策略 systemd/Timers/OnCalendar](#oncalendar) |               |
-| [systemd/Journal](#systemdjournal)                  |               |
-| [pacman](#pacman)                                   |               |
-| [AUR](#aur)                                         |               |
-| [降级软件包](#降级)                                 |               |
+| [home](index.md#archlinux)                          |      Tools      |
+| :-------------------------------------------------- | :-------------: |
+| [systemd](#systemd)                                 |  [nmap](#nmap)  |
+| [systemd/User](#systemduser)                        | [samba](#samba) |  |
+| [systemd/Timers](#systemdtimers)                    |                 |
+| [定时器策略 systemd/Timers/OnCalendar](#oncalendar) |                 |
+| [systemd/Journal](#systemdjournal)                  |                 |
+| [pacman](#pacman)                                   |                 |
+| [AUR](#aur)                                         |                 |
+| [降级软件包](#降级)                                 |                 |
+
+# samba
+
+> [参考arch wiki](https://wiki.archlinux.org/title/Samba)
+
+> 注意：优先配置 配置文件 `/etc/samba/smb.conf` \
+> 配置文件官方样例 [smb.conf.default](https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD) \
+> [smb.conf](https://man.archlinux.org/man/smb.conf.5) 文档说明 \
+> 自用配置文件[smb.conf](conf/smb.conf)
+> 
+> 配置完毕 进行安装:
+> ```shell
+> pacman -S samba
+> # 创建 共享专用账户 
+> useradd -m hi
+> # 禁止登录 禁止 ssh login 
+> usermod --shell /usr/bin/nologin --lock hi
+> # samba 拥有自己的密码管理
+> smbpasswd -a hi
+> # 列出 samba 用户
+> pdbedit -L -v
+>
+> # 启动测试
+> systemctl start smb
+> # 开机自启动
+> systemctl enable smb
+> ```
+>
+> ***TODO Linux 客户端挂载 samba***
+
+[top](#arch-linux) | [home](index.md)
 
 # pacman
 
