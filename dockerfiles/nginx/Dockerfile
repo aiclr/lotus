@@ -1,6 +1,6 @@
 FROM nginx:stable-alpine
 
-MAINTAINER bougainvilleas <caddyren@qq.com>
+MAINTAINER bougainvilleas <bougainvilleas@qq.com>
 
 WORKDIR app
 

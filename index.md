@@ -37,16 +37,16 @@
 
 ## linux
 
-| **linux**                                          | **arch**                                   | **suse**                                         | **docker**                                                         | **podman**                           | **k8s**                                              |
-| :------------------------------------------------- | :----------------------------------------- | :----------------------------------------------- | :----------------------------------------------------------------- | :----------------------------------- | :--------------------------------------------------- |
-| [btrfs](linux/btrfs.md)                            | [安装记录](linux/arch/install.md)          | [发行版](linux/suse/microos.md)                  | [Docker registry 部署 与 自签证书](linux/lxc/registry/registry.md) | [podman](linux/lxc/podman/podman.md) | [kubic 安装 k8s](linux/lxc/k8s/kubic.md)             |
-| [users & groups](linux/user.md)                    | [virtualbox安装](linux/arch/virtualbox.md) | [zypper](linux/suse/zypper.md)                   | [rabbitmq](linux/lxc/docker/rabbitmq.md)                           |                                      | [kubectl 用法](linux/lxc/k8s/kubectl.md)             |
-| [shell](linux/shell.md)                            | [samba 文件共享](linux/arch/samba.md)      | [自启动脚本](linux/suse/init.md)                 | [jre8 for alpine](linux/lxc/jre8/jre84alpine.md)                   |                                      | [Dashboard UI 部署](linux/lxc/k8s/dashbord-ui.md)    |
-| [linux](linux/linux.md)                            | [pacman](linux/arch/pacman.md)             | [默认凌晨三点六重启系统](linux/suse/rebootmg.md) | [jre7 for alpine](linux/lxc/jre7/jre74alpine.md)                   |                                      | [RabbitMQ k8s 部署 脚本](linux/lxc/k8s/rabbitmq.md)  |
-| [lvm](linux/tools/lvm.md)                          | [i3](linux/arch/i3.md)                     | [Network file system](linux/suse/nfs.md)         | [nginx](linux/lxc/docker/nginx.md)                                 |                                      | [mysql k8s 部署 脚本](linux/lxc/k8s/mysql.yaml)      |
-| [ohmyzsh](linux/tools/ohmyzsh.md)                  | [系统监控工具](linux/arch/monitor.md)      | [java version 管理工具](linux/suse/java.md)      | [nginx for react & vue](linux/lxc/nginx/nginx4js.md)               |                                      | [redis k8s 部署 脚本](linux/lxc/k8s/redis.yaml)      |
-| [awk](linux/tools/awk.md)                          | [wifi爆破](linux/arch/aircrack-ng.md)      |                                                  | [Springboot Layering Docker Images](java/spring/boot/layer.md)     |                                      | [RedisJSON k8s 部署 脚本](linux/lxc/k8s/rejson.yaml) |
-| [sed](linux/tools/sed.md)                          | [sddm login 主题](linux/arch/sddm.md)      |                                                  | [docker 开启远程访问](linux/lxc/docker/docker.md)                  |
+| **linux**                                          | **arch**                                   | **suse**                                         | **docker**                                                         | **k8s**                                              |
+| :------------------------------------------------- | :----------------------------------------- | :----------------------------------------------- | :----------------------------------------------------------------- | :--------------------------------------------------- |
+| [btrfs](linux/btrfs.md)                            | [安装记录](linux/arch/install.md)          | [发行版](linux/suse/microos.md)                  | [Docker registry 部署 与 自签证书](linux/lxc/registry/registry.md) | [kubic 安装 k8s](linux/lxc/k8s/kubic.md)             |
+| [users & groups](linux/user.md)                    | [virtualbox安装](linux/arch/virtualbox.md) | [zypper](linux/suse/zypper.md)                   | [rabbitmq](linux/lxc/docker/rabbitmq.md)                           | [kubectl 用法](linux/lxc/k8s/kubectl.md)             |
+| [shell](linux/shell.md)                            |                                            | [自启动脚本](linux/suse/init.md)                 | [jre8 for alpine](linux/lxc/jre8/jre84alpine.md)                   | [Dashboard UI 部署](linux/lxc/k8s/dashbord-ui.md)    |
+| [linux](linux/linux.md)                            |                                            | [默认凌晨三点六重启系统](linux/suse/rebootmg.md) | [jre7 for alpine](linux/lxc/jre7/jre74alpine.md)                   | [RabbitMQ k8s 部署 脚本](linux/lxc/k8s/rabbitmq.md)  |
+| [lvm](linux/tools/lvm.md)                          | [i3](linux/arch/i3.md)                     | [Network file system](linux/suse/nfs.md)         | [nginx](linux/lxc/docker/nginx.md)                                 | [mysql k8s 部署 脚本](linux/lxc/k8s/mysql.yaml)      |
+| [ohmyzsh](linux/tools/ohmyzsh.md)                  | [系统监控工具](linux/arch/monitor.md)      | [java version 管理工具](linux/suse/java.md)      | [nginx for react & vue](linux/lxc/nginx/nginx4js.md)               | [redis k8s 部署 脚本](linux/lxc/k8s/redis.yaml)      |
+| [awk](linux/tools/awk.md)                          | [wifi爆破](linux/arch/aircrack-ng.md)      |                                                  | [Springboot Layering Docker Images](java/spring/boot/layer.md)     | [RedisJSON k8s 部署 脚本](linux/lxc/k8s/rejson.yaml) |
+| [sed](linux/tools/sed.md)                          | [sddm login 主题](linux/arch/sddm.md)      |                                                  |
 | [vim](linux/tools/vim.md)                          | [mpv 视频播放](linux/arch/mpv.md)          |                                                  |
 | [firewald 防火墙策略](linux/tools/firewall-cmd.md) | [mpd mpc 音频播放](linux/arch/mpd.md)      |                                                  |
 | [vsftd文件服务器](linux/tools/vsftpd.md)           |                                            |                                                  |
@@ -91,16 +91,14 @@
 
 ## archlinux
 
-| [top](#top)                                                     |            Tools            |
-| :-------------------------------------------------------------- | :-------------------------: |
-| [systemd](archlinux.md#systemd)                                 |  [nmap](archlinux.md#nmap)  |
-| [systemd/User](archlinux.md#systemduser)                        | [samba](archlinux.md#samba) |
-| [systemd/Timers](archlinux.md#systemdtimers)                    |                             |
-| [定时器策略 systemd/Timers/OnCalendar](archlinux.md#oncalendar) |                             |
-| [systemd/Journal](archlinux.md#systemdjournal)                  |                             |
-| [pacman](archlinux.md#pacman)                                   |                             |
-| [AUR](archlinux.md#aur)                                         |                             |
-| [降级软件包](archlinux.md#降级)                                 |                             |
+| [top](#top)                                                                                 | Tools                                                                            |
+| :------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------- |
+| [systemd](archlinux.md#systemd)                                                             | [nmap](archlinux.md#nmap)                                                        |
+| [systemd/User](archlinux.md#systemduser)                                                    | [samba](archlinux.md#samba)                                                      |
+| [systemd/Timers](archlinux.md#systemdtimers) //  [OnCalendar](archlinux.md#oncalendar)      | [podman](archlinux.md#podman)                                                    |
+| [systemd/Journal](archlinux.md#systemdjournal)                                              | [docker 局域网访问](archlinux.md#局域网访问)                                     |
+| [pacman](archlinux.md#pacman) // [AUR](archlinux.md#aur)  //[降级软件包](archlinux.md#降级) | [rabbitmq](archlinux.md#rabbitmq) // [rabbitmqadmin](archlinux.md#rabbitmqadmin) |
+| [nginx](archlinux.md#nginx) // [vue & react nginx image](archlinux.md#nginx-for-h5)         |
 
 ## C
 
