@@ -6,8 +6,22 @@
 | [systemd/User](#systemduser)                                   | [samba](#samba)                                          |
 | [systemd/Timers](#systemdtimers) //  [OnCalendar](#oncalendar) | [podman](#podman)                                        |
 | [systemd/Journal](#systemdjournal)                             | [docker 局域网访问](#局域网访问)                         |
+| [开机时间检查](#boot)                                          |
 | [pacman](#pacman) // [AUR](#aur)  //[降级软件包](#降级)        | [rabbitmq](#rabbitmq) // [rabbitmqadmin](#rabbitmqadmin) |
 | [nginx](#nginx) // [vue & react nginx image](#nginx-for-h5)    | [xrandr 小米游戏本多屏输出](#xrandr)                     |
+
+[top](#arch-linux) | [home](index.md)
+
+# boot
+
+> 开机启动树 `systemd-cgls`\
+> 开机耗时总览 `systemd-analyze`\
+> 开机耗时详情 `systemd-analyze blame`\
+> 开机启动依赖项 `systemd-analyze critical-chain`
+
+> 小米游戏本开机变慢发现是 `systemd-journal-flush.service` 耗时30秒+
+> > 查看日志文件大小40M `journalctl -b -u systemd-journald`\
+> > 查看启动耗时 `journalctl -b -u systemd-journal-flush.service`
 
 [top](#arch-linux) | [home](index.md)
 
