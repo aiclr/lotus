@@ -130,10 +130,12 @@ vim 有 12 个粘贴板，分别是 0、1、2、...、9、a、“、＋；
 
 ## 注意
 
-> vim的.vimrc配置项，屏蔽掉下面这句话： \
-set fileencodings=utf-8,gb2312,gbk,gb18030,ucs-bom \
-再用vim打开jpeg文件，显示”ffd8 ffc0 0011 0804″和 “ffd9 0a”，显示正确 \
-vim 为了支持识别和显示中文，规定了 vim 的 fileencodings \
-当vim打开文件时，会使用规定的编码格式对数据进行解析，jpeg的文件头FFD8、尾FFD9 不是任何一个中文的编码，vim找不到对应的中文字，就显示为？？，即：3f3f
+> vim的`~/.vimrc`配置项，屏蔽掉下面这句话： 
+> > `set fileencodings=utf-8,gb2312,gbk,gb18030,ucs-bom` \
+> > 再用vim打开`jpeg`文件，显示`ffd8 ffc0 0011 0804`和 `ffd9 0a`，显示正确 \
+> > vim 为了支持识别和显示中文，规定了 vim 的 `fileencodings` \
+> > 当vim打开文件时，会使用规定的编码格式对数据进行解析\
+> > jpeg的文件头`FFD8`、尾`FFD9` 不是任何一个中文的编码，vim找不到对应的中文字，就显示为`？？`，即：`3f3f`
+
 
 ## [HOME](../../index.md)
