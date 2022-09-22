@@ -581,7 +581,8 @@ nmap扫描TCP/IP指纹特征，确定目标主机系统类型
 
 # systemd
 
-> [archlinux Wiki](https://wiki.archlinux.org/title/Systemd)
+> [archlinux Wiki](https://wiki.archlinux.org/title/Systemd)\
+> [i3wm 普通用户关机 重新安装 polkit 即可](https://wiki.archlinux.org/title/Allow_users_to_shutdown)
 
 > Example:
 > > root
@@ -589,6 +590,12 @@ nmap扫描TCP/IP指纹特征，确定目标主机系统类型
 > > > `systemctl enable NetworkManager` = `systemctl --system enable NetworkManager` \
 > > > `systemctl enable sshd` = `systemctl enable sshd --system` \
 > > > `systemctl enable update-system.timer` = `systemctl --system enable update-system.timer` 
+> > >
+> > > poweroff 
+> > > > `systemctl poweroff`
+> > > 
+> > > reboot
+> > > > `systemctl reboot`
 > > >
 > > > Show system status
 > > > > `systemctl status`
@@ -705,6 +712,9 @@ ExecStart=pacman -S -y --noconfirm -u
 > > help
 > > > `journalctl -h` \
 > > > `journalctl --help`
+>
+> > 检索 `pacman` 相关日志
+> > > `journalctl --grep=pacman`
 > 
 > > Show only the most recent journal entries, and continuously print new entries as they are appended to the journal. \
 > > 显示最新日志，并连续输出
