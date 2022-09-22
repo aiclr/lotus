@@ -267,7 +267,8 @@ rabbitmqadmin -u username -p password declare binding source=exchange destinatio
 > systemctl enable smb
 > ```
 >
-> ***TODO Linux 客户端挂载 samba***
+> ***Linux 客户端挂载 samba*** \
+> `sudo mount //192.168.1.165/work /mnt -o username=fly,password=fly,iocharset=utf8`
 
 [top](#arch-linux) | [home](index.md)
 
