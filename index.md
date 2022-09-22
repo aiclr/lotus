@@ -98,7 +98,7 @@
 | [systemd/Timers](archlinux.md#systemdtimers) //  [OnCalendar](archlinux.md#oncalendar)      | [podman](archlinux.md#podman)                                                    |
 | [systemd/Journal](archlinux.md#systemdjournal)                                              | [docker 局域网访问](archlinux.md#局域网访问)                                     |
 | [pacman](archlinux.md#pacman) // [AUR](archlinux.md#aur)  //[降级软件包](archlinux.md#降级) | [rabbitmq](archlinux.md#rabbitmq) // [rabbitmqadmin](archlinux.md#rabbitmqadmin) |
-| [nginx](archlinux.md#nginx) // [vue & react nginx image](archlinux.md#nginx-for-h5)         |
+| [nginx](archlinux.md#nginx) // [vue & react nginx image](archlinux.md#nginx-for-h5)         | [xrandr 小米游戏本多屏输出](archlinux.md#xrandr)                                             |
 
 ## C
 
