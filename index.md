@@ -27,6 +27,7 @@
 - [github-pages](https://bougainvilleas.github.io/lotus/)
 - [linux](#linux)
 - [java](#java)
+- [old git](#old-git)
 - [git](#git)
 - [archlinux](#archlinux)
 - [C](#c)
@@ -78,7 +79,7 @@
 | [VisualVM](jvm/visualvm.md)                                                                        |
 
 
-## git
+## old-git
 
 | **git**                     | **git 使用 规范**                |
 | :-------------------------- | :------------------------------- |
@@ -88,6 +89,16 @@
 | [tag](git/git_tag.md)       |                                  |
 | [reflog](git/git_reflog.md) |                                  |
 | [config](git/git_config.md) |                                  |
+
+## git
+
+| [top](#top)  | [reference](https://git-scm.com/docs/) | [frequently](git.md#frequently) |
+| :---------------- | :------------------------------------- | ------------------------: |
+| [clone](git.md#clone)   | [查看其他分支文件](git.md#show)              |
+| [branch](git.md#branch) | [初始化仓库](git.md#init)                    |
+| [commit](git.md#commit) | [gitlab新建仓库](git.md#gitlab)              |
+| [merge](git.md#merge)   |
+| [rebase](git.md#rebase) | [reflog](git.md#reflog)                      |
 
 ## spring-framework
 
