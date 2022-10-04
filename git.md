@@ -1,12 +1,13 @@
 # git
 
 | [home](index.md)  | [reference](https://git-scm.com/docs/) | [frequently](#frequently) |
-| :---------------- | :------------------------------------- | ------------------------: |
-| [clone](#clone)   | [查看其他分支文件](#show)              |
-| [branch](#branch) | [初始化仓库](#init)                    |
+| :---------------- | :------------------------------------- | :------------------------ |
+| [clone](#clone)   | [查看其他分支文件](#show)              | [ssh](#ssh)               |
+| [branch](#branch) | [初始化仓库](#init)                    | [gpg](#gpg)               |
 | [commit](#commit) | [gitlab新建仓库](#gitlab)              |
 | [merge](#merge)   |
 | [rebase](#rebase) | [reflog](#reflog)                      |
+| [push](#push)     |
 
 # frequently
 
@@ -18,6 +19,84 @@
 | 提交commit                                               | `git commit -m "feat: init"`       |
 | fetch 更新 origin 仓库 的指定分支                        | `git fetch origin main:main`       |
 | push 提交 本地 develop 分支 到 origin 仓库 develop2 分支 | `git push origin develop:develop2` |
+
+[top](#git) | [home](index.md)
+
+# push
+
+> `gitlab` 默认将 `master` 分支设置为 `protect` 不允许强制 `push -f`
+
+> [reference](https://git-scm.com/docs/git-push)
+> > `git push` 当前分支与远程分支已关联\
+> > `git push origin HEAD` 推送 HEAD 当前分支 到远程已关联的分支\
+> > `git push origin local_develop` 推送 local_develop 分支到已关联的分支\
+> > `git push origin HEAD:remote` 推送 HEAD 当前分支到远程 remote 分支\
+> > `git push origin local_develop:remote_develop` 推送 local_develop 分支到远程 remote_develop 分支\
+> > `git push -f origin develop` 强制提交 风险极高 本地commit会强制覆盖远程commit
+
+[top](#git) | [home](index.md)
+
+# gpg
+
+> 新增 gpg
+> > `gpg --full-generate-key` 根据提示输入`用户名`，`邮箱`，`密钥长度4096`,`过期时间`，`是否信任`，`github` 要注意邮箱要是 github 验证过的邮箱\
+> > `gpg --list-keys` 列出本地存储的所有gpg密钥信息\
+> > `gpg --armor --export xxxx(pub key)` 打印公钥字符串，复制添加到git仓库 \
+> > `git config --global user.signingkey {key_id}` 全局使用此gpg \
+> > `git commit -S -m "xxx"` `-S` 表示这次提交需要使用GPG密钥签名 \
+> > `git config --local commit.gpgsign true` 当前仓库每次commit 时自动要求签名
+
+> gpg 过期处理
+> > `gpg --list-keys` 列出本地存储的所有gpg密钥信息 \
+> > `gpg --edit-key xxxxxxx` 进入编辑模式 
+> > > `gpg>expire`  更新过期日期\
+> > > `gpg>trust`   添加信任模式\
+> > > `gpg>save`   保存
+> >
+> > `gpg --armor --export xxxx(pub key)` 打印公钥字符串，删除旧的，复制添加到git仓库即可
+
+[top](#git) | [home](index.md)
+
+# ssh
+
+> 添加 ssh 私钥 **github 需要设置密码**[参考](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+
+> win10 powershell
+> > `ssh-keygen -t rsa -b 2048  -C "xxx@xx.com"`
+> > `clip` 复制到粘贴板 
+> > `cat ~/.ssh/caddyRen_rsa.pub | clip`
+>
+> linux
+> > `ssh-keygen -t rsa -b 2048  -C "caddyRen@qq.com"`
+> > `cat ~/.ssh/caddyRen_rsa.pub`
+
+> 多 ssh 配置 `vim ~/.ssh/config`
+> ```text
+> Host git.parkere.cn
+> HostName git.parkere.cn
+>   PreferredAuthentications publickey
+>   IdentityFile ~/.ssh/work_rsa
+> Host bougainvilleas
+>   HostName github.com
+>   PreferredAuthentications publickey
+>   IdentityFile ~/.ssh/bougainvilleas_rsa
+> Host caddyRen
+>   HostName github.com
+>   PreferredAuthentications publickey
+>   IdentityFile ~/.ssh/caddyRen_rsa
+> ```
+
+> `Host` 替换掉真实域名 `git clone git@bougainvilleas:bougainvilleas/lotus.git` \
+> `HostName` 真实域名 `git clone git@github.com:bougainvilleas/lotus.git`
+
+> 检测
+> ```shell
+> ssh git@git.parkere.cn
+> ssh git@caddyRen
+> ssh git@bougainvilleas
+> ```
+
+[top](#git) | [home](index.md)
 
 # reflog
 
