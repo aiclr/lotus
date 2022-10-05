@@ -8,6 +8,7 @@
 | [merge](#merge)   |
 | [rebase](#rebase) | [reflog](#reflog)                      |
 | [push](#push)     |
+| [tag](#tag)       |
 
 # frequently
 
@@ -22,11 +23,28 @@
 
 [top](#git) | [home](index.md)
 
+# tag
+
+> **tag name 与 branch name 不能相同**\
+> [参考文档](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
+> `git tag` 列出标签
+> `git tag -l "0.0.*"` 查找标签0.0.开头的标签，需要-l或者--list
+> `git tag 0.0.1` 创建轻量标签 不需要-a,-s,-m选项，只需要提供标签名字
+> `git tag -a 0.0.2 -m "0.0.2版本"` 创建附注标签 可以被校验，包含打标签者的`name`，`email`，日期地址，标签信息，并且可以使用GNU Privacy Guard（GPG）签名验证
+> `git tag -a 0.0.3 e37da745df4102b68b81d0ec681ba28e910d2344` 对某一提交码打标签
+> `git show 0.0.1` 查看信息
+> `git push origin 0.0.1` 推送单个tag到远程仓库
+> `git push origin --tags` 推送全部标签到远程仓库
+> `git tag -d 0.0.1` 删除标签
+> `git push origin --delete 0.0.1` 删除远程仓库上的标签
+
+[top](#git) | [home](index.md)
+
 # push
 
 > `gitlab` 默认将 `master` 分支设置为 `protect` 不允许强制 `push -f`
 
-> [reference](https://git-scm.com/docs/git-push)
+> [参考文档](https://git-scm.com/docs/git-push)
 > > `git push` 当前分支与远程分支已关联\
 > > `git push origin HEAD` 推送 HEAD 当前分支 到远程已关联的分支\
 > > `git push origin local_develop` 推送 local_develop 分支到已关联的分支\
@@ -100,7 +118,7 @@
 
 # reflog
 
-> [reflog](https://git-scm.com/docs/git-reflog)\
+> [参考文档](https://git-scm.com/docs/git-reflog)\
 > 查看本地git操作日志 `git reflog`\
 > 回滚到02a3260 `git reset --hard 02a3260`\
 > 远程提交回退 `git push origin HEAD --force`
@@ -109,7 +127,7 @@
 
 # rebase
 
-> [git rebase 文档](https://git-scm.com/docs/git-rebase)
+> [参考文档](https://git-scm.com/docs/git-rebase)
 > 
 > 将b1的基线变更为b2
 > > 当前在b1分支 `git rebase b2`\
@@ -140,7 +158,7 @@
 
 # merge
 
-> [git merge 文档](https://git-scm.com/docs/git-merge)\
+> [参考文档](https://git-scm.com/docs/git-merge)\
 > ***merge 之前 两个分支都要先 commit***
 
 1. 当前分支 develop 将 temp 分支合并到develop `git merge temp`
