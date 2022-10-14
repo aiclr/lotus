@@ -4,22 +4,188 @@
 | :---------------- | :------------------------------------- | :------------------------ |
 | [clone](#clone)   | [查看其他分支文件](#show)              | [ssh](#ssh)               |
 | [branch](#branch) | [初始化仓库](#init)                    | [gpg](#gpg)               |
-| [commit](#commit) | [gitlab新建仓库](#gitlab)              |
-| [merge](#merge)   |
+| [commit](#commit) | [gitlab新建仓库](#gitlab)              | [config](#config)         |
+| [merge](#merge)   | [git-flow](#git-flow)                  |
 | [rebase](#rebase) | [reflog](#reflog)                      |
 | [push](#push)     |
 | [tag](#tag)       |
 
 # frequently
 
-| [top](#git)                                              | [home](index.md)                   |
-| :------------------------------------------------------- | :--------------------------------- |
-| 提交记录                                                 | `git log --pretty=oneline`         |
-| 仓库状态                                                 | `git status`                       |
-| 追加修改到仓库                                           | `git add .`                        |
-| 提交commit                                               | `git commit -m "feat: init"`       |
-| fetch 更新 origin 仓库 的指定分支                        | `git fetch origin main:main`       |
-| push 提交 本地 develop 分支 到 origin 仓库 develop2 分支 | `git push origin develop:develop2` |
+| [top](#git)                                              | [home](index.md)                          |
+| :------------------------------------------------------- | :---------------------------------------- |
+| 提交记录                                                 | `git log --pretty=oneline`                |
+| 仓库状态                                                 | `git status`                              |
+| 追加修改到仓库                                           | `git add .`                               |
+| 提交commit                                               | `git commit -m "feat: init"`              |
+| fetch 更新 origin 仓库 的指定分支                        | `git fetch origin main:main`              |
+| push 提交 本地 develop 分支 到 origin 仓库 develop2 分支 | `git push origin develop:develop2`        |
+| 查看其他分支文件                                         | `git show develop:README.md`              |
+| 刷新以应用新的配置文件                                   | `git rm --cached -r` & `git reset --hard` |
+
+[top](#git) | [home](index.md)
+
+# git-flow
+
+> [推荐阅读git-flow](https://www.cnblogs.com/wish123/p/9785101.html)\
+> 分支名称规范
+> > `master` or `main` 主分支
+> >
+> > `hotfix`
+> > > 生产环境版本紧急缺陷修复发布分支\
+> > > 由 master 分支 fork\
+> > > 可 merge 到 develop、master,完全 merge 后可删除分支
+> >
+> > `release`
+> > > 灰度发布分支、公测发布分支\
+> > > 由 develop fork\
+> > > 可 merge 到 master，完全merge后可移除当前分支\
+> > > 除了修复 bug 提交外不可 commit 其他内容，
+> >
+> > `develop`
+> > > 开发主轴\
+> > > 不建议直接 commit\
+> > > 由 master 或 hotfix 分支 fork\
+> > > 可 merge 到 release\
+> > > 可从 release、hotfix、feature 分支merge
+> >
+> > `feature`
+> > > 新功能分支
+> > > 可 merge 到 develop,完全 merge 后可删除分支
+>
+> commit message type
+> > `feat` 新功能\
+> > `fixBug` 修复bug\
+> > `docs` 文档相关\
+> > `style` 代码格式化相关\
+> > `refactor` 重构\
+> > `perf` 性能优化\
+> > `test` 测试相关\
+> > `build` 构建系统或包依赖相关\
+> > `ci` CI配置，脚本文件相关\
+> > `chore` c库或测试文件相关\
+> > `revert` commit 回退
+
+[top](#git) | [home](index.md)
+
+# config
+
+> 说明：
+> > 全局配置目录 windows10 `C:\Users\xxx\.gitconfig`\
+> > 当前工作目录文件 `workdir/.git/config`
+
+> example `git config -h`
+> > 查看 `global` 全部 配置 `git config -l` or `git config -l --global` \
+> > 查看 `local` 全部 配置  `git config -l --local`
+
+> user & email
+> > .git/config
+> > ```
+> > [user]
+> > 	name = xxx
+> > 	email = xxx@xx.com
+> > ```
+> >
+> > 全局 git user
+> > > `git config --global user.name xxx`\
+> > > `git config --global user.email xxx@xx.com`
+> >
+> > 单库 git user
+> > > `git config user.name xxx` or `git config --local user.name xxx`\
+> > > `git config user.email xxx@xx.com` or `git config --local user.email xxx@xx.com`
+
+> crlf & lf
+> > [GitHub reference](https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings)\
+> > [git reference](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration)
+>
+> core.autocrlf false
+> > If you’re a Windows programmer doing a Windows-only project, then you can turn off this functionality, \
+> > recording the carriage returns in the repository by setting the config value to false
+>
+>core.autocrlf true
+>> If you’re on a Windows machine, set it to true this converts LF endings into CRLF when you check out code:
+>
+>core.autocrlf input
+>> If you’re on a Linux or macOS system that uses LF line endings, \
+> > then you don’t want Git to automatically convert them when you check out files; \
+> > however, if a file with CRLF endings accidentally gets introduced, then you may want Git to fix it. \
+> > You can tell Git to convert CRLF to LF on commit but not the other way around by setting core.autocrlf to input: \
+> > This setup should leave you with CRLF endings in Windows checkouts, \
+> > but LF endings on macOS and Linux systems and in the repository.
+
+***主要应对 shell 脚本、bat 批处理文件等对换行符敏感的语言***
+
+***不建议直接 copy 文件；手动创建文件 copy 文件内容相对稳妥***
+
+***当添加配置文件或使用参数配置后，并不会生效。配置文件方式重新clone代码即可生效，`git config` 删掉除.git的全部文件,手动下载仓库代码，然后解压把代码放进去即可***
+
+> 配置 core.autocrlf
+
+- 全局
+    - linux & mac `git config --global core.autocrlf input`
+    - windows `git config --global core.autocrlf true` 安装时默认设置为 true ![image](img/crlf_lf.gif)
+- 单库
+    - linux & mac `git config --local core.autocrlf input`
+    - windows `git config --local core.autocrlf true`
+
+> .git/config file 配置
+> ```text
+> # 全局 windows C:\Users\xxx\.gitconfig
+> [core]
+> 	autocrlf = true
+> 
+> # 单库 .git/config
+> [core]
+> 	autocrlf = true
+> ```
+
+***The .gitattributes file must be created in the root of the repository and committed like any other file.***
+
+> .gitattributes
+> ```properties
+> #
+> # https://help.github.com/articles/dealing-with-line-endings/
+> #
+> # Set the default behavior, in case people don't have core.autocrlf set.
+> # text=auto Git will handle the files in whatever way it thinks is best. This is a good default option
+> # * text=auto
+> # text eol=crlf Git will always convert line endings to CRLF on checkout. You should use this for files that must keep CRLF endings, even on OSX or Linux.
+> # * text eol=crlf
+> # text eol=lf Git will always convert line endings to LF on checkout. You should use this for files that must keep LF endings, even on Windows.
+> * text eol=lf
+> # Explicitly declare text files you want to always be normalized and converted
+> # to native line endings on checkout.
+> *.c text
+> *.h text
+> *.cpp text
+> *.hpp text
+> *.cmake text
+> *.sh text
+> *.md text
+> *.java text
+> *.py text
+> *.sql text
+> *.xml text
+> *.yml text
+> *.yaml text
+> *.properties text
+> *.gradle text
+> *.pom text
+> # Declare files that will always have CRLF line endings on checkout.
+> *.sln text eol=crlf
+> *.bat text eol=crlf
+> # Denote all files that are truly binary and should not be modified.
+> *.png binary
+> *.jpg binary
+> *.jpeg binary
+> ```
+
+> 刷新以应用新的配置文件
+> ```shell
+> git rm --cached -r
+> git reset --hard
+> ```
+
 
 [top](#git) | [home](index.md)
 

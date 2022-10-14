@@ -27,7 +27,6 @@
 - [github-pages](https://bougainvilleas.github.io/lotus/)
 - [linux](#linux)
 - [java](#java)
-- [old git](#old-git)
 - [git](#git)
 - [archlinux](#archlinux)
 - [C](#c)
@@ -78,27 +77,17 @@
 | [Java泛型的优点、缺点以及丑陋之处](http://www.agiledeveloper.com/articles/GenericsInJavaPartI.pdf) |                                                      |                                                            |                                                     |
 | [VisualVM](jvm/visualvm.md)                                                                        |
 
-
-## old-git
-
-| **git**                     | **git 使用 规范**                |
-| :-------------------------- | :------------------------------- |
-| [git](git/git.md)           | [git 使用 规范](git/standard.md) |
-| [ssh & gpg](git/ssh_gpg.md) | [git 分支 规范](git/standard.md) |
-| [push](git/git_push.md)     |                                  |
-| [tag](git/git_tag.md)       |                                  |
-| [reflog](git/git_reflog.md) |                                  |
-| [config](git/git_config.md) |                                  |
-
 ## git
 
 | [top](#top)  | [reference](https://git-scm.com/docs/) | [frequently](git.md#frequently) |
-| :---------------- | :------------------------------------- | ------------------------: |
-| [clone](git.md#clone)   | [查看其他分支文件](git.md#show)              |
-| [branch](git.md#branch) | [初始化仓库](git.md#init)                    |
-| [commit](git.md#commit) | [gitlab新建仓库](git.md#gitlab)              |
-| [merge](git.md#merge)   |
+| :---------------- | :------------------------------------- | :------------------------ |
+| [clone](git.md#clone)   | [查看其他分支文件](git.md#show)              | [ssh](git.md#ssh)               |
+| [branch](git.md#branch) | [初始化仓库](git.md#init)                    | [gpg](git.md#gpg)               |
+| [commit](git.md#commit) | [gitlab新建仓库](git.md#gitlab)              | [config](git.md#config)         |
+| [merge](git.md#merge)   | [git-flow](git.md#git-flow)                  |
 | [rebase](git.md#rebase) | [reflog](git.md#reflog)                      |
+| [push](git.md#push)     |
+| [tag](git.md#tag)       |
 
 ## spring-framework
 
