@@ -18,7 +18,7 @@
 | 仓库状态                                                 | `git status`                              |
 | 追加修改到仓库                                           | `git add .`                               |
 | 提交commit                                               | `git commit -m "feat: init"`              |
-| fetch 更新 origin 仓库 的指定分支                        | `git fetch origin main:main`              |
+| fetch 更新 origin 仓库 的指定分支                        | `git fetch origin remote:local`           |
 | push 提交 本地 develop 分支 到 origin 仓库 develop2 分支 | `git push origin develop:develop2`        |
 | 查看其他分支文件                                         | `git show develop:README.md`              |
 | 刷新以应用新的配置文件                                   | `git rm --cached -r` & `git reset --hard` |
