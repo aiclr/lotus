@@ -79,13 +79,13 @@
 
 ## git
 
-| [top](#top)  | [reference](https://git-scm.com/docs/) | [frequently](git.md#frequently) |
-| :---------------- | :------------------------------------- | :------------------------ |
-| [clone](git.md#clone)   | [查看其他分支文件](git.md#show)              | [ssh](git.md#ssh)               |
-| [branch](git.md#branch) | [初始化仓库](git.md#init)                    | [gpg](git.md#gpg)               |
-| [commit](git.md#commit) | [gitlab新建仓库](git.md#gitlab)              | [config](git.md#config)         |
-| [merge](git.md#merge)   | [git-flow](git.md#git-flow)                  |
-| [rebase](git.md#rebase) | [reflog](git.md#reflog)                      |
+| [top](#top)             | [reference](https://git-scm.com/docs/) | [frequently](git.md#frequently) |
+| :---------------------- | :------------------------------------- | :------------------------------ |
+| [clone](git.md#clone)   | [查看其他分支文件](git.md#show)        | [ssh](git.md#ssh)               |
+| [branch](git.md#branch) | [初始化仓库](git.md#init)              | [gpg](git.md#gpg)               |
+| [commit](git.md#commit) | [gitlab新建仓库](git.md#gitlab)        | [config](git.md#config)         |
+| [merge](git.md#merge)   | [git-flow](git.md#git-flow)            |
+| [rebase](git.md#rebase) | [reflog](git.md#reflog)                |
 | [push](git.md#push)     |
 | [tag](git.md#tag)       |
 
@@ -103,9 +103,10 @@
 | [systemd/User](archlinux.md#systemduser)                                                    | [samba](archlinux.md#samba)                                                      |
 | [systemd/Timers](archlinux.md#systemdtimers) //  [OnCalendar](archlinux.md#oncalendar)      | [podman](archlinux.md#podman)                                                    |
 | [systemd/Journal](archlinux.md#systemdjournal)                                              | [docker 局域网访问](archlinux.md#局域网访问)                                     |
-| [开机时间检查](archlinux.md#boot)                                                                       |
+| [开机时间检查](archlinux.md#boot)                                                           |
 | [pacman](archlinux.md#pacman) // [AUR](archlinux.md#aur)  //[降级软件包](archlinux.md#降级) | [rabbitmq](archlinux.md#rabbitmq) // [rabbitmqadmin](archlinux.md#rabbitmqadmin) |
 | [nginx](archlinux.md#nginx) // [vue & react nginx image](archlinux.md#nginx-for-h5)         | [xrandr 小米游戏本多屏输出](archlinux.md#xrandr)                                 |
+| [GRUB](archlinux.md#grub)                                                                   |
 | [vscode settings.json](conf/settings.json)                                                  |
 
 ## C

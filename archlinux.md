@@ -9,6 +9,7 @@
 | [开机时间检查](#boot)                                          |
 | [pacman](#pacman) // [AUR](#aur)  //[降级软件包](#降级)        | [rabbitmq](#rabbitmq) // [rabbitmqadmin](#rabbitmqadmin) |
 | [nginx](#nginx) // [vue & react nginx image](#nginx-for-h5)    | [xrandr 小米游戏本多屏输出](#xrandr)                     |
+| [GRUB](#grub)                                                  |
 
 [top](#arch-linux) | [home](index.md)
 
