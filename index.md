@@ -27,6 +27,7 @@
 - [github-pages](https://bougainvilleas.github.io/lotus/)
 - [linux](#linux)
 - [java](#java)
+- [go](#java)
 - [git](#git)
 - [archlinux](#archlinux)
 - [C](#c)
@@ -76,6 +77,12 @@
 | [java 模块化 jlink](java/jlink.md)                                                                 |                                                      |                                                            |                                                     |
 | [Java泛型的优点、缺点以及丑陋之处](http://www.agiledeveloper.com/articles/GenericsInJavaPartI.pdf) |                                                      |                                                            |                                                     |
 | [VisualVM](jvm/visualvm.md)                                                                        |
+
+## go
+
+| **go**                      |
+| :-------------------------- |
+| [go command](go.md#command) |
 
 ## git
 
