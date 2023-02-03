@@ -27,7 +27,7 @@
 - [github-pages](https://bougainvilleas.github.io/lotus/)
 - [linux](#linux)
 - [java](#java)
-- [go](#java)
+- [go](#go)
 - [git](#git)
 - [archlinux](#archlinux)
 - [C](#c)
@@ -38,7 +38,7 @@
 
 ## linux
 
-| **linux**                                          | **arch**                                   | **suse**                                         | **docker**                                                         | **k8s**                                              |
+| [top](#top)                                        | **arch**                                   | **suse**                                         | **docker**                                                         | **k8s**                                              |
 | :------------------------------------------------- | :----------------------------------------- | :----------------------------------------------- | :----------------------------------------------------------------- | :--------------------------------------------------- |
 | [btrfs](linux/btrfs.md)                            | [安装记录](linux/arch/install.md)          | [发行版](linux/suse/microos.md)                  | [Docker registry 部署 与 自签证书](linux/lxc/registry/registry.md) | [kubic 安装 k8s](linux/lxc/k8s/kubic.md)             |
 | [users & groups](linux/user.md)                    | [virtualbox安装](linux/arch/virtualbox.md) | [zypper](linux/suse/zypper.md)                   | [rabbitmq](linux/lxc/docker/rabbitmq.md)                           | [kubectl 用法](linux/lxc/k8s/kubectl.md)             |
@@ -62,7 +62,7 @@
 
 ## java
 
-| **java**                                                                                           | **String**                                           | **Spring**                                                 | **Springboot**                                      |
+| [top](#top)                                                                                        | **String**                                           | **Spring**                                                 | **Springboot**                                      |
 | :------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | :--------------------------------------------------------- | :-------------------------------------------------- |
 | [jvm 监控工具](jvm/tools.md)                                                                       | [Jaccard 相似系数](java/string/Jaccard.md)           | [spring cloud](java/spring/cloud/springcloud.md)           | [Layering Docker Images](java/spring/boot/layer.md) |
 | [Functional Programming & Currying](java/functional.md)                                            | [Sorensen Dice 相似度系数](java/string/dice.md)      | [eureka 配置说明](java/spring/cloud/eureka.md)             |                                                     |
@@ -80,7 +80,7 @@
 
 ## go
 
-| **go**                      |
+| [top](#top)                 |
 | :-------------------------- |
 | [go command](go.md#command) |
 
@@ -98,7 +98,7 @@
 
 ## spring-framework
 
-| [top](#top) |             编译源码             |
+| [top](#top) |             编译源码              |
 | :---------- | :------------------------------: |
 |             | [5.3.x](spring-framework.md#53x) |
 

@@ -1,13 +1,14 @@
 # go
 
-| [home](index.md#go)                      |
-| :-------------------------- |
+| [home](index.md#go)    |
+| :--------------------- |
 | [go command](#command) |
 
 ## command
 
 > init 初始化 `go mod init example.com/greetings` \
 > run 运行不会生成二进制文件 `go run hello.go` or `go run .` \
+> test 在有单元测试的`module`中运行 `go test` or `go test -v` -v flag to get verbose \
 > build 打包 `go build` 在当前目录打包可执行二进制文件 \
 > install 安装`go install` 安装二进制文件到 `～/go/bin/` 目录下 \
 > dependency
