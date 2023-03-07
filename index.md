@@ -122,8 +122,9 @@
 | :------------------------------------------ |
 | [gcc](c.md#gcc)                             |
 | [gdb](c.md#gdb)                             |
-| [链接静态库/动态库时搜索路径顺序](c.md#lib) |
-| [指针大乱斗](c.md#pointer)                  |
+| [keyword](c.md#keyword)                     |
+| [链接静态库/动态库时搜索路径顺序](c.md#lib)      |
+| [指针大乱斗](c.md#pointer)                   |
 
 ## redis
 
