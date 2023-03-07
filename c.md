@@ -4,8 +4,9 @@
 | :-------------------------------------- |
 | [gcc](#gcc)                             |
 | [gdb](#gdb)                             |
-| [链接静态库/动态库时搜索路径顺序](#lib) |
-| [指针大乱斗](#pointer)                  |
+| [keyword](#keyword)                     |
+| [链接静态库/动态库时搜索路径顺序](#lib)      |
+| [指针大乱斗](#pointer)                   |
 
 ## pointer
 
@@ -234,5 +235,26 @@
 2. 环境变量 ：LD_LIBRARY_PATH
 3. 配置文件 /etc/ld.so.conf 中指定的动态库搜索路径
 4. 默认的动态库路径 /lib、/usr/lib
+
+[top](#c) | [home](index.md#c)
+
+## keyword
+
+> 关键字和保留标识符,关键字是C语言的词汇，不能用他们作为标识符。 \
+> 粗体表示C90标准新增的关键字，斜体表示的C99标准新增的关键字，粗斜体表示的是C11标准新增的关键字
+
+|||||
+|:---|:---|:---|:---|
+|auto|extern|short|while|
+|break|float|**signed**|***_Alignas***|
+|case|for|sizeof|***_Alignof***|
+|char|goto|static|***_Atomic***|
+|**const**|if|struct|***_Bool***|
+|continue|inline|switch|***_Complex***|
+|defaut|int|typedef|***_Generic***|
+|do|long|union|***_Imaginary***|
+|double|register|unsigned|***_Noreturn***|
+|else|restrict|void|***_Static_assert***|
+|**enum**|return|**volatile**|***_Thread_local***|
 
 [top](#c) | [home](index.md#c)
