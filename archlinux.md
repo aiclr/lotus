@@ -5,15 +5,29 @@
 | [systemd](#systemd)                                            | [nmap](#nmap)                                            |
 | [systemd/User](#systemduser)                                   | [samba](#samba)                                          |
 | [systemd/Timers](#systemdtimers) //  [OnCalendar](#oncalendar) | [podman](#podman)                                        |
-| [systemd/Journal](#systemdjournal)                             | [docker 局域网访问](#局域网访问)                         |
-| [开机时间检查](#boot)                                          |
-| [pacman](#pacman) // [AUR](#aur)  //[降级软件包](#降级)        | [rabbitmq](#rabbitmq) // [rabbitmqadmin](#rabbitmqadmin) |
-| [nginx](#nginx) // [vue & react nginx image](#nginx-for-h5)    | [xrandr 小米游戏本多屏输出](#xrandr)                     |
+| [systemd/Journal](#systemdjournal)                             | [docker 局域网访问](#局域网访问)                            |
+| [开机时间检查](#boot)                                            | [多个X视窗会话](#startx)                                   |
+| [pacman](#pacman) // [AUR](#aur)  //[降级软件包](#降级)          | [rabbitmq](#rabbitmq) // [rabbitmqadmin](#rabbitmqadmin) |
+| [nginx](#nginx) // [vue & react nginx image](#nginx-for-h5)    | [xrandr 小米游戏本多屏输出](#xrandr)                        |
 | [GRUB](#grub)                                                  |
 
 [top](#arch-linux) | [home](index.md)
 
-# GRUB
+## startx
+
+> Linux提供虚拟控制台的功能，一组终端设备共享PC电脑的屏幕、键盘和鼠标。 \
+> 通常一个Linux安装配置8个或者12个虚拟控制台。虚拟控制台通过字符设备文件 `/dev/ttyN`使用，其中`N`代表一个数字，从1开始 \
+> 使用字符界面登陆Linux系统，所使用的终端设备就是系统中的第一个虚拟控制台，即终端设备`/dev/tty1`。 \
+> 使用 `Ctrl+Alt+F<N>`在不同的虚拟控制台之间切换，其中`N`是虚拟控制台`/dev/ttyN`所对应的数字 \
+> 当在字符界面而不是图形界面进行虚拟控制台的切换时，需要使用组合键`Alt+F<N>` \
+> 默认情况，X视窗系统从`session:0`启动。要在Linux系统上运行多个X视窗会话必须告诉`startX`启动`session:1`。 \
+> 命令`startx -- :1`, Linux 将在下一个未使用的虚拟控制台上启动X服务器 \
+> 在一个Xsession中启动gkrellm，并让其在另一个Xsession中显示 `DISPLAY=:1 gkrellm &` \
+> `KDE的SDDM`和`GNOME的GDM`是显示管理器<sub>display manager</sub>，默认使用第一个未使用的虚拟控制台，通常是`/dev/tty7`。
+
+[top](#arch-linux) | [home](index.md)
+
+## GRUB
 
 > [win10 + archlinux 多系统手动添加引导参考](https://wiki.archlinux.org/title/GRUB#Windows_8/10_not_found)
 > 首先查看分区 `lsblk --fs`\
@@ -53,7 +67,7 @@
 
 [top](#arch-linux) | [home](index.md)
 
-# boot
+## boot
 
 > 开机启动树 `systemd-cgls`\
 > 开机耗时总览 `systemd-analyze`\
@@ -66,7 +80,7 @@
 
 [top](#arch-linux) | [home](index.md)
 
-# xrandr
+## xrandr
 
 > [archlinux-wiki 多显示器](https://wiki.archlinux.org/title/Xrandr)\
 > [archlinux-wiki 显示器亮度](https://wiki.archlinux.org/title/Backlight#Xorg:_adjust_perceived_brightness_with_xrandr)\
@@ -99,7 +113,7 @@
 
 [top](#arch-linux) | [home](index.md)
 
-# nginx
+## nginx
 
 > 挂载外部配置文件时，注意先创建 `nginx.conf` \
 > 可以先启动一个不挂载外部配置的容器，将容器内配置文件复制到宿主机编辑修改
@@ -126,7 +140,7 @@
 
 [top](#arch-linux) | [home](index.md)
 
-## nginx for vue and react
+### nginx for vue and react
 
 > [nginx.conf](dockerfiles/nginx/nginx.conf) \
 > [Dockerfile](dockerfiles/nginx/Dockerfile)
@@ -186,7 +200,7 @@
 
 [nginx](#nginx) | [top](#arch-linux) | [home](index.md)
 
-# rabbitmq
+## rabbitmq
 
 > docker
 > ```shell
@@ -208,7 +222,7 @@
 
 [top](#arch-linux) | [home](index.md)
 
-## rabbitmqadmin
+### rabbitmqadmin
 
 ```shell
 # exchange
@@ -221,14 +235,14 @@ rabbitmqadmin -u username -p password declare binding source=exchange destinatio
 
 [rabbitmq](#rabbitmq) | [top](#arch-linux) | [home](index.md)
 
-# docker
+## docker
 
 > [Guides](https://docs.docker.com/get-started/overview/)\
 > [Reference](https://docs.docker.com/reference/)
 
 [top](#arch-linux) | [home](index.md)
 
-## 局域网访问
+### 局域网访问
 
 > 开启远程 `vi /lib/systemd/system/docker.service`\
 > 修改配置
@@ -246,7 +260,7 @@ rabbitmqadmin -u username -p password declare binding source=exchange destinatio
 
 [docker](#docker) | [top](#arch-linux) | [home](index.md)
 
-# podman
+## podman
 
 > [podman 官方网站](https://podman.io) | [github](https://github.com/TomSweeneyRedHat/podman)
 > 
@@ -295,7 +309,7 @@ rabbitmqadmin -u username -p password declare binding source=exchange destinatio
 
 [top](#arch-linux) | [home](index.md)
 
-# samba
+## samba
 
 > [参考arch wiki](https://wiki.archlinux.org/title/Samba)
 
@@ -327,7 +341,7 @@ rabbitmqadmin -u username -p password declare binding source=exchange destinatio
 
 [top](#arch-linux) | [home](index.md)
 
-# pacman
+## pacman
 
 > 下载的包本地保存目录 `/var/cache/pacman/pkg/`\
 > mirrorlist `/etc/pacman.d/mirrorlist` \
@@ -377,7 +391,7 @@ rabbitmqadmin -u username -p password declare binding source=exchange destinatio
 
 [top](#arch-linux) | [home](index.md)
 
-## 降级
+### 降级
 
 > `pacman -U xxx` 不建议乱来 可以先在虚拟机上实验 
 > 
@@ -393,7 +407,7 @@ rabbitmqadmin -u username -p password declare binding source=exchange destinatio
 
 [pacman](#pacman) | [top](#arch-linux) | [home](index.md)
 
-## AUR
+### AUR
 
 > 需要安装 `base-devel`、`git`
 > > `pacman -S base-devel git` 
@@ -423,7 +437,7 @@ rabbitmqadmin -u username -p password declare binding source=exchange destinatio
 
 [pacman](#pacman) | [top](#arch-linux) | [home](index.md)
 
-# nmap
+## nmap
 
 > [arch wiki](https://wiki.archlinux.org/title/Nmap)\
 > `pacman -S nmap`
@@ -446,16 +460,16 @@ rabbitmqadmin -u username -p password declare binding source=exchange destinatio
 
 [top](#arch-linux) | [home](index.md)
 
-### 端口分类
+#### 端口分类
 
 1. 公认端口well-known port: 0-1024 最常用端口，通常于协议绑定
 2. 注册端口registered port: 1025-49151 最常用端口，通常于协议绑定
 3. 动态或私有端口dynamic/private port: 49152-65535 最常用端口，通常于协议绑定
 4. 特例: 端口还与协议相关。比如UDP端口53通常用于DNS查询、TCP端口53通常用于DNS记录迁移
 
-### 扫描类型
+#### 扫描类型
 
-#### -sT
+##### -sT
 
 ```text
 TCP conect()扫描，最基本的TCP扫描方式。
@@ -465,7 +479,7 @@ connect() 是一种系统调用，由操作系统提供，用来打开一个连�
 这种扫描很容易被检测到，在目标主机的日志中会记录大批的连接请求以及错误信息
 ```
 
-#### -sS
+##### -sS
 
 ```text
 TCP 同步扫描 TCP SYN，因为不必全部打开一个 TCP 连接，被称为半开扫描 half-open。
@@ -478,7 +492,7 @@ TCP 同步扫描 TCP SYN，因为不必全部打开一个 TCP 连接，被称为
 
 ```
 
-#### -sU
+##### -sU
 
 ```text
 UDP 扫描，发送0字节UDP包，快速扫描 Windows 的UDP端口。
@@ -487,7 +501,7 @@ nmap 首先向目标主机的每个端口发出一个0字节的UDP报
 收到端口不可达的ICMP消息，端口就是关闭的，否则就是打开的
 ```
 
-#### -sP
+##### -sP
 
 ```text
 ping 扫描，仅想获取哪些主机正在运行，通过向指定的网络内的每个IP地址发送ICMP echo 请求数据包即可。
@@ -495,7 +509,7 @@ ping 扫描，仅想获取哪些主机正在运行，通过向指定的网络内
 如果只想知道目标主机是否运行，不想进行其他扫描，才使用这个选项
 ```
 
-#### -sA
+##### -sA
 
 ```text
 ACK扫描，TCP ACK扫描，当防火墙开启时，查看防火墙有未过滤某端口。
@@ -507,20 +521,20 @@ ACK扫描，TCP ACK扫描，当防火墙开启时，查看防火墙有未过滤�
 这种扫描方式不能找出处于打开状态的端口
 ```
 
-#### -sW
+##### -sW
 
 ```text
 滑动窗口扫描，非常类似于 ACK 扫描，除了它有时可以检测到处于打开状态的端口。
 因为滑动窗口的大小是不规则的，有些操作系统可以报告其大小
 ```
 
-#### -sR
+##### -sR
 
 ```text
 RPC扫描，和其他不同的端口扫描方法结合使用
 ```
 
-#### -b
+##### -b
 
 ```text
 FTP 反弹攻击(FTP Bounce attack)外网用户通过 FTP渗透内网
@@ -528,16 +542,16 @@ FTP 反弹攻击(FTP Bounce attack)外网用户通过 FTP渗透内网
 
 [nmap](#nmap) | [top](#arch-linux) | [home](index.md)
 
-### 通用选项
+#### 通用选项
 
-#### -P0
+##### -P0
 
 ```text
 nmap 扫描前 不Ping 目标主机
 有些防火墙不允许ICMP echo 请求穿过，这个选项可以对这些网络进行扫描
 ```
 
-#### -PT
+##### -PT
 
 ```text
 nmap 扫描前 使用 TCP ACK 包确定目标主机是否在运行
@@ -549,7 +563,7 @@ nmap不是通过发送 ICMP echo 请求包，然后等待响应来实现这种�
 使用 -PT 来设定目标端口 ，默认80 这个端口通常不会被过滤
 ```
 
-#### -PS
+##### -PS
 
 ```text
 nmap使用 TCP SYN包进行扫描
@@ -557,7 +571,7 @@ nmap使用 TCP SYN包进行扫描
 如果主机正在运行返回一个 RST包(或者一个 SYN/ACK包)
 ```
 
-#### -PI
+##### -PI
 
 ```text
 nmap 进行ping扫描，设置这个选项，让nmap使用真正的ping（ICMP echo请求）来扫描目标主机是否正在运行。
@@ -566,56 +580,56 @@ nmap 进行ping扫描，设置这个选项，让nmap使用真正的ping（ICMP e
 这些IP广播包应该删除，因为会造成拒绝服务攻击 例如 smurf
 ```
 
-#### -PB
+##### -PB
 
 ```text
 结合 -PT 和 -PI功能，这是默认的 ping 扫描选项，使用 ACK（-PT）和 ICMP（-PI）两种扫描类型并行扫描
 如果防火墙能够过滤其中一种包，之后使用这种方法，就能穿过防火墙
 ```
 
-#### -O
+##### -O
 
 ```text
 nmap扫描TCP/IP指纹特征，确定目标主机系统类型
 ```
 
-#### -I
+##### -I
 
 ```text
 反向标志扫描，扫描监听端口的用户
 ```
 
-#### -f
+##### -f
 
 ```text
 分片发送 SYN FIN Xmas Null 扫描的数据包
 ```
 
-#### -v
+##### -v
 
 ```text
 冗余模式扫描，可以得到扫描详细信息
 ```
 
-#### -oN
+##### -oN
 
 ```text
 扫描结果重定向到文件
 ```
 
-#### -resume
+##### -resume
 
 ```text
 使被中断的扫描可以继续
 ```
 
-#### -iL
+##### -iL
 
 ```text
 扫描目录文件列表
 ```
 
-#### -p
+##### -p
 
 ```text
 指定端口或扫描端口列表及范围，默认扫秒 1-1024端口和/usr/share/nmap/nmap-services文件中指定的端口
@@ -626,7 +640,7 @@ nmap扫描TCP/IP指纹特征，确定目标主机系统类型
 
 [nmap](#nmap) | [top](#arch-linux) | [home](index.md)
 
-### 扫描目标
+#### 扫描目标
 
 > 192.168.1.25 \
 > 192.168.1.0/24 表示：192.168.1 网段所有ip \
@@ -634,11 +648,11 @@ nmap扫描TCP/IP指纹特征，确定目标主机系统类型
 
 [nmap](#nmap) | [top](#arch-linux) | [home](index.md)
 
-# systemd
+## systemd
 
 > [archlinux Wiki](https://wiki.archlinux.org/title/Systemd)\
 > [i3wm 普通用户关机 重新安装 polkit 即可](https://wiki.archlinux.org/title/Allow_users_to_shutdown)
-
+>
 > Example:
 > > root
 > > > `systemctl` = `systemctl --system` \
@@ -646,9 +660,9 @@ nmap扫描TCP/IP指纹特征，确定目标主机系统类型
 > > > `systemctl enable sshd` = `systemctl enable sshd --system` \
 > > > `systemctl enable update-system.timer` = `systemctl --system enable update-system.timer` 
 > > >
-> > > poweroff 
+> > > poweroff
 > > > > `systemctl poweroff`
-> > > 
+> > >
 > > > reboot
 > > > > `systemctl reboot`
 > > >
@@ -671,27 +685,27 @@ nmap扫描TCP/IP指纹特征，确定目标主机系统类型
 
 [top](#arch-linux) | [home](index.md)
 
-## systemd/User
+### systemd/User
 
 > [systemd](#systemd) offers the ability to manage services under the user's control with a per-user systemd instance,enabling them to start, stop, enable, and disable their own user units\
 > [archlinux Wiki](https://wiki.archlinux.org/title/Systemd/User)\
 > 参考[mpd](linux/arch/mpd.md)
 
-## systemd/Timers
+### systemd/Timers
 
 > There are many cron implementations, but none of them are installed by default as the base system uses **systemd/Timers** instead. \
 > [archlinux Wiki](https://wiki.archlinux.org/title/Systemd/Timers)\
 > [systemd.timer](https://man.archlinux.org/man/systemd.timer.5)\
 > [systemd.time 执行时间策略](https://man.archlinux.org/man/systemd.time.7)
 > > [OnCalendar](#oncalendar)
-> 
-> [systemd.exec ](https://man.archlinux.org/man/systemd.exec.5)
-
+>
+> [systemd.exec](https://man.archlinux.org/man/systemd.exec.5)
+>
 > file path
 > > /etc/systemd/system/update-system.timer \
 > > /etc/systemd/system/update-system.service
 
-### update-system.timer
+#### update-system.timer
 
 ```
 [Unit]
@@ -704,7 +718,7 @@ OnCalendar= Fri *-*-* 12:00:00
 WantedBy=timers.target
 ```
 
-### update-system.service
+#### update-system.service
 
 ```
 [Unit]
@@ -718,22 +732,22 @@ ExecStart=pacman -S -y --noconfirm -u
 > > `systemctl list-timers` \
 > > `systemctl list-timers --all`
 >
-> 开机激活定时器 
-> > `systemctl enable update-system.timer` 
-> 
-> 取消开机激活定时器 
-> > `systemctl disable update-system.timer` 
-> 
-> 手动激活定时器 
-> > `systemctl start update-system.timer` 
-> 
+> 开机激活定时器
+> > `systemctl enable update-system.timer`
+>
+> 取消开机激活定时器
+> > `systemctl disable update-system.timer`
+>
+> 手动激活定时器
+> > `systemctl start update-system.timer`
+>
 > 手动停止定时器
 > > `systemctl stop update-system.timer`
-> 
-> 查看定时器状态 
+>
+> 查看定时器状态
 > > `systemctl status update-system.timer`
 
-### OnCalendar
+#### OnCalendar
 
 > `systemd-analyze calendar weekly` \
 > `systemd-analyze calendar "Mon *-*-* 00:00:00"`
@@ -757,12 +771,12 @@ ExecStart=pacman -S -y --noconfirm -u
 
 [timer](#systemdtimers) | [systemd](#systemd) | [top](#arch-linux) | [home](index.md)
 
-## systemd/Journal
+### systemd/Journal
 
 > linux 系统日志 \
 > [archlinux Wiki](https://wiki.archlinux.org/title/Systemd/Journal) \
 > [opensuse man](https://www.freedesktop.org/software/systemd/man/journalctl.html#)
-
+>
 > Examples:
 > > help
 > > > `journalctl -h` \
@@ -770,31 +784,31 @@ ExecStart=pacman -S -y --noconfirm -u
 >
 > > 检索 `pacman` 相关日志
 > > > `journalctl --grep=pacman`
-> 
+>
 > > Show only the most recent journal entries, and continuously print new entries as they are appended to the journal. \
 > > 显示最新日志，并连续输出
 > > > `journalctl -f` \
 > > > `journalctl --follow`
->  
+>
 > > Reverse output so that the newest entries are displayed first \
 > > 反转输出 以便先显示最新的日志
 > > > `journalctl -r` \
 > > > `journalctl --reverse`
->  
+>
 > > Show all kernel logs from previous boot \
 > > 显示上次启动的所有内核日志
 > > > `journalctl -k -b -1`
->  
+>
 > > Show a live log display from a system service `kubelet.service` \
 > > 实时显示 `kubelet` 日志
 > > > `journalctl -f -u kubelet`
->  
+>
 > > 查看 `kubelet` 日志
 > > > `journalctl _SYSTEMD_UNIT=kubelet.service`
-> 
+>
 > > 查看进程号 `28097` 日志
 > > > `journalctl _PID=28097`
->  
+>
 > > 查看进程号=28097 的 kubelet服务的日志 ***交集***
 > > > `journalctl _SYSTEMD_UNIT=kubelet.service _PID=28097`
 
