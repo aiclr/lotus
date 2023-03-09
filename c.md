@@ -111,8 +111,8 @@
 > 链接
 > > `gcc xxx.o -o xxx`
 
-> -l 指定头文件包含目录: b.c的头文件b.h
-> > `gcc -l /home/caddy/c/cpp/h xxx.c /home/caddy/c/cpp/s/b.c -o xxx`
+> -I 指定头文件包含目录: b.c的头文件b.h
+> > `gcc -I /home/caddy/c/cpp/h xxx.c /home/caddy/c/cpp/s/b.c -o xxx`
 
 > -L 指定库文件目录
 > > 假定在/home/caddy/c/lib 目录下有动态库 libadd.so 静态库 libadd.a. \
