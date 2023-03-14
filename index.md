@@ -149,14 +149,14 @@
 
 | [top](#top) | [maven](maven.md#maven)                               | [gradle](gradle.md#gradle) |
 | :---------- | :---------------------------------------------------- | :------------------------- |
-|             | [安装目录说明](maven.md#安装目录说明)                 |
-|             | [生命周期](maven.md#生命周期)                         |
-|             | [命令行与生命周期](maven.md#命令行与生命周期)         |
-|             | [总结](maven.md#总结)                                 |
-|             | [插件](maven.md#插件)                                 |
-|             | [传递性依赖和以来范围](maven.md#传递性依赖和以来范围) |
-|             | [多模块](maven.md#多模块)                             |
-|             | [一些错误](maven.md#error)                            |
+|             | [安装目录说明](maven.md#安装目录说明)                     | [升级gradle版本](gradle.md#upgrade) |
+|             | [生命周期](maven.md#生命周期)                            | [jvm参数配置](gradle.md#gradleproperties) |
+|             | [命令行与生命周期](maven.md#命令行与生命周期)              |  [构建环境](gradle.md#build-environment) |
+|             | [总结](maven.md#总结)                                  |
+|             | [插件](maven.md#插件)                                  |
+|             | [传递性依赖和以来范围](maven.md#传递性依赖和以来范围)       |
+|             | [多模块](maven.md#多模块)                              |
+|             | [一些错误](maven.md#error)                             |
 
 ## windows
 
