@@ -1,6 +1,6 @@
 # IntelliJIdea
 
-| [home](index.md#IntelliJIdea) |
+| [home](index.md#intellijidea) |
 |:------------------------------|
 | [快捷键](#shortcut-keys)         |
 

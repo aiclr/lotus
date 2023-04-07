@@ -35,7 +35,7 @@
 - [mysql](#mysql)
 - [build tools](#build-tools)
 - [windows](#windows)
-- [idea](#IntelliJIdea)
+- [idea](#intellijidea)
 
 ## linux
 
