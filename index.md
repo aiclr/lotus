@@ -35,6 +35,7 @@
 - [mysql](#mysql)
 - [build tools](#build-tools)
 - [windows](#windows)
+- [idea](#IntelliJIdea)
 
 ## linux
 
@@ -157,6 +158,12 @@
 |             | [传递性依赖和以来范围](maven.md#传递性依赖和以来范围)       |
 |             | [多模块](maven.md#多模块)                              |
 |             | [一些错误](maven.md#error)                             |
+
+## IntelliJIdea
+
+| [top](#top)                  |
+|:-----------------------------|
+| [快捷键](idea.md#shortcut-keys) |
 
 ## windows
 

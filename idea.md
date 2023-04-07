@@ -1,5 +1,9 @@
 # IntelliJIdea
 
+| [home](index.md#IntelliJIdea) |
+|:------------------------------|
+| [快捷键](#shortcut-keys)         |
+
 ## shortcut keys
 
 > `Ctrl W` expand<sub>扩大</sub> the code selection \
@@ -28,3 +32,5 @@
 > `Alt Shift J` to deselect the last occurrence<sub>出现</sub> \
 > `Ctrl Alt Shift J` select all occurrence<sub>出现</sub> in the file \
 >
+
+[top](#top)
