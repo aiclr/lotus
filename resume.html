@@ -14,7 +14,7 @@
         #content {
             width: 78%;
             float: left;
-            text-align: center;
+            text-align: left;
         }
 
         #menu-info {
@@ -26,9 +26,11 @@
             border-collapse: collapse;
             width: 100%;
         }
+
         caption {
             font-size: x-large;
         }
+
         th {
             width: 25%;
             height: 24px;
@@ -53,6 +55,7 @@
             text-align: center;
             margin: 1%;
         }
+
         h4 {
             text-align: center;
             font-size: x-large;
@@ -154,11 +157,57 @@
 
         <div id="content">
             <div>
-                <h4>2021.04-</h4>
-                <p>aaa</p>
-            </div>
+                <h4>2021.04~2023.3</h4>
+                <p>北京无限飞翔科技有限公司<sub>北京车停哪儿科技有限公司</sub></p>
+                <p>停车缴费系统终端服务开发维护调优</p>
+                <p>对接相机、LED显示屏、语音控制卡、ETC天线等硬件设备</p>
+                <p>推进公司项目容器化，结合springboot layer缩小服务镜像体积，提高发布效率</p>
+                <p>为公司基础框架增加 prometheus 依赖模块，包括 pushgateway 模式</p>
 
-            <div>内容在这里</div>
+                独自通过修改spring及springboot源码，完成车道(停车缴费系统终端服务)无侵入式jar包加密工作，
+                编写gradle插件实现自动打包，保护公司财产。
+
+                使用STOMP,改造车道前后端交互模式为websocket,前端react使用stompjs sockjs-client。前端获取后端数据延迟降低60%。
+                借助opensuse kubic独自搭建k8s环境，实现车道devops,节约50%发布时间。
+
+                结合spring定时任务源码(org.springframework.scheduling.config.ScheduledTaskRegistrar)，将车道定时任务改造为不停机启停模式。
+                减少车道服务停机时间，提高停车场服务质量。
+                提高30%实施工程师应多不同车场不同需求实施效率。
+                并将热切换定时任务独立做成spring starter，供其他服务使用
+            </div>
+            <hr />
+            <div>
+                <h4>2019.03~2020.11</h4>
+                <p>珠海恒源信息技术有限公司<sub>外委</sub>
+                    广州科腾信息技术有限公司外委
+                    工作内容，技术中台建设
+                    自定义表单系统
+                    生产项目管理系统
+                    微服务容器化改造
+                    业绩
+                    团队协作完成技术中台搭建
+                    作为技术负责人带领团队完成自定义表单项目第一期
+                    作为技术负责人带领团队完成生产项目管理系统第一期
+                    与团队成员分享学习23种设计模式和《改善java程序的151个建议》的学习笔记与示例代码
+                    与技术总监一起推进公司开发团队gitflow规范、sonarqube代码自检和DevOps
+                </p>
+            </div>
+            <hr />
+            <div>
+                <h4>2018.04~2018.07</h4>
+                <p>广州科腾信息技术有限公司。springboot微服务开发，springMVC后台开发
+                    开发维护发布消息推送服务，集成极光消息推送平台与公司短信平台。
+                    GIS地图数据展示服务开发
+                    电建saas平台一部分数据收集服务接口开发
+                    绩效三化一期二期数据同步服务开发
+                </p>
+            </div>
+            <div>
+                <h4>2017.07~2018.03</h4>
+                <p>广州新榞企业管理有限公司<sub>外委</sub>
+                    jeecg快速开发平台，电建SaaS平台后端研发，消息推送平台开发，主站现场监控平台开发
+                </p>
+            </div>
         </div>
 
         <div id="footer" style="clear:both;">
