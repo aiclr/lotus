@@ -12,9 +12,10 @@
         }
 
         #content {
-            width: 78%;
+            width: 77%;
             float: left;
             text-align: left;
+            margin-left: 1%;
         }
 
         #menu-info {
@@ -164,32 +165,31 @@
                 <ul>
                     <li>根据客户业务功能需求升级<b>车道<sub><i>停车缴费系统终端</i></sub></b>服务、云岗亭服务、数据收集服务</li>
                     <li>根据客户采购硬件设备类型，车道服务集成对于设备。包括车牌识别相机、LED显示屏、语音控制卡、道闸、地磁、ETC天线等硬件</li>
-                    <li>降低车道服务停机时间与频次；提高运维工程师、实施工程师工作效率。将车道定时任务改造为热切换模式<sub>参考spring定时任务相关源码org.springframework.scheduling.config.ScheduledTaskRegistrar</sub>。并将此功能按照springboot
-                        starter模式实现添加到公司基础框架</li>
+                    <li>降低车道服务停机时间与频次；提高运维工程师、实施工程师工作效率。将车道定时任务改造为热切换模式。</li>
                     <li>基于车道服务，为公司<b>云座席</b>技术提供完整技术实现方案</li>
                     <li>保护公司知识产权将车道服务加密</li>
                     <li>为增加客户路侧停车场收费效率，集成高位视频、低位视频桩、地磁和诱导屏。</li>
-                    <li>为发展云车道、云座席技术。云岗亭集成苏州云客服平台</li>
+                    <li>为发展云车道、云座席。集成苏州云客服平台</li>
                 </ul>
                 技术积累：
-                &emsp;&emsp;
-
-
-                推进公司项目容器化，结合springboot layer缩小服务镜像体积，提高发布效率
-                为公司基础框架增加 prometheus 依赖模块，包括 pushgateway 模式
-
-                独自通过修改spring及springboot源码，完成车道(停车缴费系统终端服务)无侵入式jar包加密工作，
-                编写gradle插件实现自动打包，保护公司财产。
-
-                使用STOMP,改造车道前后端交互模式为websocket,前端react使用stompjs sockjs-client。前端获取后端数据延迟降低60%。
-                借助opensuse kubic独自搭建k8s环境，实现车道devops,节约50%发布时间。
-
-                结合spring定时任务源码(org.springframework.scheduling.config.ScheduledTaskRegistrar)，将车道定时任务改造为不停机启停模式。
-                减少车道服务停机时间，提高停车场服务质量。
-                提高30%实施工程师应多不同车场不同需求实施效率。
-                并将热切换定时任务独立做成spring starter，供其他服务使用</p>
+                <ul>
+                    <li>参考spring源码实现不停机增删改查springboot定时任务，并实现为springboot starter<sub>ScheduledTaskRegistrar</sub>。</li>
+                    <li>根据springboot layering docker images文档、docker multi-stage
+                        builds文档，将springboot服务docker镜像分层打包，提高发布效率。</li>
+                    <li>springboot jar包加密技术。根据曾自学《深入理解Java虚拟机》关于classloader system部分的经验、spring、springboot源码、
+                        自学《Groovy程序设计》时积累的groovy经验和gradle官网插件开发指导文档，
+                        实现非侵入式加密车道服务jar包。不影响IDE开发、不影响Jenkins部署、不影响前端开发、加密算法支持扩展、绑定MAC、有效期校验。由本人经过10个工作日独自研发实现。</li>
+                    <li>为公司监控系统引入prometheus、pushgateway，根据襄州监控平台为公司自主研发jvm监控系统。</li>
+                    <li>参考spring
+                        guides以及曾自学的React框架，将车道前后端交互由http改造为websocket。主要使用STOMP，前端react使用stompjs、sockjs-client库。由于公司业务繁杂，仅改造部分业务。
+                    </li>
+                    <li>通过学习opensuse kubic系统，独自为公司开发环境搭建k8s环境，以及Docker私有仓库搭建以及自签证书管理，
+                        编写Dashboard UI、RabbitMQ,Redis,RedisJson和MySQL的K8s部署脚本。由于改动成本太大，仅自己负责的车道支持k8s部署。</li>
+                </ul>
             </div>
-            <hr />
+        </div>
+        <div>
+            <hr/>
             <div>
                 <h4>2019.03~2020.11</h4>
                 <p>珠海恒源信息技术有限公司<sub>外委</sub>
