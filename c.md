@@ -7,6 +7,130 @@
 | [keyword](#keyword)                     |
 | [链接静态库/动态库时搜索路径顺序](#lib)      |
 | [指针大乱斗](#pointer)                   |
+| [数据类型](#variable-types)              |
+| [格式化数据类型](#format-specifiers) |
+| [运算符](#operators) |
+
+## operators
+
+| symbol      | function                                         |
+|:------------|:-------------------------------------------------|
+| a + b       | addition                                         |
+| a - b       | subtraction                                      |
+| a * b       | multiplication                                   |
+| a / b       | division                                         |
+| a % b       | modulo(remainder of a/b)                         |
+| a & b       | bitwise AND                                      |
+| a &#124; b  | bitwise OR                                       |
+| a ^ b       | bitwise XOR                                      |
+| `a << b`    | bit shift left                                   |
+| `a >> b`    | bit shift right                                  |
+| ~a          | bitwise<sub>按位</sub> 1's complement<sub>补码</sub> |
+| !a          | logical NOT                                      |
+| a++         | increment a by one                               |
+| a--         | decrement a by one                               |
+| ++a         | increment a by one                               |
+| --a         | decrement a by one                               |
+| a += b      | increment a by b                                 |
+| a -= b      | decrement a by b                                 |
+| a *= b      | multiply a by b                                  |
+| a /= b      | divide a by b                                    |
+| a %= b      | a = remainder of a/b                             |
+| a &= b      | bitwise AND a with b                             |
+| a &#124;= b | bitwise OR a with b                              |
+| a ^=b       | bitwise XOR a with b                             |
+| a <<= b     | bit shift a left by b                            |
+| a >>= b     | bit shift a right by b                           |
+| ==          | is equal to                                      |
+| !=          | is not equal to                                  |
+| >           | is greater than                                  |
+| <           | is less than                                     |
+| >=          | is greater than or equal to                      |
+| <=          | is less than or equal to                         |
+
+> the difference between `a++` and `++a` is that if they are used in a test, \
+> such as if(a++), \
+> `a++` tests the value and increments it, \
+> while `++a` increments the value first and then tests the incremented value;
+
+[top](#c) | [home](index.md#c)
+
+## format specifiers
+
+| specifier | format/type                                                                 |
+|:----------|:----------------------------------------------------------------------------|
+| %c        | alphanumeric<sub>含有字母和数字的; 字母与数字并用的</sub> character/char         |
+| %d        | signed decimal value/int                                                    |
+| %i        | 与%d类似，但是`scanf("%i",&a)`时会将输入的`012`作为8进制，`0x12`作为十六进制 [参考]()       |
+| %ld       | signed decimal value/long int                                               |
+| %u        | unsigned decimal value/int                                                  |
+| %lu       | unsigned decimal value/long int                                             |
+| %o        | octal<sub>八进制</sub> value/int                                             |
+| %lo       | octal value/long int                                                        |
+| %x,%X     | hexadecimal<sub>十六进制</sub> value/int                                      |
+| %lx,%lX   | hexadeciaml value/long int                                                  |
+| %f        | floating-point<sub>浮点</sub> value/float                                  |
+| %e,%E     | exponential<sub>指数的</sub> value/float   浮点数，e记数法                   |
+| %g,%G     | 根据值的不同，自动选择`%f`或`%e`. `%e`格式用于指数小于`-4`或者大于或者等于精度时 |
+| %a,%A     | `C99` float/浮点数，十六进制 p/P计数法|
+| %s        | text string/char pointer |
+| %p        | pointer 指针 |
+| %%        | 打印`%` |
+| %zd       | `C99`新增的%zd/`size_t`,如果编译器不支持%zd 请将其改成 %u或%lu,[参考](https://github.com/bougainvilleas/aio/blob/develop/c/cprimerplus/chapter05/0508_sizeof.c) |
+
+### 格式字符和修饰符
+
+- 标记：`-、+、空格、#、0`
+- `数字`：最小字段宽度 `%2d`
+- `.数字`: 精度 `%.2f`
+- `h`: 和整型转换说明一起使用，表示`short int`或`unsigned short int`类型
+- `hh`: 和整型转换说明一起使用，表示`short char`或`unsigned char`类型的值
+- `j`: 和整型转换说明一起使用，表示`intmax_t`或`uintmax_t`类型的值，这些类型定义在`stdint.h`中
+- `-` 负号修饰符：待打印项`左对齐`。即，从字段的左侧开始打印该项
+- `+` 正号修饰符：有符号值 若为正数，则在值前面显示正号，若为负数，则在值前面显示负号
+- 空格：有符号值若为正，则在值前面显示一个前导空格（不显示任何符号），若为负，则在值前面显示负号并覆盖一个前导空格
+- `#`：把结果转换为另一种形式`八进制`、`十六进制`
+  - `%#o`以`0`开头，八进制
+  - `%#x` 以`0x`开头 小写十六进制
+  - `%#X` 以`0X`开头 大写十六进制
+  - 对于浮点数，`#`保证即使后面没有任何数字，也打印一个小数点字符。
+  - `%g`和`%G` 使用 `%#g、%#G` 防止结果后面的`0`被删除
+- `0`：零对于数值格式，前导0代替空格填充字段宽度，对于整数格式，如果出现`-`标记或指定精度，忽略0标记
+- 例子：
+  - `%2d`  100 = '100'、1 = ' 1' 右对齐输出宽度为2的字符，不足的位置使用空格填充，字段宽度2可以自动扩大以符合要输出的整数长度
+  - `%02d` 100 = '100'、1 = '01' 右对齐输出宽度为2的字符，不足的位置使用填充,字段宽度自动扩大
+  - `%-2d` 100 = '100'、1 = '1 ' 左对齐输出宽度为2的字符，不足的位置使用空格填充，字段宽度自动扩大
+  - `% d`  100 = ' 100'、-100 = '-100'
+  - `%x`  31 = 1f
+  - `%X`  31 = 1F
+  - `%#x` 31 = 0x1f
+  - `%#X` 31 = 0X1F
+  - `%4.2f` 3852.99 = 3852.99
+  - `%3.1f` 3852.99 = 3853.0 四舍五入 整数位自动扩大
+
+[top](#c) | [home](index.md#c)
+
+## variable types
+
+> depending on platform,**int** can be either a **short int**(16bits) or a **long int**(32bits); \
+> on Raspbian<sub>树莓派</sub>,as per the table above, **int** is a long(32bits)integer value. \
+> [数据类型大小查看参考](https://github.com/bougainvilleas/aio/blob/develop/c/cprimerplus/chapter05/0508_sizeof.c)
+
+| name               | description                                                | size(bytes) |
+|:-------------------|:-----------------------------------------------------------|:------------|
+| char               | single alphanumeric<sub>含有字母和数字的; 字母与数字并用的</sub> character | 1           |
+| signed char        | signed 8-bit integer(-128-127)                             | 1           |
+| unsigned char      | unsigned 8-bit integer(0-255)                              | 1           |
+| short,signed short | signed 16-bit integer(-32768-32767)                        | 2           |
+| unsigned short     | unsigned 16-bit integer(0-65535)                           | 2           |
+| int,signed int     | signed 32-bit integer(-2147483648-2147483647)              | 4           |
+| unsigned int       | unsigned 32-bit integer(0-4294967295)                      | 4           |
+| long,signed long   | signed 32-bit integer(-2147483648-2147483647)              | 4           |
+| unsigned long      | unsigned 32-bit integer(0-4294967295)                      | 4           |
+| float              | floating-point value(+/- 3.402823x10<sup>38</sup>)         | 4           |
+| double             | double-precision floating-point value()+/-10<sup>308</sup> | 8           |
+
+[top](#c) | [home](index.md#c)
 
 ## pointer
 
@@ -78,6 +202,8 @@
 > >
 > > 再看 `(int)` 指针指向函数 \
 > > 最后 `char` 函数返回类型 char
+
+[top](#c) | [home](index.md#c)
 
 ## gcc
 

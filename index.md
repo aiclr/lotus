@@ -126,6 +126,9 @@
 | [keyword](c.md#keyword)                     |
 | [链接静态库/动态库时搜索路径顺序](c.md#lib)      |
 | [指针大乱斗](c.md#pointer)                   |
+| [数据类型](c.md##variable-types)             |
+| [格式化数据类型](c.md##format-specifiers)     |
+| [运算符](c.md##operators)                   |
 
 ## redis
 
