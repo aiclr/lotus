@@ -61,7 +61,7 @@
 |:----------|:----------------------------------------------------------------------------|
 | %c        | alphanumeric<sub>含有字母和数字的; 字母与数字并用的</sub> character/char         |
 | %d        | signed decimal value/int                                                    |
-| %i        | 与%d类似，但是`scanf("%i",&a)`时会将输入的`012`作为8进制，`0x12`作为十六进制 [参考]()       |
+| %i        | 与%d类似，但是`scanf("%i",&a)`时会将输入的`012`作为8进制，`0x12`作为十六进制 [参考](https://github.com/bougainvilleas/aio/blob/develop/c/cprimerplus/format_specifier.c) |
 | %ld       | signed decimal value/long int                                               |
 | %u        | unsigned decimal value/int                                                  |
 | %lu       | unsigned decimal value/long int                                             |
