@@ -10,7 +10,7 @@
 | [push](#push)     |
 | [tag](#tag)       |
 
-# frequently
+## frequently
 
 | [top](#git)                                              | [home](index.md)                          |
 | :------------------------------------------------------- | :---------------------------------------- |
@@ -22,10 +22,11 @@
 | push 提交 本地 develop 分支 到 origin 仓库 develop2 分支 | `git push origin develop:develop2`        |
 | 查看其他分支文件                                         | `git show develop:README.md`              |
 | 刷新以应用新的配置文件                                   | `git rm --cached -r` & `git reset --hard` |
+| 远程分支删除后，本地同步清理                              | `git remote prune origin` |
 
 [top](#git) | [home](index.md)
 
-# git-flow
+## git-flow
 
 > [推荐阅读git-flow](https://www.cnblogs.com/wish123/p/9785101.html)\
 > 分支名称规范
@@ -68,7 +69,7 @@
 
 [top](#git) | [home](index.md)
 
-# config
+## config
 
 > 说明：
 > > 全局配置目录 windows10 `C:\Users\xxx\.gitconfig`\
@@ -189,24 +190,24 @@
 
 [top](#git) | [home](index.md)
 
-# tag
+## tag
 
-> **tag name 与 branch name 不能相同**\
-> [参考文档](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
-> `git tag` 列出标签
-> `git tag -l "0.0.*"` 查找标签0.0.开头的标签，需要-l或者--list
-> `git tag 0.0.1` 创建轻量标签 不需要-a,-s,-m选项，只需要提供标签名字
-> `git tag -a 0.0.2 -m "0.0.2版本"` 创建附注标签 可以被校验，包含打标签者的`name`，`email`，日期地址，标签信息，并且可以使用GNU Privacy Guard（GPG）签名验证
-> `git tag -a 0.0.3 e37da745df4102b68b81d0ec681ba28e910d2344` 对某一提交码打标签
-> `git show 0.0.1` 查看信息
-> `git push origin 0.0.1` 推送单个tag到远程仓库
-> `git push origin --tags` 推送全部标签到远程仓库
-> `git tag -d 0.0.1` 删除标签
+> **tag name 与 branch name 不能相同** \
+> [参考文档](https://git-scm.com/book/en/v2/Git-Basics-Tagging) \
+> `git tag` 列出标签 \
+> `git tag -l "0.0.*"` 查找标签0.0.开头的标签，需要-l或者--list \
+> `git tag 0.0.1` 创建轻量标签 不需要-a,-s,-m选项，只需要提供标签名字 \
+> `git tag -a 0.0.2 -m "0.0.2版本"` 创建附注标签 可以被校验，包含打标签者的`name`，`email`，日期地址，标签信息，并且可以使用GNU Privacy Guard（GPG）签名验证 \
+> `git tag -a 0.0.3 e37da745df4102b68b81d0ec681ba28e910d2344` 对某一提交码打标签 \
+> `git show 0.0.1` 查看信息 \
+> `git push origin 0.0.1` 推送单个tag到远程仓库 \
+> `git push origin --tags` 推送全部标签到远程仓库 \
+> `git tag -d 0.0.1` 删除标签 \
 > `git push origin --delete 0.0.1` 删除远程仓库上的标签
 
 [top](#git) | [home](index.md)
 
-# push
+## push
 
 > `gitlab` 默认将 `master` 分支设置为 `protect` 不允许强制 `push -f`
 
@@ -220,7 +221,7 @@
 
 [top](#git) | [home](index.md)
 
-# gpg
+## gpg
 
 > 新增 gpg
 > > `gpg --full-generate-key` 根据提示输入`用户名`，`邮箱`，`密钥长度4096`,`过期时间`，`是否信任`，`github` 要注意邮箱要是 github 验证过的邮箱\
@@ -241,7 +242,7 @@
 
 [top](#git) | [home](index.md)
 
-# ssh
+## ssh
 
 > 添加 ssh 私钥 **github 需要设置密码**[参考](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
 
@@ -282,7 +283,7 @@
 
 [top](#git) | [home](index.md)
 
-# reflog
+## reflog
 
 > [参考文档](https://git-scm.com/docs/git-reflog)\
 > 查看本地git操作日志 `git reflog`\
@@ -291,7 +292,7 @@
 
 [top](#git) | [home](index.md)
 
-# rebase
+## rebase
 
 > [参考文档](https://git-scm.com/docs/git-rebase)
 > 
@@ -322,7 +323,7 @@
 
 [top](#git) | [home](index.md)
 
-# merge
+## merge
 
 > [参考文档](https://git-scm.com/docs/git-merge)\
 > ***merge 之前 两个分支都要先 commit***
@@ -333,9 +334,9 @@
 
 [top](#git) | [home](index.md)
 
-# init
+## init
 
-## local
+### local
 
 ```shell
 # 初始化不指定分支名称 默认创建 master 分支
@@ -398,7 +399,7 @@ git push -u origin --tags
 
 [init](#init) | [top](#git) | [home](index.md)
 
-# commit
+## commit
 
 > 修改 `commit message`
 > > 未提交 远程 `git commit --amend`
@@ -411,42 +412,48 @@ git push -u origin --tags
 
 [top](#git) | [home](index.md)
 
-# show
+## show
 
 > 查看其他分支文件 `git show develop:README.md`
 
 [top](#git) | [home](index.md)
 
-# clone
+## clone
 
 > `git clone xxx`
 
 [top](#git) | [home](index.md)
 
-# branch
+## branch
 
 > 查
 > > 查看本地分支 `git branch`\
 > > 查看远程分支 `git branch -r`\
 > > 查看全部分支 `git branch -a`\
 > > 查看分支详情 `git branch -v -a`
-
+>
 > 增
 > > 创建不切换
 > > > 以当前分支为基线创建temp分支 `git branch temp`\
 > > > 以base为基线创建temp分支,***base可以为tag或提交码*** `git branch temp base`
 > >
 > > 切换 `git checkout temp`
-> > 
+> >
 > > 创建并切换
 > > > 以当前分支为基线创建temp分支,并切换到temp分支 `git checkout -b temp`\
 > > > 以base为基线创建temp分支并切换到temp,***base可以为tag或提交码*** `git checkout -b temp base`\
 > > > 以远程仓库origin内的develop分支为基线创建develop分支，并切换到develop分支 `git checkout -b develop origin/develop`
-
+>
 > 删
+> > 远程分支删除后，本地同步清理 `git remote prune origin` \
+> > 删除本地`temp`分支 `git branch -d temp`
+> > > `-d` delete fully merged branch \
+> > > `-D` delete branch (even if not merged)
 > >
- 
+> > 删除远程`master`分支 `git push origin --delete master`
+>
 > 改
-> >
+> > Rename your local `master` branch into `main` with: `git branch --move master main`\
+> > 将当前分支与远程`main`分支绑定`git push --set-upstream origin main`
 
 [top](#git) | [home](index.md)
