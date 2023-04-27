@@ -10,6 +10,17 @@
 | [数据类型](#variable-types)              |
 | [格式化数据类型](#format-specifiers) |
 | [运算符](#operators) |
+| |
+| [cmake](#cmake) |
+
+## cmake
+
+> [Introduction](https://cmake.org/cmake/help/latest/) \
+> [CMake Tutorial](https://cmake.org/cmake/help/latest/guide/tutorial/index.html) \
+> [install](https://cmake.org/cmake/help/latest/command/install.html#targets)
+> > [CMAKE_INSTALL_PREFIX](https://cmake.org/cmake/help/latest/variable/CMAKE_INSTALL_PREFIX.html#variable:CMAKE_INSTALL_PREFIX+) \
+> > [GNUInstallDirs](https://cmake.org/cmake/help/latest/module/GNUInstallDirs.html#module:GNUInstallDirs) \
+> > 
 
 ## operators
 
