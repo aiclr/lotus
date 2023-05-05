@@ -36,6 +36,7 @@
 - [build tools](#build-tools)
 - [windows](#windows)
 - [idea](#intellijidea)
+- 
 
 ## linux
 
@@ -52,7 +53,7 @@
 | [vim](linux/tools/vim.md)                          | [mpv 视频播放](linux/arch/mpv.md)          |                                                  |
 | [firewald 防火墙策略](linux/tools/firewall-cmd.md) | [mpd mpc 音频播放](linux/arch/mpd.md)      |                                                  |
 | [vsftd文件服务器](linux/tools/vsftpd.md)           |                                            |                                                  |
-| [tar](linux/tools/tar.md)                          |                                            |                                                  |
+| [tar](linux/tools/tar.md)                        | [《Linux 驱动程序开发实例（第2版）》](kernel.md) |                                                  |
 | [jar](linux/tools/jar.md)                          |                                            |                                                  |
 | [zip & gzip](linux/tools/zip.md)                   |                                            |                                                  |
 | [tmux](linux/tools/tmux.md)                        |                                            |                                                  |
