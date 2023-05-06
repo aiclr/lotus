@@ -86,7 +86,7 @@ flowchart LR
 > `make modules_install INSTALL_MOD_PATH=/home/usr/modules`\
 > 使用 `make` 命令编译内核相当一执行 `make zImage` 和 `make modules`两个命令
 
-#### 1.1.3 编写可加载模块
+#### [1.1.3 编写可加载模块](https://github.com/bougainvilleas/aio/tree/develop/c/kernel/instance/chapter01/1-1sample)
 
 > Linux内核模块必须包含以下两个接口
 > > `module_init(your_init_func);`//模块初始化接口 \
@@ -110,3 +110,57 @@ flowchart LR
 > ```
 > 注意在编写可加载模块前先要有一个`内核代码目录树` \
 > `KERNELDIR` 的内核版本必须与运行的内核版本一致，否则编译出的模块往往无法加载
+
+#### [1.1.4 带参数的可加载模块](https://github.com/bougainvilleas/aio/tree/develop/c/kernel/instance/chapter01/1-2module)
+
+#### [1.1.5 模块依赖](https://github.com/bougainvilleas/aio/tree/develop/c/kernel/instance/chapter01/1-10export)
+
+#### 1.1.6 printk 的等级
+
+> 内核态的打印函数 `printk` 可以设定打印信息的等级
+>
+> ```
+> int console_printk[4]={
+>     CONSOLE_LOGLEVEL_DEFAULT, /* 控制台日志级别 */
+>     MESSAGE_LOGLEVEL_DEFAULT, /* 默认消息日志级别 */
+>     CONSOLE_LOGLEVEL_MIN,     /* 最小的控制台日志级别 */
+>     CONSOLE_LOGLEVEL_DEFAULT, /* 默认控制台日志级别 */
+> };
+> #define console_loglevel(console_printk[0])         /* 当前控制台日志级别 优先级比它高的信息将打印到控制台 */
+> #define default_message_loglevel(console_printk[1]) /* 默认消息日志级别 */
+> #define minimum_console_loglevel(console_printk[2]) /* 最低的可设置的控制台日志级别 */
+> #define default_console_loglevel(console_printk[3]) /* 默认的控制台日志级别 */
+> ```
+>
+> `printk` 打印等级包括
+>
+> ```
+> #define KERN_EMERG   KERN_SOH "0" /* 紧急，系统不可用 */
+> #define KERN_ALERT   KERN_SOH "1" /* 必须立即响应 */
+> #define KERN_CRIT    KERN_SOH "2" /* 严重 */
+> #define KERN_ERR     KERN_SOH "3" /* 一般错误 */
+> #define KERN_WARNING KERN_SOH "4" /* 警告 */
+> #define KERN_NOTICE  KERN_SOH "5" /* 普通，但需要注意 */
+> #define KERN_INFO    KERN_SOH "6" /* 提示 */
+> #define KERN_DEBUG   KERN_SOH "7" /* 调试信息 */
+> ```
+>
+> 用法示例：`printk(KERN_INFO "kernel print %d\n" ,value)`
+>
+> 未指定打印等级的信息，根据`default_message_loglevel`来确定是否打印。\
+> `default_message_loglevel`优先级高于`console_loglevel`则打印，否则不打印。\
+> 通过`/proc/sys/kernel/printk`文件动态调整printk的打印等级 \
+> `cat /proc/sys/kernel/printk`\
+> `1	4	1	4`\
+> 可以通过`echo 6	4	1	7>/proc/sys/kernel/printk`调整printk打印等级
+
+> 四个值分别对应于console_printk数组的0～3字节
+
+|/proc/sys/kernel/printk|1|4|1|4|
+|:---|:---|:---|:---|:---|
+|打印等级|KERN_ALERT|KERN_WARNING|KERN_ALERT|KERN_WARNING|
+|打印信息的等级|CONSOLE_LOGLEVEL_DEFAULT|MESSAGE_LOGLEVEL_DEFAULT|CONSOLE_LOGLEVEL_MIN|CONSOLE_LOGLEVEL_DEFAULT|
+||控制台日志级别|默认消息日志级别|最小的控制台日志级别|默认控制台日志级别|
+|打印信息的等级|console_loglevel(console_printk[0])|default_message_loglevel(console_printk[1])|minimum_console_loglevel(console_printk[2])|default_console_loglevel(console_printk[3])|
+||当前控制台日志级别 优先级比它高的信息将打印到控制台|默认消息日志级别|最低的可设置的控制台日志级别|默认的控制台日志级别|
+|||未指定打印等级信息，若优先级高于console_logevel则打印，否则不打印|||
