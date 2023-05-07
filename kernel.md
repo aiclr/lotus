@@ -12,7 +12,6 @@
 #### 1.1.1 驱动程序的概念
 
 > Linux驱动程序运行原理
-
 ```mermaid
 flowchart LR
     subgraph 硬件层
@@ -86,7 +85,7 @@ flowchart LR
 > `make modules_install INSTALL_MOD_PATH=/home/usr/modules`\
 > 使用 `make` 命令编译内核相当一执行 `make zImage` 和 `make modules`两个命令
 
-#### [1.1.3 编写可加载模块](https://github.com/bougainvilleas/aio/tree/develop/c/kernel/instance/chapter01/1-1sample)
+#### [1.1.3 编写可加载模块](https://github.com/bougainvilleas/aio/tree/develop/c/kernel/instance/chapter01/1-1simple)
 
 > Linux内核模块必须包含以下两个接口
 > > `module_init(your_init_func);`//模块初始化接口 \
@@ -222,3 +221,31 @@ flowchart LR
 >
 > 字符设备和块设备也可以通过`/proc/devices`文件查看：`cat /proc/devices`
 
+### 1.2 字符设备驱动程序原理
+
+#### 1.2.1 file_operations 结构
+
+> 对于字符设备驱动程序，最核心的就是 `file_operations` 结构，这个结构实际上是提供给**虚拟文件系统**（`VFS`）的文件接口，它的每一个成员函数一般都对应一个系统调用。\
+> 用户进程利用系统调用对设备文件进行诸如读和写等操作时，系统调用通过设备文件的主设备号找到相应的设备驱动程序，并调用相应的驱动程序函数。\
+> `file_operations`结构定义[参考](https://github.com/bougainvilleas/aio/blob/develop/c/kernel/instance/file_operations.c)\
+> 注意`unlocked_ioctl`已经取代了旧内核的`ioctl`接口，`ioctl`是`BKL（Big Kernel Lock）`模式下的控制接口。\
+> 在内核中，`file`结构代表一个打开的文件，`file`在执行`file_operation`中的`open`操作时创建。\
+> 假设驱动程序中定义的`file_operation`是`fops`,下图是**应用层系统调用**与**驱动层**`fops`的调用关系图。\
+> ![应用层与驱动层的调用关系](img/应用层与驱动层的调用关系.svg) \
+> `file_operations`的`open`与`release`接口的第一个参数是`inode`结构。\
+> 该结构被内核用来表示一个**文件节点**，也就是一个具体的文件或目录。\
+> `inode_operations`文件节点的操作结构定义[参考](https://github.com/bougainvilleas/aio/blob/develop/c/kernel/instance/inode_operations.c)
+
+#### 1.2.2 使用 register_chrdev 注册字符设备
+
+#### 1.2.3 使用 cdev_add 注册字符设备
+
+#### 1.2.4 字符设备的读写
+
+#### 1.2.5 IOCTL 接口
+
+#### 1.2.6 seek 接口
+
+#### 1.2.7 poll 接口
+
+#### 1.2.8 异步通知
