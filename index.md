@@ -83,8 +83,8 @@
 
 | [top](#top)                          | Tools                       |
 |:-------------------------------------|:----------------------------|
-| [The pc Register](jvm/pcregister.md) | [jvm监控工具](jvm/tools.md)   |
-|                                      | [VisualVM](jvm/visualvm.md) |
+| [The pc Register](jvm/pcregister.md) | [jvm监控工具](jvm/tools.md)  |
+| [对象的实例化](jvm/对象的实例化.md)      | [VisualVM](jvm/visualvm.md) |
 
 ## go
 
