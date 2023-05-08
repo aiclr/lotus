@@ -36,7 +36,7 @@
 - [build tools](#build-tools)
 - [windows](#windows)
 - [idea](#intellijidea)
-- 
+- [jvm](#jvm)
 
 ## linux
 
@@ -66,7 +66,7 @@
 
 | [top](#top)                                                                                        | **String**                                           | **Spring**                                                 | **Springboot**                                      |
 | :------------------------------------------------------------------------------------------------- | ---------------------------------------------------- | :--------------------------------------------------------- | :-------------------------------------------------- |
-| [jvm 监控工具](jvm/tools.md)                                                                       | [Jaccard 相似系数](java/string/Jaccard.md)           | [spring cloud](java/spring/cloud/springcloud.md)           | [Layering Docker Images](java/spring/boot/layer.md) |
+| | [Jaccard 相似系数](java/string/Jaccard.md)           | [spring cloud](java/spring/cloud/springcloud.md)           | [Layering Docker Images](java/spring/boot/layer.md) |
 | [Functional Programming & Currying](java/functional.md)                                            | [Sorensen Dice 相似度系数](java/string/dice.md)      | [eureka 配置说明](java/spring/cloud/eureka.md)             |                                                     |
 | [jshell java REPL](java/jshell.md)                                                                 | [Levenshtein 莱文斯距离](java/string/Levenshtein.md) | [循环依赖](java/spring/cyclic-dependencies.md)             |                                                     |
 | [REST ful API](java/RESTfulAPI.md)                                                                 |                                                      | [MultipartFile isEmpty 源码](java/spring/MultipartFile.md) |                                                     |
@@ -78,7 +78,13 @@
 | [java 模块化 jar](java/jar.md)                                                                     |                                                      |                                                            |                                                     |
 | [java 模块化 jlink](java/jlink.md)                                                                 |                                                      |                                                            |                                                     |
 | [Java泛型的优点、缺点以及丑陋之处](http://www.agiledeveloper.com/articles/GenericsInJavaPartI.pdf) |                                                      |                                                            |                                                     |
-| [VisualVM](jvm/visualvm.md)                                                                        |
+
+## jvm
+
+| [top](#top)                          | Tools                       |
+|:-------------------------------------|:----------------------------|
+| [The pc Register](jvm/pcregister.md) | [jvm监控工具](jvm/tools.md)   |
+|                                      | [VisualVM](jvm/visualvm.md) |
 
 ## go
 

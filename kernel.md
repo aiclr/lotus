@@ -236,7 +236,7 @@ flowchart LR
 > 该结构被内核用来表示一个**文件节点**，也就是一个具体的文件或目录。\
 > `inode_operations`文件节点的操作结构定义[参考](https://github.com/bougainvilleas/aio/blob/develop/c/kernel/instance/inode_operations.c)
 
-#### 1.2.2 使用 register_chrdev 注册字符设备
+#### [1.2.2 使用 register_chrdev 注册字符设备](https://github.com/bougainvilleas/aio/tree/develop/c/kernel/instance/chapter01/1-3register_chrdev)
 
 #### 1.2.3 使用 cdev_add 注册字符设备
 
