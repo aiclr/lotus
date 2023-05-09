@@ -9,6 +9,12 @@
 > > > If the method currently being executed by the thread is native, the value of the Java Virtual Machine's pc register is undefined. \
 > > > The Java Virtual Machine's pc register is wide enough to hold a returnAddress or a native pointer on the specific<sub>具体的</sub> platform.
 
+---
+
+![image](../img/运行时数据区jdk8.svg)
+
+---
+
 > `pc Register` 是一块较小的内存空间，它可以看作是当前线程所执行的字节码的行号指示器。\
 > 在JVM的**概念模型**里<sub>代表所有JVM的统一外观，不同类型的JVM并不一定要完全按照概念模型的定义来进行设计，可能会通过一些更高效率的等价方法去实现它</sub>，\
 > **字节码解释器**工作时就是通过改变这个计数器的值来选取下一条需要执行的字节码指令，\

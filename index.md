@@ -81,10 +81,15 @@
 
 ## jvm
 
-| [top](#top)                          | Tools                       |
-|:-------------------------------------|:----------------------------|
-| [The pc Register](jvm/pcregister.md) | [jvm监控工具](jvm/tools.md)  |
-| [对象的实例化](jvm/对象的实例化.md)      | [VisualVM](jvm/visualvm.md) |
+| [top](#top)                                       | Tools                       |
+|:--------------------------------------------------|:----------------------------|
+| [The pc Register](jvm/pcregister.md)              | [jvm监控工具](jvm/tools.md)  |
+| [JVM Stack](jvm/jvmstack.md)                      | [VisualVM](jvm/visualvm.md) |
+| [Heap](jvm/heap.md)                               |                             |
+| [Method Area](jvm/methodarea.md)                  |                             |
+| [Run-Time Constant Pool](jvm/rtconstantpool.md)   |                             |
+| [Native Method Stacks](jvm/nativemethodstacks.md) |                             |
+| [对象的实例化](jvm/对象的实例化.md)                   |                             |
 
 ## go
 
