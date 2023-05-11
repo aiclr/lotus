@@ -56,6 +56,28 @@
 > > `OutOfMemmoryError`
 > > 1. 动态扩展的jvm stack，尝试扩展时无法申请到足够的内存，JVM将抛出OutOfMemoryError
 > > 2. 创建新的线程时没有足够的内存去创建对应的jvm stack，JVM将抛出OutOfMemoryError
+>
+> jvm Stack 是运行时的单位，而Heap是存储的单位\
+> jvm Stack 解决程序的运行问题,即程序如何执行。参与方法的调用和返回，每个线程在创建时都会创建自己的jvm Stack,内部保存一个个stack frame，对应一次次的方法调用\
+> Heap 解决数据存储问题，即数据怎么存放，存放到哪。new创建的对象实例都存放在Heap\
+> 方法嵌套调用的次数由jvm stack的大小决定
+> > jvm stack越大，方法嵌套调用次数越多\
+> > 对一个**函数**来说，**参数**和**局部变量**越多，`local variables`越大，则其`stack frame`越大，该函数调用会占用更多的`jvm stack`空间，导致嵌套调用次数减少\
+> > `local variables`中的**局部变量**只在**当前方法**调用中有效
+> > > 方法执行时，JVM通过使用`local variables`来完成**参数值**到**参数变量列表**的传递。\
+> > > 方法调用结束后，随着`stack frame`的出栈销毁，`local variables`也会随之销毁
+>
+> **变量分类**
+> > 按照**数据类型**分类
+> > > **基本数据类型**\
+> > > **引用数据类型**
+> >
+> > 按照在类中**声明的位置**分类
+> > > **成员变量**: 使用前都经历过，默认初始化赋值
+> > > > **类变量**<sub>`static`修饰</sub>：`linking`的`prepare`阶段会给类变量赋**默认值** `-->` `Initialization`阶段**显示赋值**<sub>静态代码块赋值</sub>\
+> > > > **实例变量**：随着对象的创建，会在`heap`空间中分配**实例变量空间**并进行**默认赋值**
+> > >
+> > > **局部变量**：使用前**必须显示赋值**，否则**编译不通过**
 
 ## Stack Frame
 
@@ -94,6 +116,10 @@
 > > JAVA方法两种返回函数方式<sub>stack frame出栈</sub>
 > > 1. 函数正常返回，使用`return`**指令**
 > > 2. 抛异常<sub>未用`try-catch`捕获处理</sub>
+>
+> 在`stack frame`中与**性能调优**有关的主要是`local variables`
+>
+> `stack frame`中允许携带与JVM实现有关的一些**附加信息**：对程序调试提供支持的信息
 
 ### Local Variables
 
@@ -123,16 +149,17 @@
 > > On **instance method** invocation, local variable `0` is always used to pass a **reference to the object** on which the instance method is being invoked (`this` in the Java programming language).\
 > > Any parameters are subsequently<sub>随后</sub> passed in consecutive<sub>连续的</sub> local variables starting from local variable `1`.
 >
-> `Local Variables`是一个`Array`，存放**编译期可知**的各种**JVM基本数据类型、reference、returnAddress**
+> `Local Variables`是一个`Array`，存储**方法参数**和定义在**方法体内的局部变量**，数据类型包括：**编译期可知**的各种**JVM基本数据类型、reference、returnAddress**
 > > **JVM基本数据类型**：`byte`、`boolean`、`short`、`char`、`int`、`float`、`long`、`double`\
 > > **reference对象引用类型**：并不等同于对象本身，可能是一个指向对象**起始地址的引用指针**，也可能是指向一个代表对象的**句柄**或者其他与此对象相关的位置\
 > > **returnAddress**：指向一条**字节码指令地址**
 >
+> `Local Variables`建立在线程上是**线程的私有数据**，因此**不存在数据安全问题**\
 > `Local Variables`中的存储单位以`Slot`<sub>变量槽</sub>来表示。数据从`Local Variables Array` 的索引`0`位置开始存放
 > > 占用`64bit`的`long`和`double`类型数据会占用**两个Slot**\；使用时，用其占用的第一个Slot的index
 > > 其余的数据只占用**一个Slot**。
 >
-> `Local Variables`所需的内存空间在**编译期**完成分配，\
+> `Local Variables`所需的内存空间在**编译期**完成分配，并保存在**方法**的`Code`属性的`maximum local variables`数据项中\
 > 当进入一个方法时，这个方法需要在`Stack Frame`中分配多大的`Local Variables`空间是**完全确定**的，\
 > 在**方法运行期间不会改变**`Local Variables`的大小<sub>**大小指Slot的数量**</sub>，\
 > JVM真正使用多大的内存空间来实现一个Slot，由具体的JVM实现自行决定<sub>譬如按照一个Slot占用32bit、64bit，或者更多</sub>。
@@ -142,6 +169,8 @@
 > > **静态方法**不存在对象引用`this`，其`local variables`不会保存`this`,所以**静态方法中**不能使用`this`
 >
 > 如果一个局部变量过了其作用域，那么在其作用域之后申明的新的局部变量就很可能会复用过期局部变量的`slot`,从而达到节省资源的目的
+>
+> `local variables`中的变量也是重要的**垃圾回收根结点**，只要被`local variables`中**直接**或**间接**引用的对象都**不会被回收**
 
 ### Operand Stacks
 
@@ -158,3 +187,29 @@
 ### Abrupt Method Invocation Completion
 
 > [Oracle 官方文档](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.6.5)
+
+## 拓展
+
+> jvm stack 溢出的情况
+> > `Xss10M` 设置 `jvm stack size`\
+> > jvm stack固定分配大小，当最后一个stack frame所占内存大于stack的剩余容量即会出现StackOverFlowError\
+> > jvm stack动态分配，当尝试扩展的时候无法申请到足够的内存，或者在创建新的线程时没有足够的内存去创建对应的JVM stack，则OutOfMemoryError
+>
+> 调整stack大小，能保证不出现溢出吗?
+> > stack frame不确定，方法嵌套调用深度不确定，故扩大stack size不能100%保证不出现溢出，最多延迟溢出的时间\
+> > eg： 递死归
+>
+> 分配stack越大越好吗
+> > 不是，要综合考虑\
+> > 挤占线程空间\
+> > 挤占其他空间
+>
+> Garbage Collection 是否会涉及到 jvm stack
+> > 不会涉及jvm stack
+>
+> 方法中定义的局部变量（local variable）是否线程安全？
+> > 不一定，如果局部变量一直在当前方法内存活，则线程安全\
+> > 如果局部变量作为**参数**传入，如果**多线程**调用此方法，则该局部变量不安全\
+> > 如果局部变量作为**返回值**返回，并被其他方法使用时，如果**多线程**，也不安全
+
+[home](../index.md#jvm)
