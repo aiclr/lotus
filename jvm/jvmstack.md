@@ -27,7 +27,7 @@
 > > > the Java Virtual Machine throws an **OutOfMemoryError**.
 >
 > 不同平台cpu架构不同，不能基于寄存器来设计java指令集\
-> 为了实现跨平台，java指令集根据stack<sub>First In Last Out</sub>特性设计
+> 为了实现跨平台，java指令集根据`LIFO`<sub>last-in-first-out</sub>stack设计
 > > 优点：跨平台、指令集小、编译器容易实现\
 > > 缺点：性能下降、实现同样功能需要更多的指令
 >
@@ -126,7 +126,7 @@
 > [Oracle 官方文档](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.6.1)
 > > Each frame ([§2.6](#stack-frame)) contains an array of variables known as its local variables.\
 > > The length of the local variable array of a frame is determined<sub>确定</sub> at compile-time<sub>编译时期</sub>\
-> > and supplied<sub>提供</sub> in the binary representation<sub>二进制表示法</sub> of a class or interface along with the code for the method associated with<sub>与…有关</sub> the frame ([§4.7.3]).
+> > and supplied<sub>提供</sub> in the binary representation<sub>二进制表示法</sub> of a class or interface along with the code for the method associated with<sub>与…有关</sub> the frame ([§4.7.3](TODO)).
 >
 > > **A single local variable** can hold a value of type `boolean`, `byte`, `char`, `short`, `int`, `float`, `reference`, or `returnAddress`.\
 > > **A pair of local variables** can hold a value of type `long` or `double`.
@@ -175,6 +175,30 @@
 ### Operand Stacks
 
 > [Oracle 官方文档](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.6.2)
+> > Each frame ([§2.6](#stack-frame)) contains a `LIFO`<sub>last-in-first-out</sub> stack known as its `operand stack`.\
+> > The maximum depth of the operand stack of a frame is determined<sub>确定</sub> at compile-time<sub>编译时期</sub> and is supplied<sub>提供</sub> along with the code for the method associated with<sub>与…有关</sub> the frame ([§4.7.3](TODO)).
+> >
+> > Where it is clear<sub>明确的</sub> by context<sub>上下文</sub>, we will sometimes refer<sub>称…(为)</sub> to the operand stack of the current frame as simply<sub>简单地</sub> the operand stack.
+> >
+> > The operand stack is empty when the frame that contains it is created. \
+> > The Java Virtual Machine supplies<sub>提供</sub> instructions<sub>(计算机的)指令</sub> to load `constants`<sub>常量</sub> or `values from local variables` or `fields`<sub>字段</sub> onto the operand stack.\
+> > Other Java Virtual Machine instructions<sub>(计算机的)指令</sub> take operands from the operand stack, operate on them, and push the result back onto the operand stack.\
+> > The operand stack is also used to prepare<sub>把…预备好</sub> parameters to be passed to methods and to receive method results.
+> > 
+> > For example, the `iadd` instruction ([§iadd](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-6.html#jvms-6.5.iadd)) adds two int values together.\
+> > It requires that the int values to be added be the top two values of the operand stack, pushed there by previous<sub>先前的</sub> instructions.\
+> > Both of the int values are popped from the operand stack.They are added, and their sum is pushed back onto the operand stack.\
+> > Subcomputations<sub>子计算</sub> may be nested<sub>嵌套</sub> on the operand stack, resulting in<sub>导致</sub> values that can be used by the encompassing<sub>涉及</sub> computation<sub>计算</sub>.
+> > 
+> > Each entry on the `operand stack` can hold a value of any Java Virtual Machine type,including a value of type `long` or type `double`.
+> > 
+> > Values from the operand stack must be operated upon<sub>在……上</sub> in ways appropriate to<sub>适用于</sub> their types.\
+> > It is not possible, for example, to push two `int` values and subsequently<sub>随后</sub> treat<sub>把…看作</sub> them as a `long` or to push two `float` values and subsequently add them with an `iadd` instruction.\
+> > A small number of<sub>少数</sub> Java Virtual Machine instructions<sub>the `dup` instructions (§dup) and `swap` (§swap)</sub>operate on run-time data areas as raw<sub>原始的</sub> values without regard<sub>关注</sub> to their specific<sub>具体的</sub> types;\
+> > these instructions<sub>(计算机的)指令</sub> are defined in such a way<sub>必须如此</sub> that they cannot be used to modify<sub>修改</sub> or break up individual<sub>单独的</sub> values.\
+> > These restrictions<sub>限制规定</sub> on operand stack manipulation<sub>操作</sub> are enforced<sub>强制性的</sub> through<sub>通过</sub> class file verification<sub>验证</sub> (§4.10).
+> > 
+> > At any point in time, an operand stack has an associated<sub>相关的</sub> depth, where a value of type `long` or `double` contributes<sub>添加</sub> two units<sub>单位</sub> to the depth and a value of any other type contributes<sub>添加</sub> one unit.
 
 ### Dynamic Linking
 
