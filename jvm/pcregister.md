@@ -1,5 +1,8 @@
 # The pc Register
 
+![image](../img/运行时数据区jdk8.svg)
+![The pc Register](../img/program_counter_register.svg)
+
 > [Oracle 官方文档](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.5.1)
 > > 2.5.1 The pc Register
 > > > The Java Virtual Machine can support many threads of execution at once (JLS §17). \
@@ -8,12 +11,6 @@
 > > > If that method is not native, the pc register contains the address of the Java Virtual Machine instruction<sub>指令</sub> currently being executed. \
 > > > If the method currently being executed by the thread is native, the value of the Java Virtual Machine's pc register is undefined. \
 > > > The Java Virtual Machine's pc register is wide enough to hold a returnAddress or a native pointer on the specific<sub>具体的</sub> platform.
-
----
-
-![image](../img/运行时数据区jdk8.svg)
-
----
 
 > `pc Register` 是一块较小的内存空间，它可以看作是当前线程所执行的字节码的行号指示器。\
 > 在JVM的**概念模型**里<sub>代表所有JVM的统一外观，不同类型的JVM并不一定要完全按照概念模型的定义来进行设计，可能会通过一些更高效率的等价方法去实现它</sub>，\
@@ -39,8 +36,6 @@
 > 6. 程序控制流的指示器，分支、循环、跳转、异常处理、线程恢复等基础功能都依赖The pc Register
 > 7. **字节码解释器**工作时就是通过改变The pc Register的值来选取下一条需要执行的字节码指令
 > 8. 唯一一个在《JVM规范》中没有规定任何OutOfMemoryError情况的区域
-
-![The pc Register](../img/program_counter_register.svg)
 
 ## 面试题
 
