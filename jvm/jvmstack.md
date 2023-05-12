@@ -2,6 +2,15 @@
 
 ![image](../img/运行时数据区jdk8.svg)
 
+- [Stack Frame](#stack-frame)
+  - [Local Variable](#local-variables)
+  - [Operand Stack](#operand-stacks)
+  - [Dynamic Linking](#dynamic-linking)
+  - [Normal Method Invocation Completion](#normal-method-invocation-completion)
+  - [Abrupt Method Invocation Completion](#abrupt-method-invocation-completion)
+- [栈顶缓存技术](#tos)
+- [拓展](#拓展)
+
 > [Oracle 官方文档](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.5.2)
 > > 2.5.2. Java Virtual Machine Stacks
 > > > Each Java Virtual Machine thread has a private Java Virtual Machine stack, created at the same time as the thread.\
@@ -79,6 +88,8 @@
 > > >
 > > > **局部变量**：使用前**必须显示赋值**，否则**编译不通过**
 
+[top](#java-virtual-machine-stacks)🚦[home](../index.md#jvm)
+
 ## Stack Frame
 
 > [Oracle 官方文档](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.6)
@@ -120,6 +131,8 @@
 > 在`stack frame`中与**性能调优**有关的主要是`local variables`
 >
 > `stack frame`中允许携带与JVM实现有关的一些**附加信息**：对程序调试提供支持的信息
+
+[top](#java-virtual-machine-stacks)🚦[home](../index.md#jvm)
 
 ### Local Variables
 
@@ -172,6 +185,8 @@
 >
 > `local variables`中的变量也是重要的**垃圾回收根结点**，只要被`local variables`中**直接**或**间接**引用的对象都**不会被回收**
 
+[top](#java-virtual-machine-stacks)🚦[home](../index.md#jvm)
+
 ### Operand Stacks
 
 > [Oracle 官方文档](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.6.2)
@@ -200,17 +215,58 @@
 > > 
 > > At any point in time, an operand stack has an associated<sub>相关的</sub> depth, where a value of type `long` or `double` contributes<sub>添加</sub> two units<sub>单位</sub> to the depth and a value of any other type contributes<sub>添加</sub> one unit.
 
+> 《深入理解Java虚拟机》
+> > JVM的解释执行引擎被称为“基于栈<sub>`operand stack`</sub>的执行引擎<sub>`execution engine`</sub>
+>
+> > 在概念模型中，两个不同的`Stack frame`作为不同方法的`jvm stack`元素，是完全相互独立的。\
+> > 但是在大多虚拟机的实现里都会进行一些优化处理，令两个`Stack frame`出现一部分重叠。\
+> > 让下面`stack frame`的部分`operand stack`与上面`stack frame`的部分`local variables`重叠在一起，这样做不仅节约了一些空间，\
+> > 更重要的是在进行方法调用时就可以直接共用一部分数据，无须进行额外的参数复制传递\
+> > ![两个stack frame数据共享](../img/%E4%B8%A4%E4%B8%AAstack%20frame%E6%95%B0%E6%8D%AE%E5%85%B1%E4%BA%AB.svg)
+>
+> `operand stack` 在方法执行过程中，根据**字节码指令**，往栈中写入数据或提取数据，即入栈<sub>`push`</sub>或出栈<sub>`pop`</sub>\
+> > 某些字节码指令将值压入`operand stack`，其余的字节码指令将操作数取出`operand stack`，使用<sub>复制、交换、求和</sub>后把结果压入`operand stack`
+>
+> 如果被调用的方法带有**返回值**，其返回值将会被压入`current stack frame`的`operand stack`中，并更新`The pc Register`中下一条需要执行的字节码指令\
+> `operand stack`中元素的数据类型必须与字节码指令**严格匹配**，这由**编译器**在**编译期间**进行验证，同时在**类加载过程**中的**类检验阶段**的**数据流分析阶段**要再次验证\
+> `operand stack`主要保存计算过程的中间结果，同时作为计算过程中变量临时的存储空间\
+> `operand stack`是`JVM execution engine`的一个工作区，当一个方法刚开始执行的时候，一个新的`stack frame`也会随之被创建，这个方法的`operand stack`是空的（已创建）\
+> 每一个`operand stack` 都会拥有一个明确的栈深度用于存储数值，其所需的最大深度在**编译期**确定，保存在方法的`Code`属性中，为`max_stack`的值，与`local variables`大小无关\
+> `operand stack`中任何一个元素都是任意的Java数据类型，与`local variables`的`slot`类似
+> > `32bit`的类型占用一个`operand stack`单位深度 \
+> > `64bit`的类型占用两个`operand stack`单位深度
+>
+> `operand stack`使用数组实现, 不使用访问数组索引进行数据访问，只能通过标准的入栈<sub>`push`</sub>和出栈<sub>`pop`</sub>来完成数据访问
+
+[top](#java-virtual-machine-stacks)🚦[home](../index.md#jvm)
+
 ### Dynamic Linking
 
 > [Oracle 官方文档](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.6.3)
+
+[top](#java-virtual-machine-stacks)🚦[home](../index.md#jvm)
 
 ### Normal Method Invocation Completion
 
 > [Oracle 官方文档](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.6.4)
 
+[top](#java-virtual-machine-stacks)🚦[home](../index.md#jvm)
+
 ### Abrupt Method Invocation Completion
 
 > [Oracle 官方文档](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.6.5)
+
+[top](#java-virtual-machine-stacks)🚦[home](../index.md#jvm)
+
+## ToS
+
+> 栈顶缓存 `ToS`<sub>`Top-of-Stack Cashing`</sub>\
+> `JVM`基于**栈式架构**，使用的**零地址指令**更加紧凑，完成一项操作的时候必然需要使用更多的入栈和出栈指令，意味着将需要更多的指令分派<sub>`instruction dispatch`</sub>次数和内存读写次数\
+> 由于操作数是存储在**内存**中，因此频繁地执行内存读写操作必然会影响执行速度，为了解决此问题，`HotSpot JVM`的设计者们提出**栈顶缓存技术**<sub>`ToS Top-of-Stack Cashing`</sub>
+>
+> 将**栈顶元素**全部缓存在**物理CPU寄存器**中<sub>CPU寄存器:指令更少，执行速度快</sub>，降低对内存的读写次数，提升`execution engine`的执行效率。*ToS还需要在HotSpot JVM具体进行测试才能运用*
+
+[top](#java-virtual-machine-stacks)🚦[home](../index.md#jvm)
 
 ## 拓展
 
@@ -236,4 +292,4 @@
 > > 如果局部变量作为**参数**传入，如果**多线程**调用此方法，则该局部变量不安全\
 > > 如果局部变量作为**返回值**返回，并被其他方法使用时，如果**多线程**，也不安全
 
-[home](../index.md#jvm)
+[top](#java-virtual-machine-stacks)🚦[home](../index.md#jvm)
