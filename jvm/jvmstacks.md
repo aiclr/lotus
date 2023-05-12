@@ -244,20 +244,131 @@
 ### Dynamic Linking
 
 > [Oracle 官方文档](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.6.3)
+> Each frame ([§2.6](#stack-frame)) contains a reference to the `run-time constant pool` ([§2.5.5](TODO)) for the type of the current method to support dynamic linking of the method code.The class file code for a method refers<sub>表示</sub> to methods to be invoked and variables to be accessed<sub>访问</sub> via<sub>通过</sub> symbolic<sub>符号</sub> references. Dynamic linking translates<sub>转换</sub> these symbolic method references into concrete<sub>具体的</sub> method references, loading classes as necessary to resolve<sub>解决</sub> as-yet-undefined<sub>尚未定义</sub> symbols, and translates variable accesses<sub>访问</sub> into appropriate<sub>恰当的</sub> offsets<sub>位置</sub> in storage<sub>存储</sub> structures associated with<sub>与…有关</sub> the run-time location of these variables.
+>
+> This late binding<sub>延迟绑定</sub> of the methods and variables makes<sub>使</sub> changes in other classes that a method uses less likely<sub>可能的</sub> to break this code.
+>
+> 《深入理解Java虚拟机》每个`Stack Frame`都包含一个指向`run-time constant pool`<sub>运行时常量池</sub>中该`Stack Frame所属方法的引用`，持有这个引用是为了支持方法调用过程中的`Dynamic Linking`<sub>比如`invokedynamic`指令</sub>。
+>
+> Java源文件编译为字节码文件时，所有的**变量**和`method references`<sub>方法引用</sub>都作为`symbolic reference`<sub>符号引用</sub>保存在`class文件的常量池`中。**字节码**中的**方法调用指令**以`class文件的常量池`里指向方法的`symbolic reference`<sub>符号引用</sub>作为参数。这些`symbolic reference`<sub>符号引用</sub>一部分会在**类加载阶段**或者**第一次使用**的时候就被转化为**concrete<sub>具体的</sub> method references**，这种转化被称为**静态解析**。另外一部分将在**每一次运行期间**都转化为**concrete<sub>具体的</sub> method references**，这部分就称为`Dynamic Linking`。
+>
+> `Dynamic Linking` 通过`symbolic reference`<sub>符号引用</sub>指向`run-time constant pool`<sub>运行时常量池</sub>中的`method references`<sub>方法引用</sub>
 
 [top](#java-virtual-machine-stacks)🚦[home](../index.md#jvm)
 
-### Normal Method Invocation Completion
+#### 方法的调用--多态
+
+> JVM 将`symbolic reference`<sub>符号引用 `#3`、`#2`...</sub>转换为直接引用与方法的**绑定机制**有关
+>
+> `static linking`<sub>静态链接</sub>
+> > 当一个字节码文件被装载进JVM内部时，如果被调用方法在**编译期**可知，且运行期保持不变时。将被调用方法的`symbolic reference`<sub>符号引用</sub>转换为**直接引用**的过程称为`static linking`<sub>静态链接</sub>
+>
+> `dynamic linking`<sub>动态链接</sub>
+> > 如果被调用方法在编译期无法被确定下来，也就是说只能够在**程序运行期**将调用方法的`symbolic reference`<sub>符号引用</sub>转换为**直接引用**。由于这种引用转换过程具备动态性因此也被称为`dynamic linking`<sub>动态链接</sub>
+>
+> 方法的**绑定机制**：是一个**字段**、**方法**、**类**在`symbolic reference`<sub>符号引用</sub>被替换为**直接引用**的过程，仅发生一次
+> > `early binding`<sub>早期绑定</sub>
+> > > `early binding`<sub>早期绑定</sub>：被调用的目标方法在**编译期**可知，且运行期保持不变<sub>即可将这个方法与所属的类型进行绑定</sub>，因此可以使用`static linking`<sub>静态链接</sub>的方式将`symbolic reference`<sub>符号引用</sub>转换为**直接引用**
+> >
+> > `late binding`<sub>延迟绑定</sub>
+> > > 如果被调用的方法在**编译期**无法被确定下来只能在**程序运行期**根据实际的类型，绑定相关的方法，这种绑定方式就是`late binding`<sub>延迟绑定</sub>
+>
+> **虚函数**
+> > Java中任何一个普通方法其实都具备**虚函数**的特征，相当于`c++`语言中的**虚函数**<sub>`c++`中需要使用关键字`virtual`来显示定义</sub>。如果java程序中不希望某个方法拥有虚函数的特征，使用关键字`final`修饰<sub>不能被重写，编译期确定，不再具备多态性</sub>
+>
+> 多态<sub>类继承，且重写方法</sub>
+> > 子类对象的多态性前提：1.类的继承 2.方法的重写\
+> > 面向对象的高级语言，尽管在语法风格上存在差异，但是都支持**封装**、**继承**、**多态**等面向对象特性\
+> > 具备多态性，就具备`early binding`和`late binding`两种绑定方式，可以在编译期确定具体调用哪个方法
+>
+> - 虚方法
+>   - 具备多态性的方法
+>   - 除了**静态方法**、**私有方法**、**final方法**、**实例构造器**、**父类方法**
+>   - `invokevirtual`指令：调用所有**虚方法**<sub>`final`修饰的方法为非虚方法，也使用`invokevirtual`指令</sub>
+>   - `invokeinterface`指令：调用**接口方法**
+> - 非虚方法
+>   - 不具备多态性的方法
+>   - `invokestatic`和`invokespecial`指令调用的方法称为非虚方法，其余的<sub>`final`修饰的方法为非虚方法</sub>称为虚方法
+>   - 方法在编译期确定具体的调用版本，这个版本在运行时不可变
+>   - **静态方法**、**私有方法**、**final方法**、**实例构造器**、**父类方法**都是非虚方法
+>   - `invokestatic`指令：调用**静态方法**，`ClassLoaderSubSystem.Linking.Resolve`阶段<sub>解析阶段</sub>确定唯一方法版本
+>   - `invokespecial`指令：调用`<init>`方法、**私有方法**、**父类方法**，`ClassLoaderSubSystem.Linking.Resolve`阶段<sub>解析阶段</sub>确定唯一方法版本
+> - 动态调用指令
+>   - `invokedynamic`指令：动态解析出需要调用的方法，然后执行。**支持由用户确定方法版本**。
+>   - `invokevirtual`、`invokeinterface`、`invokestatic`、`invokespecial`指令固化在JVM内部，方法的调用执行**不可人为干预**。
+
+[top](#java-virtual-machine-stacks)🚦[home](../index.md#jvm)
+
+#### 方法重写的本质
+
+1. 找到`operand stack`栈顶元素所执行的对象的实际类型，记作`c`<sub>当调用一个对象的方法时，会先把该方法的对象压入`operand stack`，通常为`invokevirtual`指令</sub>
+2. 如果在类型`c`中找到与**常量池**中**描述符**、**简单名称**都相符的方法<sub>查找c中有没有该方法</sub>，则进行**访问权限校验**
+    1. 如果访问权限校验通过，则返回这个方法的**直接引用**，查找过程结束。
+    2. 如果访问权限校验不通过，则返回`java.lang.IllegalAccessError`异常。
+3. 如果在类型`c`中没找到与**常量池**中**描述符**、**简单名称**都相符的方法<sub>查找c中有没有该方法</sub>，按照**继承关系从下往上**依次对`c`的各个父类进行`第2步`的搜索和验证
+4. 如果始终没有找到合适的方法，则抛出`java.lang.AbstractMethodError`异常
+
+> `java.lang.IllegalAccessError`异常<sub>jar冲突可能会出现</sub>
+> > 程序试图访问或修改一个属性或调用一个方法，当这个属性或方法没有权限访问，一般会引起编译器异常，这个错误如果发生在运行时，就说明一个类发生了不兼容的改变。
+
+#### 虚方法表
+
+- 在面向对象编程OOP，频繁的使用到动态分派，若每次动态分派的过程都要重新在类的方法元数据中搜索合适的目标，会影响执行效率
+- JVM采用在类的方法区建立一个`virtual method table`<sub>虚方法表</sub>，使用索引表来代替查找。非虚方法不会出现在表中。
+- 每个类中都有一个`virtual method table`<sub>虚方法表</sub>，存放着各个方法的实际入口
+- `virtual method table`<sub>虚方法表</sub>在`ClassLoaderSubSystem.Linking.resolve`阶段<sub>将常量池内的符号引用转换为直接引用</sub>被创建并开始初始化，类的变量初始值准备完成后，JVM会把该类的方法表也初始化完毕
+
+[top](#java-virtual-machine-stacks)🚦[home](../index.md#jvm)
+
+### Method Invocation Completion
+
+> 《深入理解Java虚拟机》当一个方法开始执行后，只有两种方式退出这个方法。
+>
+> 第一种方式是**执行引擎**遇到任意一个[方法返回的字节码指令](#返回字节码指令)，这时候可能会有返回值传递给上层的方法调用者<sub>调用当前方法的方法称为调用者或主调方法</sub>，方法是否有返回值以及返回值的类型将根据遇到何种[方法返回的字节码指令](#返回字节码指令)来决定，这种退出方法的方式称为[Normal Method Invocation Completionsub](#normal-method-invocation-completion)<sub>正常调用完成</sub>。
+>
+> 另一种退出方式是在方法执行的过程中遇到异常，且这个异常没有在方法体内得到妥善处理。无论是JVM内部产生的异常，还是代码中使用`athrow`字节码指令产生的异常，只要在本方法的**异常表**中没有搜索到匹配的**异常处理器**，就会导致方法退出，这种退出方法的方式称为[Abrupt Method Invocation Completion](#abrupt-method-invocation-completion)<sub>异常调用完成</sub>。一个方法使用[Abrupt Method Invocation Completion](#abrupt-method-invocation-completion)的方式退出，不会给他的上层调用者提供任何返回值。方法执行过程中抛出异常的**异常处理器**，存储在一个**异常处理表**，方便在发生异常的时候找到处理异常的代码。
+>
+> 无论采用何种退出方式，在方法退出后，必须返回到最初方法被调用时的位置，程序才能继续执行，方法返回时可能需要在`stack frame`种保存一些信息，用来帮助恢复他的上层主调方法的执行状态。一般来说，方法正常退出时，主调方法的`pc register`的值就可以作为**返回地址**<sub>即调用该方法的指令的下一条指令的地址</sub>，`stack frame`中很可能会保存这个`pc register value`。而方法异常退出时，返回地址是要通过**异常处理器表**来确定的，`stack frame`中**一般不会**保存这部分信息，异常退出不会给上层调用者生产任何的返回值。
+>
+> 方法退出的过程实际上等同于把当前`stack frame` **出栈**，因此退出时可能<sub>基于jvm规范讨论，具体执行哪些操作由具体jvm实现来确定</sub>执行的操作有：恢复上层方法的`local variables`和`operand stack`，把返回值<sub>如果有返回值</sub>压入调用者`stack frame`的`operand stack`，调整`pc register`的值以指向方法调用指令后面的一条指令等。
+
+#### 返回字节码指令
+
+- `ireturn`
+  - boolean、byte、char、short、int
+- `lreturn`
+  - long
+- `freturn`
+  - float
+- `dreturn`
+  - double
+- `areturn`
+  - 引用类型
+- `return`
+  - void 方法、实例初始化方法、类、接口的初始化方法
+
+[top](#java-virtual-machine-stacks)🚦[home](../index.md#jvm)
+
+#### Normal Method Invocation Completion
 
 > [Oracle 官方文档](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.6.4)
+> A method invocation completes normally<sub>正常地</sub> if that invocation does not cause<sub>造成</sub> an exception ([§2.10](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.10)) to be thrown, either directly<sub>直接地</sub> from the Java Virtual Machine or as a result of executing<sub>执行</sub> an explicit<sub>明确的</sub> throw statement<sub>语句</sub>. If the invocation of the current method completes normally, then a value may be returned to the invoking method. This occurs<sub>发生</sub> when the invoked method executes<sub>执行</sub> one of the return instructions<sub>(计算机的)指令</sub> ([§2.11.8](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.11.8)), the choice<sub>选择</sub> of which must be appropriate<sub>合适的</sub> for the type of the value being returned (if any).
+>
+> The current frame [§2.6](#stack-frame)) is used in this case to restore<sub>恢复</sub> the state of the invoker<sub>调用者</sub>, including its `local variables` and `operand stack`, with the `program counter` of the invoker<sub>调用者</sub> appropriately<sub>适当地</sub> incremented<sub>递增</sub> to skip past<sub>跳过</sub> the method invocation instruction<sub>(计算机的)指令</sub>. Execution<sub>执行</sub> then continues normally<sub>正常地</sub> in the invoking method's frame with the returned value (if any) pushed onto the `operand stack` of that frame.
 
 [top](#java-virtual-machine-stacks)🚦[home](../index.md#jvm)
 
-### Abrupt Method Invocation Completion
+#### Abrupt Method Invocation Completion
 
 > [Oracle 官方文档](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.6.5)
+> A method invocation<sub>调用</sub> completes abruptly<sub>意外地</sub> if execution<sub>执行</sub> of a Java Virtual Machine instruction<sub>(计算机的)指令</sub> within the method causes the Java Virtual Machine to throw an exception ([§2.10](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.10)), and that exception is not handled within the method. Execution<sub>执行</sub> of an `athrow` instruction ([§athrow](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-6.html#jvms-6.5.athrow)) also causes<sub>引起</sub> an exception to be explicitly<sub>明确地</sub> thrown and, if the exception is not caught<sub>抓住</sub> by the current method, results in abrupt<sub>意外地</sub> method invocation completion. A method invocation that completes abruptly<sub>意外地</sub> never returns a value to its invoker<sub>调用者</sub>.
 
 [top](#java-virtual-machine-stacks)🚦[home](../index.md#jvm)
+
+### 附加信息
+
+> 《深入理解Java虚拟机》
+JVM规范运行jvm实现增加一些规范里没有描述的信息到stack frame中，例如与调试、性能收集相关的信息，这部分信息完全取决于具体jvm实现，
 
 ## 指令集架构
 
