@@ -8,6 +8,7 @@
   - [Dynamic Linking](#dynamic-linking)
   - [Normal Method Invocation Completion](#normal-method-invocation-completion)
   - [Abrupt Method Invocation Completion](#abrupt-method-invocation-completion)
+- [指令集架构](#指令集架构)
 - [栈顶缓存技术](#tos)
 - [拓展](#拓展)
 
@@ -255,6 +256,23 @@
 ### Abrupt Method Invocation Completion
 
 > [Oracle 官方文档](https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html#jvms-2.6.5)
+
+[top](#java-virtual-machine-stacks)🚦[home](../index.md#jvm)
+
+## 指令集架构
+
+> 基于栈式架构（JVM）
+> > 设计和实现更**简单**，适用于**资源受限**的系统\
+> > 避开寄存器的分配难题：使用**零地址指令**方式分配\
+> > 指令流中的指令大部分是零地址指令，其执行过程依赖于**操作栈**，指令集更小，编译器容易实现\
+> > 不需要硬件支持，**可移植性**更好，更好实现**跨平台**
+>
+> 基于寄存器架构
+> > 典型的应用是x86的二进制指令集<sub>传统PC以及Android的Davlik虚拟机</sub>\
+> > 指令集架构完全依赖**硬件**，**可移植性差**\
+> > 性能优秀和执行更高效\
+> > 花费**更少**的指令去完成一项操作\
+> > 在大部分情况下，基于寄存器架构的指令集往往都以**一地址指令**、**二地址指令**和**三地址指令**为主，而基于栈式架构的指令集却是以零地址指令为主
 
 [top](#java-virtual-machine-stacks)🚦[home](../index.md#jvm)
 
