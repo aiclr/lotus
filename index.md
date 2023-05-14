@@ -84,8 +84,8 @@
 | [top](#top)                                       | Tools                       |
 |:--------------------------------------------------|:----------------------------|
 | [The pc Register](jvm/pcregister.md)              | [jvm监控工具](jvm/tools.md)  |
-| [JVM Stacks](jvm/jvmstacks.md)                      | [VisualVM](jvm/visualvm.md) |
-| [Heap](jvm/heap.md)                               |                             |
+| [JVM Stacks](jvm/jvmstacks.md)                    | [VisualVM](jvm/visualvm.md) |
+| [Heap](jvm/heap.md)                               | [jvm参数](jvm/jvmoptions.md) |
 | [Method Area](jvm/methodarea.md)                  |                             |
 | [Run-Time Constant Pool](jvm/rtconstantpool.md)   |                             |
 | [Native Method Stacks](jvm/nativemethodstacks.md) |                             |
