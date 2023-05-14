@@ -36,11 +36,11 @@
 
 > `-XX:MaxTenuringThreshold=15` 设置`Promotion`<sub>晋升Old区阈值</sub>。默认值`15`。
 
-> 开启 or 关闭 `TLAB`。
+> 开启 or 关闭 [TLAB](./tlab.md)<sub>`Thread Local Allocation Buffer`</sub>。
 > > `-XX:+UseTLAB` 默认开启
 > > `-XX:-UseTLAB` 关闭'
 >
-> `-XX:TLABSize=512k` 设置[TLAB](/tlab.md)<sub>`Thread Local Allocation Buffer`</sub>空间大小。`If this option is set to 0, then the JVM chooses the initial size automatically.`
+> `-XX:TLABSize=512k` 设置`TLAB`空间大小。`If this option is set to 0, then the JVM chooses the initial size automatically.`
 
 > `-XX:+PrintGCDetails` 输出详细的GC处理日志\
 > `-XX:+PrintGC` 输出GC简要信息
