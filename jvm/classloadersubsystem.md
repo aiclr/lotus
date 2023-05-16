@@ -204,7 +204,8 @@
 > >     2. `REF_getStatic、REF_putStatic、REF_invokeStatic`**句柄**对应的类没有初始化则初始化
 >
 > **被动使用**
-> > 类不会执行 Initialization 阶段
+> > 类加载阶段不会执行 Initialization 阶段
+> > > 比如：静态内部类
 > >
 > > 除了主动使用的七种情况，其他使用java类的方式都被看作是对类的被动使用，都**不会导致类的初始化**。
 
