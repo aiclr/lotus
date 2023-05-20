@@ -129,7 +129,7 @@
 | [开机时间检查](archlinux.md#boot)                                                             | [多个X视窗会话](archlinux.md#startx)
 | [pacman](archlinux.md#pacman) // [AUR](archlinux.md#aur)  //[降级软件包](archlinux.md#降级)   | [rabbitmq](archlinux.md#rabbitmq) // [rabbitmqadmin](archlinux.md#rabbitmqadmin) |
 | [nginx](archlinux.md#nginx) // [vue & react nginx image](archlinux.md#nginx-for-h5)         | [xrandr 小米游戏本多屏输出](archlinux.md#xrandr)                                 |
-| [GRUB](archlinux.md#grub)                                                                   |
+| [GRUB](archlinux.md#grub)                                                                   | [ImageMagick](imagemagick.md) |
 | [vscode settings.json](conf/settings.json)                                                  |
 
 ## C
