@@ -86,7 +86,7 @@
 | [top](#top)                                       | Tools                       | other                                         |
 |:--------------------------------------------------|:----------------------------|:----------------------------------------------|
 | [The pc Register](jvm/pcregister.md)              | [jvm监控工具](jvm/tools.md)  | [Thread Local Allocation Buffer](jvm/tlab.md) |
-| [JVM Stacks](jvm/jvmstacks.md)                    | [VisualVM](jvm/visualvm.md) |
+| [JVM Stacks](jvm/jvmstacks.md)                    | [VisualVM](jvm/visualvm.md) | [OOM](jvm/oom.md) |
 | [Heap](jvm/heap.md)                               | [jvm参数](jvm/jvmoptions.md) |
 | [Method Area](jvm/methodarea.md)                  |                             |
 | [Run-Time Constant Pool](jvm/rtconstantpool.md)   |                             |
