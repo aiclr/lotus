@@ -93,6 +93,7 @@
 | [Native Method Stacks](jvm/nativemethodstacks.md) |                             |
 | [ClassLoader SubSystem](jvm/classloadersubsystem.md)                   |                             |
 | [对象的实例化](jvm/对象的实例化.md)                   |                             |
+| [GC](jvm/gc.md)                                   |                             |
 
 ## go
 
