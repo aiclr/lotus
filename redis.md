@@ -4,7 +4,7 @@
 | :--------------------- | :--- | :------------------------------------------ |
 | [官方网址](#official)  |      | [rejson docker & podman](#docker-or-podman) |
 | [docker](#docker)      |      | [rejson k8s](#rejson-k8s)                   |
-| [podman](#podman)      |      | [rejson commands](#redisjson-commands)      |
+| [podman](podman.md#redis) |      | [rejson commands](#redisjson-commands)      |
 | [k8s](#k8s)            |      | [java client](#jrejson)                     |
 | [commands](#commands)  |
 
@@ -21,22 +21,13 @@
 > **redis 6.0** 以后的新功能 `ACL` 访问控制列表:
 > > A container for Access List Control commands 访问控制列表 
 
-
 [top](#redis) | [home](index.md#redis)
 
 ## docker
 
 ```bash
-docker run -v/root/redis/conf:/usr/local/etc/redis -v /root/redis/data:/data -p 6379:6379 --name redis redis:6.2.6
+docker run -v /root/redis/conf:/usr/local/etc/redis -v /root/redis/data:/data -p 6379:6379 --name redis redis:6.2.6
 
-```
-
-[top](#redis) | [home](index.md#redis)
-
-## podman
-
-```bash
-podman run -v/root/redis/conf:/usr/local/etc/redis -v /root/redis/data:/data -p 6379:6379 --name redis redis:6.2.6
 ```
 
 [top](#redis) | [home](index.md#redis)
@@ -148,8 +139,8 @@ spec:
 ### docker or podman
 
 ```bash
-docker run -v/root/redis/conf:/usr/local/etc/redis -v /root/redis/data:/data -p 6379:6379 --name rejson redislabs/rejson:2.0.6
-podman run -v/root/redis/conf:/usr/local/etc/redis -v /root/redis/data:/data -p 6379:6379 --name rejson redislabs/rejson:2.0.6
+docker run -v /root/redis/conf:/usr/local/etc/redis -v /root/redis/data:/data -p 6379:6379 --name rejson redislabs/rejson:2.0.6
+podman run -v /root/redis/conf:/usr/local/etc/redis -v /root/redis/data:/data -p 6379:6379 --name rejson redislabs/rejson:2.0.6
 ```
 [redisjson](#redisjson) | [top](#redis) | [home](index.md#redis)
 

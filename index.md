@@ -43,7 +43,7 @@
 | [top](#top)                                        | **arch**                                   | **suse**                                         | **docker**                                                         | **k8s**                                              |
 | :------------------------------------------------- | :----------------------------------------- | :----------------------------------------------- | :----------------------------------------------------------------- | :--------------------------------------------------- |
 | [btrfs](linux/btrfs.md)                            | [安装记录](linux/arch/install.md)          | [发行版](linux/suse/microos.md)                  | [Docker registry 部署 与 自签证书](linux/lxc/registry/registry.md) | [kubic 安装 k8s](linux/lxc/k8s/kubic.md)             |
-| [users & groups](linux/user.md)                    | [virtualbox安装](linux/arch/virtualbox.md) | [zypper](linux/suse/zypper.md)                   | [rabbitmq](linux/lxc/docker/rabbitmq.md)                           | [kubectl 用法](linux/lxc/k8s/kubectl.md)             |
+| [users & groups](linux/user.md)                    | [virtualbox安装](linux/arch/virtualbox.md) | [zypper](linux/suse/zypper.md)                   | [rabbitmq](linux/lxc/k8s/rabbitmq.md)                           | [kubectl 用法](linux/lxc/k8s/kubectl.md)             |
 | [shell](linux/shell.md)                            |                                            | [自启动脚本](linux/suse/init.md)                 | [jre8 for alpine](linux/lxc/jre8/jre84alpine.md)                   | [Dashboard UI 部署](linux/lxc/k8s/dashbord-ui.md)    |
 | [linux](linux/linux.md)                            |                                            | [默认凌晨三点六重启系统](linux/suse/rebootmg.md) | [jre7 for alpine](linux/lxc/jre7/jre74alpine.md)                   | [RabbitMQ k8s 部署 脚本](linux/lxc/k8s/rabbitmq.md)  |
 | [lvm](linux/tools/lvm.md)                          | [i3](linux/arch/i3.md)                     | [Network file system](linux/suse/nfs.md)         | [nginx](linux/lxc/docker/nginx.md)                                 | [mysql k8s 部署 脚本](linux/lxc/k8s/mysql.yaml)      |
@@ -125,10 +125,10 @@
 | :------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------- |
 | [systemd](archlinux.md#systemd)                                                             | [nmap](archlinux.md#nmap)                                                        |
 | [systemd/User](archlinux.md#systemduser)                                                    | [samba](archlinux.md#samba)                                                      |
-| [systemd/Timers](archlinux.md#systemdtimers) //  [OnCalendar](archlinux.md#oncalendar)      | [podman](archlinux.md#podman)                                                    |
+| [systemd/Timers](archlinux.md#systemdtimers) //  [OnCalendar](archlinux.md#oncalendar)      | [podman](podman.md)                                                    |
 | [systemd/Journal](archlinux.md#systemdjournal)                                              | [docker 局域网访问](archlinux.md#局域网访问)                                     |
 | [开机时间检查](archlinux.md#boot)                                                             | [多个X视窗会话](archlinux.md#startx)
-| [pacman](archlinux.md#pacman) // [AUR](archlinux.md#aur)  //[降级软件包](archlinux.md#降级)   | [rabbitmq](archlinux.md#rabbitmq) // [rabbitmqadmin](archlinux.md#rabbitmqadmin) |
+| [pacman](archlinux.md#pacman) // [AUR](archlinux.md#aur)  //[降级软件包](archlinux.md#降级)   | [rabbitmq](rabbitmq.md) // [rabbitmqadmin](rabbitmq.md#rabbitmqadmin) |
 | [nginx](archlinux.md#nginx) // [vue & react nginx image](archlinux.md#nginx-for-h5)         | [xrandr 小米游戏本多屏输出](archlinux.md#xrandr)                                 |
 | [GRUB](archlinux.md#grub)                                                                   | [ImageMagick](imagemagick.md) |
 | [vscode settings.json](conf/settings.json)                                                  |
@@ -158,12 +158,12 @@
 
 ## mysql
 
-| [top](#top)                                                                                                     |                                                                                   |
-| :-------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------- |
+| [top](#top)                                                                                                    |                                                                                   |
+| :------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------- |
 | [mysql错误码](https://dev.mysql.com/doc/mysql-errors/5.7/en/server-error-reference.html#error_er_no_such_table) | [mysql5.7 sql_mode 默认开启 ONLY_FULL_GROUP_BY 问题](mysql.md#ONLY_FULL_GROUP_BY) |
-|                                                                                                                 | [commands](mysql.md#commands)                                                     |
-|                                                                                                                 | [mysql5.7 类型隐式转换](mysql.md#type-conversion)                                 |
-|                                                                                                                 | [优化分页查询](mysql.md#分页查询)                                                 |
+| [podman](podman.md#mysql)                                                                                      | [commands](mysql.md#commands)                                                     |
+|                                                                                                                | [mysql5.7 类型隐式转换](mysql.md#type-conversion)                                 |
+|                                                                                                                | [优化分页查询](mysql.md#分页查询)                                                 |
 
 ## build tools
 

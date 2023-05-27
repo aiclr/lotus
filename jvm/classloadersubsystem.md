@@ -74,7 +74,7 @@
 > > > > 从JDK的安装目录`jre/lib/ext`子目录（扩展目录）下加载类库，如果用户创建的jar放在此目录下，也会自动由`ExtClassLoader`加载
 > > >
 > > > `SystemClassLoader`系统类加载器<sub>或称为应用程序类加载器`AppClassLoader`</sub>。`ClassLoader systemClassLoader=ClassLoader.getSystemClassLoader();`
-> > > > java实现。实现位置`sun.misc.Launcher`静态内部类`static class AppClassLoader extends URLClassLoader`\
+> > > > java实现。实现位置`sun.misc.Launcher`内静态内部类`static class AppClassLoader extends URLClassLoader`\
 > > > > `parent`<sub>父类加载器</sub>为 `ExtClassLoader` 扩展类加载器\
 > > > > 负责加载**环境变量**`classpath`或**系统属性**`java.class.path`指定路径下的类库\
 > > > > 程序中的**默认类加载器**，一般java应用的类都是由其来完成加载\

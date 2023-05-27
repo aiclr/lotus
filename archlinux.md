@@ -4,10 +4,10 @@
 | :------------------------------------------------------------- | :------------------------------------------------------- |
 | [systemd](#systemd)                                            | [nmap](#nmap)                                            |
 | [systemd/User](#systemduser)                                   | [samba](#samba)                                          |
-| [systemd/Timers](#systemdtimers) //  [OnCalendar](#oncalendar) | [podman](#podman)                                        |
+| [systemd/Timers](#systemdtimers) //  [OnCalendar](#oncalendar) | [podman](podman.md)                                        |
 | [systemd/Journal](#systemdjournal)                             | [docker 局域网访问](#局域网访问)                            |
 | [开机时间检查](#boot)                                            | [多个X视窗会话](#startx)                                   |
-| [pacman](#pacman) // [AUR](#aur)  //[降级软件包](#降级)          | [rabbitmq](#rabbitmq) // [rabbitmqadmin](#rabbitmqadmin) |
+| [pacman](#pacman) // [AUR](#aur)  //[降级软件包](#降级)          | [rabbitmq](rabbitmq.md) // [rabbitmqadmin](rabbitmq.md#rabbitmqadmin) |
 | [nginx](#nginx) // [vue & react nginx image](#nginx-for-h5)    | [xrandr 小米游戏本多屏输出](#xrandr)                        |
 | [GRUB](#grub)                                                  |
 
@@ -200,41 +200,6 @@
 
 [nginx](#nginx) | [top](#arch-linux) | [home](index.md)
 
-## rabbitmq
-
-> docker
-> ```shell
-> # Management Plugin rabbitmq default username and password of guest / guest
-> docker run -d -p 5672:5672 -p 15672:15672 --name containerName imageID
-> docker run -d -p 5672:5672 -p 15672:15672 --name containerName imageName:version
-> docker run -d --hostname my-rabbit --name some-rabbit -e RABBITMQ_DEFAULT_USER=user -e RABBITMQ_DEFAULT_PASS=password rabbitmq:3-management
-> # go to container exit container will not stop
-> docker exec -it containerID /bin/bash
-> docker exec -it containerID /bin/sh
-> # go to container exit container will stop
-> docker attach containerID
-> # exit container
-> exit # 退出容器伪终端并关闭容器
-> ctrl+d # 退出容器伪终端并关闭容器
-> ctrl+c # 退出容器伪终端不关闭容器
-> ctrl+p+ctrl+q #退出容器伪终端不关闭容器
-> ```
-
-[top](#arch-linux) | [home](index.md)
-
-### rabbitmqadmin
-
-```shell
-# exchange
-rabbitmqadmin -u username -p password declare exchange name=exchange type=topic
-# queue
-rabbitmqadmin -u username -p password declare queue name=queue  durable=true
-# binding
-rabbitmqadmin -u username -p password declare binding source=exchange destination=queue routing_key=key
-```
-
-[rabbitmq](#rabbitmq) | [top](#arch-linux) | [home](index.md)
-
 ## docker
 
 > [Guides](https://docs.docker.com/get-started/overview/)\
@@ -259,55 +224,6 @@ rabbitmqadmin -u username -p password declare binding source=exchange destinatio
 > > `firewall-cmd --zone=public --add-port=2375/tcp --permanent`
 
 [docker](#docker) | [top](#arch-linux) | [home](index.md)
-
-## podman
-
-> [podman 官方网站](https://podman.io) | [github](https://github.com/TomSweeneyRedHat/podman)
-> 
-> archlinux 安装 `pacman -S podman` \
-> opensuse 安装 `zypper in podman` 
->
-> [Rootless mode](https://man.archlinux.org/man/podman.1#Rootless_mode)
-> ```shell
-> usermod --add-subuids 10000-65535 caddy
-> usermod --add-subgids 10000-65535 caddy
-> # or
-> echo caddy:10000:65536 >> /etc/subuid
-> echo caddy:10000:65536 >> /etc/subgid
-> ```
-> 
-> registry 加速配置 `etc/containers/registries.conf`
-> ```properties
-> [[registry]]
->    prefix = "docker.io"
->    location = "rjm3pmfv.mirror.aliyuncs.com"
-> [[registry.mirror]]
->    location = "rjm3pmfv.mirror.aliyuncs.com"
-> ```
-> 
-> [command](https://docs.podman.io/en/latest/Commands.html)
-> ```shell
-> podman --help
-> podman <subcommand> --help
-> man podman
-> man podman-<subcommand>
-> 
-> podman search <search_term> # searching images
-> podman search httpd --filter=is-official # searching images
-> podman search httpd --f=is-official # searching images
-> podman pull docker.io/library/httpd #  pulling some images
-> podman images # list all images
-> podman run -dt -p 8080:80/tcp docker.io/library/httpd # Running a container
-> podman ps # Listing running containers
-> podman ps -a # Listing all containers
-> podman inspect -l | grep IPAddress # Inspecting a running container
-> podman logs -l # Viewing the container’s logs
-> podman top -l # Viewing the container’s pids
-> podman stop -l # Stopping the container
-> podman rm -l # Removing the container
-> ```
-
-[top](#arch-linux) | [home](index.md)
 
 ## samba
 
