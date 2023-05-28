@@ -47,7 +47,7 @@
 | [shell](linux/shell.md)                            |                                            | [自启动脚本](linux/suse/init.md)                 | [jre8 for alpine](linux/lxc/jre8/jre84alpine.md)                   | [Dashboard UI 部署](linux/lxc/k8s/dashbord-ui.md)    |
 | [linux](linux/linux.md)                            |                                            | [默认凌晨三点六重启系统](linux/suse/rebootmg.md) | [jre7 for alpine](linux/lxc/jre7/jre74alpine.md)                   | [RabbitMQ k8s 部署 脚本](linux/lxc/k8s/rabbitmq.md)  |
 | [lvm](linux/tools/lvm.md)                          | [i3](linux/arch/i3.md)                     | [Network file system](linux/suse/nfs.md)         | [nginx](linux/lxc/docker/nginx.md)                                 | [mysql k8s 部署 脚本](linux/lxc/k8s/mysql.yaml)      |
-| [ohmyzsh](linux/tools/ohmyzsh.md)                  | [系统监控工具](linux/arch/monitor.md)      | [java version 管理工具](linux/suse/java.md)      | [nginx for react & vue](linux/lxc/nginx/nginx4js.md)               | [redis k8s 部署 脚本](linux/lxc/k8s/redis.yaml)      |
+| [ohmyzsh](archlinux.md#oh-my-zsh)                  | [系统监控工具](linux/arch/monitor.md)      | [java version 管理工具](linux/suse/java.md)      | [nginx for react & vue](linux/lxc/nginx/nginx4js.md)               | [redis k8s 部署 脚本](linux/lxc/k8s/redis.yaml)      |
 | [awk](linux/tools/awk.md)                          | [wifi爆破](linux/arch/aircrack-ng.md)      |                                                  | [Springboot Layering Docker Images](java/spring/boot/layer.md)     | [RedisJSON k8s 部署 脚本](linux/lxc/k8s/rejson.yaml) |
 | [sed](linux/tools/sed.md)                          | [sddm login 主题](linux/arch/sddm.md)      |                                                  |
 | [vim](linux/tools/vim.md)                          | [mpv 视频播放](linux/arch/mpv.md)          |                                                  |
@@ -121,17 +121,17 @@
 
 ## archlinux
 
-| [top](#top)                                                                                 | Tools                                                                            |
-| :------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------- |
-| [systemd](archlinux.md#systemd)                                                             | [nmap](archlinux.md#nmap)                                                        |
-| [systemd/User](archlinux.md#systemduser)                                                    | [samba](archlinux.md#samba)                                                      |
-| [systemd/Timers](archlinux.md#systemdtimers) //  [OnCalendar](archlinux.md#oncalendar)      | [podman](podman.md)                                                    |
-| [systemd/Journal](archlinux.md#systemdjournal)                                              | [docker 局域网访问](archlinux.md#局域网访问)                                     |
-| [开机时间检查](archlinux.md#boot)                                                             | [多个X视窗会话](archlinux.md#startx)
+| [top](#top)                                                                                 | Tools                                                                 |
+| :------------------------------------------------------------------------------------------ | :-------------------------------------------------------------------- |
+| [systemd](archlinux.md#systemd)                                                             | [nmap](archlinux.md#nmap)                                             |
+| [systemd/User](archlinux.md#systemduser)                                                    | [samba](archlinux.md#samba)                                           |
+| [systemd/Timers](archlinux.md#systemdtimers) //  [OnCalendar](archlinux.md#oncalendar)      | [podman](podman.md)                                                   |
+| [systemd/Journal](archlinux.md#systemdjournal)                                              | [docker 局域网访问](archlinux.md#局域网访问)                             |
+| [开机时间检查](archlinux.md#boot)                                                             | [多个X视窗会话](archlinux.md#startx)                                    |
 | [pacman](archlinux.md#pacman) // [AUR](archlinux.md#aur)  //[降级软件包](archlinux.md#降级)   | [rabbitmq](rabbitmq.md) // [rabbitmqadmin](rabbitmq.md#rabbitmqadmin) |
-| [nginx](archlinux.md#nginx) // [vue & react nginx image](archlinux.md#nginx-for-h5)         | [xrandr 小米游戏本多屏输出](archlinux.md#xrandr)                                 |
-| [GRUB](archlinux.md#grub)                                                                   | [ImageMagick](imagemagick.md) |
-| [vscode settings.json](conf/settings.json)                                                  |
+| [nginx](archlinux.md#nginx) // [vue & react nginx image](archlinux.md#nginx-for-h5)         | [xrandr 小米游戏本多屏输出](archlinux.md#xrandr)                         |
+| [GRUB](archlinux.md#grub)                                                                   | [ImageMagick](imagemagick.md)                                         |
+| [vscode settings.json](conf/settings.json)                                                  | [Oh My Zsh](archlinux.md#oh-my-zsh)                                   |
 
 ## C
 
