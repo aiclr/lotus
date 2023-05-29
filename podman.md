@@ -3,6 +3,7 @@
 | [home](index.md#archlinux) | [podman official](https://podman.io) | [github](https://github.com/containers/podman) | [Rootless mode](https://man.archlinux.org/man/podman.1#Rootless_mode) | [Commands](https://docs.podman.io/en/latest/Commands.html) |
 |:---------------------------|:-------------------------------------|:-----------------------------------------------|:----------------------------------------------------------------------|:-----------------------------------------------------------|
 | [pod](#pod)                | [mysql](#mysql)                      | [redis](#redis)                                | [rabbitmq](#rabbitmq)                                                 | [elasticsearch](#elasticsearch)                            |
+|                            | [nacos](podman.md)                   | [redis](#redis)                                | [rabbitmq](#rabbitmq)                                                 | [elasticsearch](#elasticsearch)                            |
 
 > archlinux 安装 `pacman -S podman`
 >
